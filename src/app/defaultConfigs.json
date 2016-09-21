@@ -1,0 +1,17 @@
+{
+    "logo": "Logo",
+    "main": [
+        "News"
+    ],
+    "rest": [
+        "Weex",
+        "Bao",
+        "Gold",
+        "Download"
+    ],
+    "widget": [
+        "Search",
+        "Notification",
+        "User"
+    ]
+}
