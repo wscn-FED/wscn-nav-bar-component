@@ -1,32 +1,16 @@
 import React from 'react';
+import c from 'classnames';
 import withHover from '../../../utils/withHover';
 import withData from '../../../utils/withData';
 import Tabs, { TabPane } from '../../Tabs';
 
-@withHover
-export default
-class News extends React.PureComponent {
-    render() {
-        console.log(this.props);
-        return (
-            <div>
-                <span>资讯</span>
-                {
-                    this.props.hovered
-                    ? <NewsTab />
-                    : null
-                }
-            </div>
-        );
-    }
-}
-
 
 class ListView extends React.PureComponent {
+
     render() {
         if (this.props.loading) return <div>加载中...</div>;
         if (this.props.error) return <div>加载失败</div>;
-        const Item = this.props.itemComponent;
+        const Item = this.props.renderItem;
         return (
             <ul>
                 {this.props.data.map((datum, index) => <Item key={this.props.getKey ? this.props.getKey(datum) : index} {...datum} />)}
@@ -76,19 +60,44 @@ const Europe = withData({
 }, res => res.data.results)(ListView);
 
 class NewsTab extends React.PureComponent {
+    static defaultProps = {
+        className: 'nav_tab'
+    }
+
     render() {
         return (
-            <Tabs>
+            <Tabs className={c(this.props.className)}>
                 <TabPane name="美国">
-                    <America itemComponent={Card}/>
+                    <America renderItem={Card}/>
                 </TabPane>
                 <TabPane name="中国">
-                    <China itemComponent={Card}/>
+                    <China renderItem={Card}/>
                 </TabPane>
                 <TabPane name="欧洲">
-                    <Europe itemComponent={Card}/>
+                    <Europe renderItem={Card}/>
                 </TabPane>
             </Tabs>
+        );
+    }
+}
+
+@withHover
+export default
+class News extends React.PureComponent {
+    static defaultProps = {
+        className: 'nav_item_news'
+    }
+
+    render() {
+        return (
+            <div className={c(this.props.className)} >
+                <span>资讯</span>
+                {
+                    this.props.hovered
+                    ? <NewsTab />
+                    : null
+                }
+            </div>
         );
     }
 }

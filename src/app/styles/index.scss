@@ -1,0 +1,61 @@
+body {
+    background: #ecedf3;
+}
+
+.header_nav {
+    height: 60px;
+    ul, ul li {
+        list-style: none;
+    }
+    .nav_main, .nav_logo, .nav_rest, .nav_widget {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+    }
+    .nav_logo {
+        padding: 0 30px;
+        img {
+            vertical-align: middle;
+        }
+        &:after {
+            content: "";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .nav_main {
+        .nav_item_news {
+            height: 100%;
+            display: table;
+            text-align: center;
+            span {
+                vertical-align: middle;
+                display: table-cell;
+            }
+            position: relative;
+            .nav_tab {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                transform: translate(-50%);
+                width: 380px;
+                height: 240px;
+                .tabs_nav_container {
+                    height: 41px;
+                }
+            }
+        }
+    }
+}
+
+.header_nav {
+    background: rgba(38,47,56,0.92);
+    font-size: 14px;
+    color: #AAAAAA;
+    .nav_tab {
+        background: white;
+        box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.40);
+    }
+}
