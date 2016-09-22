@@ -110,6 +110,17 @@ function runDevServer(port) {
         watchOptions: {
             ignored: /node_modules/
         },
+        proxy: {
+            '/api/**': {
+                target: 'http://api.wallstcn.com/v2',
+                // ignorePath: true,
+                pathRewrite: {
+                    '^/api': ''
+                },
+                changeOrigin: true,
+                logLevel: 'debug'
+            }
+        }
     }).listen(port, (err, result) => {
         if (err) {
             return console.log(err);
