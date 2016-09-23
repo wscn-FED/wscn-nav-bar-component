@@ -37,7 +37,7 @@ class Card extends React.PureComponent {
                 <div className={contentContainerClassName}>
                     <a href={url} target="_blank" rel="noopener noreferrer" ><h1>{title}</h1></a>
                     <div className={c(footerClassName)}>
-                        <span>文 / <a href={user.url}>{user.username}</a></span>
+                        <span>文 / <a href={user.url}>{user.screenName || user.username}</a></span>
                         <span>{formatTime(createdAt)}</span>
                     </div>
                 </div>
