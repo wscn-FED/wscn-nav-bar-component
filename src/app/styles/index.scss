@@ -41,6 +41,9 @@ body {
                 cursor: pointer;
                 vertical-align: middle;
                 display: table-cell;
+                &:hover {
+                    color: white;
+                }
             }
             position: relative;
             .nav_tab {
@@ -77,7 +80,7 @@ body {
                                 height: 10px;
                                 border: 1px solid #1478F0;
                                 background: white;
-                                transform: rotate(45deg) translate(-50%, -3px);
+                                transform: rotate(45deg) translate(-7px, 2px);
                                 z-index: 10;
                             }
                             &:before {
