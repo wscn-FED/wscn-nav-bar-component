@@ -33,6 +33,7 @@ body {
         }
     }
     .nav_main {
+        margin-left: 55px;
         .nav_item_news {
             position: relative;
             height: 100%;
@@ -42,6 +43,7 @@ body {
                 cursor: pointer;
                 vertical-align: middle;
                 display: table-cell;
+                font-size: 14px;
                 &:hover {
                     color: white;
                 }
