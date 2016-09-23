@@ -7,6 +7,17 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var url = require('url');
 var paths = require('./paths');
 
+var AUTOPREFIXER_BROWSERS = [
+  'Android 2.3',
+  'Android >= 4',
+  'Chrome >= 35',
+  'Firefox >= 31',
+  'Explorer >= 9',
+  'iOS >= 7',
+  'Opera >= 12',
+  'Safari >= 7.1'
+];
+
 const outputFileName = 'react-market.min.js';
 module.exports = {
     entry: [
@@ -110,7 +121,7 @@ module.exports = {
         useEslintrc: true
     },
     postcss: function () {
-        return [autoprefixer, precss];
+        return [autoprefixer(AUTOPREFIXER_BROWSERS), precss];
     },
     plugins: [
         new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'}),

@@ -6,6 +6,17 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 var paths = require('./paths');
 
+var AUTOPREFIXER_BROWSERS = [
+  'Android 2.3',
+  'Android >= 4',
+  'Chrome >= 35',
+  'Firefox >= 31',
+  'Explorer >= 9',
+  'iOS >= 7',
+  'Opera >= 12',
+  'Safari >= 7.1'
+];
+
 module.exports = {
     devtool: 'eval',
     cache: true,
@@ -101,7 +112,7 @@ module.exports = {
     },
     /* most developer is chrome if you need you can add*/
     // postcss: function () {
-    //     return [autoprefixer];
+    //     return [autoprefixer((AUTOPREFIXER_BROWSERS))];
     // },
     plugins: [
         new webpack.DllReferencePlugin({
