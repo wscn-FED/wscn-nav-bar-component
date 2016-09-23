@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 export default ComposedComponent => {
-    class WithHover extends Component {
-        state = {hovered: false}
+    class Open extends Component {
+        state = {open: false}
 
         componentDidMount() {
             this.el.addEventListener('mouseenter', this.onMouseEnter);
@@ -15,9 +15,9 @@ export default ComposedComponent => {
             this.el.removeEventListener('mouseleave', this.onMouseLeave);
         }
 
-        onMouseEnter = () => this.setState({hovered: true})
+        onMouseEnter = () => this.setState({open: true})
 
-        onMouseLeave = () => this.setState({hovered: false})
+        onMouseLeave = () => this.setState({open: false})
 
         bindRef = ref => {
             this.el = ReactDOM.findDOMNode(ref); // eslint-disable-line 
@@ -31,5 +31,5 @@ export default ComposedComponent => {
             );
         }
     }
-    return WithHover;
+    return Open;
 };

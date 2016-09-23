@@ -50,6 +50,10 @@ body {
             }
             position: relative;
             .nav_tab {
+                display: none;
+                &.show {
+                    display: block;
+                }
                 &:before {
                     content: "";
                     position: absolute;
@@ -123,38 +127,6 @@ body {
                         .list_view {
                             margin: 0;
                             padding: 0;
-                            .card {
-                                margin: 20px 16px 20px 20px;
-                                height: 70px;
-                                text-align: initial;
-                                position: relative;
-                                img {
-                                    position: absolute;
-                                    left: 0;
-                                }
-                                .content_container {
-                                    height: 100%;
-                                    padding-left: 86px;
-                                    h1 {
-                                        font-size: 14px;
-                                        line-height: (23 / 14);
-                                        color: #333333;
-                                    }
-                                    .footer {
-                                        position: absolute;
-                                        bottom: 0;
-                                        color: #999999;
-                                        font-size: 12px;
-                                        span {
-                                            display: initial;
-                                            margin-right: 20px;
-                                        }
-                                        a {
-                                            color: #288CF0;
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }

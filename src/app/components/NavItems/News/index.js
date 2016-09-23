@@ -1,50 +1,11 @@
 import React from 'react';
-import c from 'classnames';
-import withHover from '../../../utils/withHover';
+import c from '#/utils/c';
+import withOpen from '../../../utils/withOpen';
 import withData from '../../../utils/withData';
-import { formatTime } from '../../../utils/time';
+import Card from './Card';
+import List from './List';
 import Tabs, { TabPane } from '../../Tabs';
-
-
-class ListView extends React.PureComponent {
-    static defaultProps = {
-        className: 'list_view'
-    }
-    render() {
-        if (this.props.loading) return <div>加载中...</div>;
-        if (this.props.error) return <div>加载失败</div>;
-        const Item = this.props.renderItem;
-        return (
-            <ul className={c(this.props.className)}>
-                {this.props.data.map((datum, index) => <Item key={this.props.getKey ? this.props.getKey(datum) : index} {...datum} />)}
-            </ul>
-        );
-    }
-}
-
-
-class Card extends React.PureComponent {
-    static defaultProps = {
-        className: 'card',
-        contentContainerClassName: 'content_container',
-        footerClassName: 'footer'
-    }
-    render() {
-        const { contentContainerClassName, className, footerClassName, imageUrl, title, user, createdAt, url} = this.props;
-        return (
-            <li className={c(className)}>
-                <img src={imageUrl + '?imageView2/1/w/70/h/70'} alt="" />
-                <div className={contentContainerClassName}>
-                    <a href={url} target="_blank" rel="noopener noreferrer" ><h1>{title}</h1></a>
-                    <div className={c(footerClassName)}>
-                        <span>文 / <a href={user.url}>{user.screenName || user.username}</a></span>
-                        <span>{formatTime(createdAt)}</span>
-                    </div>
-                </div>
-            </li>
-        );
-    }
-}
+import './index.scss';
 
 
 const America = withData({
@@ -55,7 +16,7 @@ const America = withData({
         cid: 16
     },
     method: 'get'
-}, res => res.data.results)(ListView);
+}, res => res.data.results)(List);
 
 const China = withData({
     url: '/api/posts',
@@ -65,7 +26,7 @@ const China = withData({
         cid: 17
     },
     method: 'get'
-}, res => res.data.results)(ListView);
+}, res => res.data.results)(List);
 
 const Europe = withData({
     url: '/api/posts',
@@ -75,16 +36,17 @@ const Europe = withData({
         cid: 15
     },
     method: 'get'
-}, res => res.data.results)(ListView);
+}, res => res.data.results)(List);
 
-class NewsTab extends React.PureComponent {
+class NewsTabs extends React.PureComponent {
     static defaultProps = {
-        className: 'nav_tab'
+        className: 'news-tabs'
     }
 
     render() {
+        const defaultClassName = NewsTabs.defaultProps.className;
         return (
-            <Tabs className={c(this.props.className)}>
+            <Tabs className={c(defaultClassName, this.props.className, this.props.open && 'show')} >
                 <TabPane name="美国">
                     <America renderItem={Card}/>
                 </TabPane>
@@ -99,7 +61,8 @@ class NewsTab extends React.PureComponent {
     }
 }
 
-@withHover
+
+@withOpen
 export default
 class News extends React.PureComponent {
     static defaultProps = {
@@ -110,11 +73,7 @@ class News extends React.PureComponent {
         return (
             <div className={c(this.props.className)} >
                 <span>资讯</span>
-                {
-                    this.props.hovered
-                    ? <NewsTab />
-                    : null
-                }
+                <NewsTabs open={this.props.open} />
             </div>
         );
     }

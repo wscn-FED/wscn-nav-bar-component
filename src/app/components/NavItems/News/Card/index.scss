@@ -1,0 +1,32 @@
+.news-card {
+    margin: 20px 16px 20px 20px;
+    height: 70px;
+    text-align: initial;
+    position: relative;
+    .news-card-thumbnail {
+        position: absolute;
+        left: 0;
+    }
+    .news-card-content-container {
+        height: 100%;
+        padding-left: 86px;
+        .news-card-title {
+            font-size: 14px;
+            line-height: (23 / 14);
+            color: #333333;
+        }
+        .news-card-footer {
+            position: absolute;
+            bottom: 0;
+            color: #999999;
+            font-size: 12px;
+            .news-card-author {
+                display: initial;
+                margin-right: 20px;
+                a {
+                    color: #288CF0;
+                }
+            }
+        }
+    }
+}
