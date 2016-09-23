@@ -5,10 +5,11 @@ export default
 class Tabs extends React.Component {
     static defaultProps = {
         className: 'tabs',
-        navClassName: 'tabs-nav',
-        navContainerClassName: 'tabs-nav-container',
-        navIndicatorClassName: 'tabs-nav-indicator',
-        contentContainerClassName: 'tabs-content-container'
+        navClassName: 'tabs_nav',
+        navContainerClassName: 'tabs_nav_container',
+        navIndicatorClassName: 'tabs_nav_indicator',
+        contentContainerClassName: 'tabs_content_container',
+        tabNameClassName: 'tab_name'
     }
     state = {
         index: 0
@@ -16,7 +17,7 @@ class Tabs extends React.Component {
 
     onTabClicked = index => () => this.setState({index})
 
-    mapChildToNavItem = (child, index) => <div onClick={this.onTabClicked(index)} data-active={index === this.state.index}>{child.props.name}</div>
+    mapChildToNavItem = (child, index) => <div className={this.props.tabNameClassName} onClick={this.onTabClicked(index)} data-active={index === this.state.index}>{child.props.name}</div>
 
     mapChildToNavContent = (child, index) => React.cloneElement(child, {
         activated: index === this.state.index
@@ -46,7 +47,7 @@ class Tabs extends React.Component {
 export
 class TabPane extends React.PureComponent {
     static defaultProps = {
-        className: 'tab-pane'
+        className: 'tab_pane'
     }
     render() {
         return (
