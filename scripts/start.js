@@ -54,7 +54,7 @@ function setupCompiler(port) {
         if (!hasErrors && !hasWarnings) {
             console.log(chalk.green('Compiled successfully!'));
             console.log();
-            console.log('The app is running at http://localhost:' + port + '/');
+            console.log('The app is running at http://0.0.0.0:' + port + '/');
             console.log();
             return;
         }
@@ -121,7 +121,7 @@ function runDevServer(port) {
                 logLevel: 'debug'
             }
         }
-    }).listen(port, (err, result) => {
+    }).listen(port, '0.0.0.0', (err, result) => {
         if (err) {
             return console.log(err);
         }
