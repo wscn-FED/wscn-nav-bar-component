@@ -38,25 +38,27 @@ const Europe = withData({
     method: 'get'
 }, res => res.data.results)(List);
 
-class NewsTabs extends React.PureComponent {
+class NewsTab extends React.PureComponent {
     static defaultProps = {
-        className: 'news-tabs'
+        className: 'news-tab'
     }
 
     render() {
-        const defaultClassName = NewsTabs.defaultProps.className;
         return (
-            <Tabs className={c(defaultClassName, this.props.className, this.props.open && 'show')} >
-                <TabPane name="美国">
-                    <America renderItem={Card}/>
-                </TabPane>
-                <TabPane name="中国">
-                    <China renderItem={Card}/>
-                </TabPane>
-                <TabPane name="欧洲">
-                    <Europe renderItem={Card}/>
-                </TabPane>
-            </Tabs>
+            <div className={c(this.props.className)} data-open={this.props.open}>
+                <Tabs>
+                    <TabPane name="美国">
+                        <America renderItem={Card}/>
+                    </TabPane>
+                    <TabPane name="中国">
+                        <China renderItem={Card}/>
+                    </TabPane>
+                    <TabPane name="欧洲">
+                        <Europe renderItem={Card}/>
+                    </TabPane>
+                </Tabs>
+            </div>
+
         );
     }
 }
@@ -66,14 +68,14 @@ class NewsTabs extends React.PureComponent {
 export default
 class News extends React.PureComponent {
     static defaultProps = {
-        className: 'nav_item_news'
+        className: 'nav-item-news'
     }
 
     render() {
         return (
             <div className={c(this.props.className)} >
                 <span>资讯</span>
-                <NewsTabs open={this.props.open} />
+                <NewsTab open={this.props.open} />
             </div>
         );
     }

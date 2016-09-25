@@ -1,15 +1,11 @@
 import React from 'react';
-import c from '#/utils/c';
+import {withPrefix } from '#/utils/c';
+import './index.scss';
 
 export default
 class Tabs extends React.Component {
     static defaultProps = {
-        className: 'tabs',
-        navClassName: 'tabs_nav',
-        navContainerClassName: 'tabs_nav_container',
-        navIndicatorClassName: 'tabs_nav_indicator',
-        contentContainerClassName: 'tabs_content_container',
-        tabNameClassName: 'tab_name'
+        prefix: 'tabs'
     }
     state = {
         index: 0
@@ -17,7 +13,9 @@ class Tabs extends React.Component {
 
     onTabClicked = index => () => this.setState({index})
 
-    mapChildToNavItem = (child, index) => <div className={this.props.tabNameClassName} onClick={this.onTabClicked(index)} data-active={index === this.state.index}>{child.props.name}</div>
+    c = withPrefix(this.props.prefix, this.props.className)
+
+    mapChildToNavItem = (child, index) => <div className={this.c('nav-item')} onClick={this.onTabClicked(index)} data-active={index === this.state.index}>{child.props.name}</div>
 
     mapChildToNavContent = (child, index) => React.cloneElement(child, {
         activated: index === this.state.index
@@ -25,17 +23,16 @@ class Tabs extends React.Component {
 
     render() {
         const Children = this.props.children;
-        const { className, navClassName, navContainerClassName, navIndicatorClassName, contentContainerClassName } = this.props;
-
+        const c = this.c;
         return (
-            <div className={c(className)} >
-                <div className={c(navContainerClassName)} >
-                    <div className={c(navClassName)} >
+            <div className={c()} >
+                <div className={c('nav-container')} >
+                    <div className={c('nav')} >
                         {React.Children.map(Children, this.mapChildToNavItem)}
                     </div>
-                    <div className={c(navIndicatorClassName)} />
+                    <div className={c('nav-indicator')} />
                 </div>
-                <div className={c(contentContainerClassName)} >
+                <div className={c('content')} >
                     {React.Children.map(Children, this.mapChildToNavContent)}
                 </div>
             </div>
@@ -47,11 +44,11 @@ class Tabs extends React.Component {
 export
 class TabPane extends React.PureComponent {
     static defaultProps = {
-        className: 'tab_pane'
+        prefix: 'tab-pane'
     }
     render() {
         return (
-            <div className={c(this.props.className)} data-active={this.props.activated}>
+            <div className={withPrefix(this.props.prefix)()} data-active={this.props.activated}>
                 {this.props.children}
             </div>
         );

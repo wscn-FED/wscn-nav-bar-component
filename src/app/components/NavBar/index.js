@@ -1,15 +1,16 @@
-import c from 'classnames';
+import c from '#/utils/c';
 import React from 'react';
 import NavMain from '../NavMain';
 import NavRest from '../NavRest';
 import NavWidget from '../NavWidget';
 import NavLogo from '../NavLogo';
+import './index.scss';
 
 
 export default
 class NavBar extends React.PureComponent {
     static defaultProps = {
-        className: 'header_nav'
+        className: 'header-nav'
     }
     render() {
         const { config } = this.props;

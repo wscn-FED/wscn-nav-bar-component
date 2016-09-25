@@ -7,15 +7,21 @@ function dedupe(arr) {
     }, []);
 }
 
+function prefix(prefixArr, classNameArr) {
+    if (prefixArr.length === 0) return classNameArr.join(' ');
+    if (classNameArr.length === 0) return prefixArr.join(' ');
+    return prefixArr.map(p => classNameArr.map(c => `${p}-${c}`).join(' ')).join(' ');
+}
+
 export default (...args) => {
     const arr = dedupe(classnames(...args).split(' '));
     const res = new String(arr.join(' ')); // eslint-disable-line
-    res.withNS = (...namespaces) => arr.map(c => dedupe(namespaces).map(ns => `${ns}-${c}`).join(' ')).join(' ');
+    res.withPrefix = (...prefixArr) => prefix(prefixArr);
     return res;
 };
 
-export const withNS = (...namespaces) => (...args) => {
+export const withPrefix = (...prefixArr) => (...args) => {
     const arr = dedupe(classnames(...args).split(' '));
-    return arr.map(c => dedupe(namespaces).map(ns => `${ns}-${c}`).join(' ')).join(' ');
+    return prefix(dedupe(prefixArr), arr);
 };
 

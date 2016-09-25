@@ -4,7 +4,7 @@ import c from 'classnames';
 export default
 class NavLogo extends React.PureComponent {
     static defaultProps = {
-        className: 'nav_logo'
+        className: 'nav-logo'
     }
 
     render() {

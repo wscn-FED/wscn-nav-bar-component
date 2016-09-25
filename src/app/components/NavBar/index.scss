@@ -1,0 +1,34 @@
+.header-nav {
+    background: rgba(38,47,56,0.92);
+    font-size: 14px;
+    color: #AAAAAA;
+    height: 60px;
+    ul, ul li {
+        list-style: none;
+    }
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    a {
+        text-decoration: none;
+    }
+    .nav-main, .nav-logo, .nav-rest, .nav-widget {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+    }
+    .nav-logo {
+        padding: 0 30px;
+        img {
+            vertical-align: middle;
+        }
+        &:after {
+            content: "";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
