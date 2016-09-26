@@ -33,7 +33,7 @@ class Tabs extends React.Component {
                     <div className={c('nav-indicator')} />
                 </div>
                 <div className={c('content')} >
-                    {React.Children.map(Children, this.mapChildToNavContent)}
+                    {this.mapChildToNavContent(Children[this.state.index], this.state.index)}
                 </div>
             </div>
         );
