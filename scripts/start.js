@@ -112,7 +112,7 @@ function runDevServer(port) {
         },
         proxy: {
             '/api/**': {
-                target: 'http://api.wallstcn.com/v2',
+                target: 'http://api.wallstreetcn.com/v2',
                 // ignorePath: true,
                 pathRewrite: {
                     '^/api': ''

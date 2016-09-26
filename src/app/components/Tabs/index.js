@@ -1,6 +1,6 @@
 import React from 'react';
 import { Motion, spring } from 'react-motion';
-import classname, { withPrefix } from '#/utils/c';
+import classname, { withPrefix } from '../../utils/c';
 import './index.scss';
 
 export default
@@ -23,8 +23,9 @@ class Tabs extends React.Component {
     })
 
     render() {
-        const Children = this.props.children;
+        const Children = React.Children.toArray(this.props.children);
         const c = this.c;
+        if (!Children.length) return <div className={classname(c(), this.props.className)} />;
         return (
             <div className={classname(c(), this.props.className)} >
                 <div className={c('nav-container')} >

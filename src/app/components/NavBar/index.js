@@ -1,5 +1,5 @@
-import c from '#/utils/c';
 import React from 'react';
+import c from '../../utils/c';
 import NavMain from '../NavMain';
 import NavRest from '../NavRest';
 import NavWidget from '../NavWidget';
