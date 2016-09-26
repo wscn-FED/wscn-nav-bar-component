@@ -39,7 +39,7 @@ class Tabs extends React.Component {
                     </div>
                 </div>
                 <div className={c('content')} >
-                    {this.mapChildToNavContent(Children[this.state.index], this.state.index)}
+                    {Children.map(this.mapChildToNavContent)}
                 </div>
             </div>
         );
@@ -55,7 +55,7 @@ class TabPane extends React.PureComponent {
     render() {
         return (
             <div className={withPrefix(this.props.prefix)()} data-active={this.props.activated}>
-                {this.props.children}
+                {React.cloneElement(this.props.children, {activated: this.props.activated})}
             </div>
         );
     }

@@ -7,7 +7,7 @@ import './styles/index.scss';
 export default
 class WSCNNavBar {
     constructor(config) {
-        this.config = Object.assign({}, defaultConfigs, config);
+        this.config = Object.assign({}, defaultConfigs[process.env.NODE_ENV], config);
     }
 
     init(el) {

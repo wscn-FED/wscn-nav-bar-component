@@ -7,55 +7,25 @@ import List from './List';
 import Tabs, { TabPane } from '../../Tabs';
 import './index.scss';
 
-
-const America = withData({
-    url: '/api/posts',
-    params: {
-        type: 'news',
-        limit: 2,
-        cid: 16
-    },
-    method: 'get'
-}, res => res.data.results)(List);
-
-const China = withData({
-    url: '/api/posts',
-    params: {
-        type: 'news',
-        limit: 2,
-        cid: 17
-    },
-    method: 'get'
-}, res => res.data.results)(List);
-
-const Europe = withData({
-    url: '/api/posts',
-    params: {
-        type: 'news',
-        limit: 2,
-        cid: 15
-    },
-    method: 'get'
-}, res => res.data.results)(List);
-
 class NewsTab extends React.PureComponent {
     static defaultProps = {
         className: 'news-tab'
     }
 
+    TabPanes = this.props.tabs.map(tab => {
+        const Content = withData(tab.api, res => res.data.results, {fetchAfterMount: false})(List);
+        return (
+            <TabPane name={tab.name} key={tab.name}>
+                <Content renderItem={Card} />
+            </TabPane>
+        );
+    })
+
     render() {
         return (
             <div className={c(this.props.className)} data-open={this.props.open}>
                 <Tabs>
-                    <TabPane name="美国">
-                        <America renderItem={Card}/>
-                    </TabPane>
-                    <TabPane name="中国">
-                        <China renderItem={Card}/>
-                    </TabPane>
-                    <TabPane name="欧洲">
-                        <Europe renderItem={Card}/>
-                    </TabPane>
+                    {this.TabPanes}
                 </Tabs>
             </div>
 
@@ -74,10 +44,9 @@ class News extends React.PureComponent {
     render() {
         return (
             <div className={c(this.props.className)} >
-                <span>资讯</span>
-                <NewsTab open={this.props.open} />
+                <span>{this.props.name}</span>
+                <NewsTab open={this.props.open} tabs={this.props.tabs} />
             </div>
         );
     }
 }
-

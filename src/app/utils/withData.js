@@ -3,7 +3,7 @@ import React from 'react';
 
 const MINIMUM_FETCH_INTERVAL = 5000;
 
-export default (config, map, fetchOnRerender) => ComposedComponent => {
+export default (config, map, {fetchOnRerender, fetchAfterMount = true} = {}) => ComposedComponent => {
     class WithData extends React.Component {
         state = {
             data: null,
@@ -12,7 +12,7 @@ export default (config, map, fetchOnRerender) => ComposedComponent => {
         }
 
         componentDidMount() {
-            this.fetchData();
+            if (fetchAfterMount) this.fetchData();
             this.mounted = true;
         }
 

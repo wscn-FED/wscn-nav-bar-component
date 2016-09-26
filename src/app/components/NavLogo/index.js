@@ -1,5 +1,6 @@
 import React from 'react';
 import c from 'classnames';
+import './index.scss';
 
 export default
 class NavLogo extends React.PureComponent {
