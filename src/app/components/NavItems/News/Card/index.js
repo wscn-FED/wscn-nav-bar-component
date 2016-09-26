@@ -1,5 +1,5 @@
 import React from 'react';
-import { withPrefix } from '#/utils/c';
+import classname, { withPrefix } from '#/utils/c';
 import { formatTime } from '#/utils/time';
 import './index.scss';
 
@@ -10,9 +10,9 @@ class Card extends React.PureComponent {
     }
     render() {
         const { prefix, className, imageUrl, title, user, createdAt, url} = this.props;
-        const c = withPrefix(prefix, className);
+        const c = withPrefix(prefix);
         return (
-            <li className={c()}>
+            <li className={classname(c(), className)}>
                 <img className={c('thumbnail')} src={imageUrl + '?imageView2/1/w/70/h/70'} alt="" />
                 <div className={c('content-container')}>
                     <a href={url} target="_blank" rel="noopener noreferrer" >
