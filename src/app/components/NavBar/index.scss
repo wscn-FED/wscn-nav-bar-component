@@ -19,16 +19,4 @@
         vertical-align: middle;
         position: relative;
     }
-    .nav-logo {
-        padding: 0 30px;
-        img {
-            vertical-align: middle;
-        }
-        &:after {
-            content: "";
-            height: 100%;
-            display: inline-block;
-            vertical-align: middle;
-        }
-    }
 }
