@@ -1,7 +1,7 @@
 {
-  "name": "wscn-market-components",
-  "version": "0.0.4",
-  "description": "wscn-market-components",
+  "name": "wscn-nav-bar-component",
+  "version": "0.0.1",
+  "description": "wscn-nav-bar-component",
   "main": "dist/js/main.js",
   "scripts": {
     "start": "node ./scripts/start.js",
@@ -13,16 +13,16 @@
   },
   "keywords": [
     "react",
-    "compinents"
+    "components"
   ],
   "author": {
-    "name": "PanJiaChen",
-    "email": "466595307@qq.com"
+    "name": "yuluyi",
+    "email": "yuluyi1991@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/wscn-FED/wscn-market-components/issues"
+    "url": "https://github.com/wscn-FED/wscn-nav-bar-component/issues"
   },
-  "homepage": "https://github.com/wscn-FED/wscn-market-components",
+  "homepage": "https://github.com/wscn-FED/wscn-nav-bar-component",
   "license": "MIT",
   "devDependencies": {
     "assets-webpack-plugin": "^3.4.0",
