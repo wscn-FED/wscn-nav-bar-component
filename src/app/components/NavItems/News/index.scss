@@ -13,9 +13,11 @@
         }
     }
     .news-tab {
-        display: none;
+        visibility: hidden;
+        opacity: 0;
         &[data-open="true"] {
-            display: block;
+            visibility: visible;
+            opacity: 1;
         }
         width: 380px;
         height: 240px;
@@ -23,6 +25,7 @@
         top: 100%;
         left: 50%;
         transform: translate(-50%);
+        transition: all 0.3s;
         > .tabs {
             height: 100%;
             .tabs-nav-container {
