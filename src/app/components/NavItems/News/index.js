@@ -13,7 +13,7 @@ class NewsTab extends React.PureComponent {
     }
 
     TabPanes = this.props.tabs.map(tab => {
-        const Content = withData(tab.api, res => res.data.results)(List);
+        const Content = withData(tab.api, res => res.data.results, {fetchAfterMount: false})(List);
         return (
             <TabPane name={tab.name} key={tab.name}>
                 <Content renderItem={Card} />

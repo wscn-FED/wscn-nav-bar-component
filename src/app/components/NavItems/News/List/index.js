@@ -7,6 +7,15 @@ class List extends React.PureComponent {
     static defaultProps = {
         className: 'news-list'
     }
+
+    componentDidMount() {
+        if (this.props.activated && !this.props.data) this.props.fetchData();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.activated && !nextProps.data) this.props.fetchData();
+    }
+
     render() {
         if (this.props.loading) return <div>加载中...</div>;
         if (this.props.error) return <div>加载失败</div>;
