@@ -20,6 +20,7 @@
             color: #666666;
             display: table;
             width: 100%;
+            position: relative;
         }
         .tabs-nav-item {
             display: table-cell;
@@ -29,29 +30,36 @@
             overflow: hidden;
             &[data-active="true"] {
                 color: #1482F0;
-                position: relative;
-                &:after {
-                    content: "";
-                    position: absolute;
-                    top: 100%;
-                    left: 50%;
-                    width: 10px;
-                    height: 10px;
-                    border: 1px solid #1478F0;
-                    background: white;
-                    transform: rotate(45deg) translate(-7px, 2px);
-                    z-index: 10;
-                }
-                &:before {
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 1px;
-                    box-sizing: border-box;
-                    border-bottom: 1px solid #1478F0;
-                }
+            }
+        }
+        .tabs-nav-indicator {
+            display: table-cell;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            &:after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                width: 10px;
+                height: 10px;
+                border: 1px solid #1478F0;
+                background: white;
+                transform: rotate(45deg) translate(-7px, 2px);
+                z-index: 10;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                box-sizing: border-box;
+                border-bottom: 1px solid #1478F0;
             }
         }
     }
