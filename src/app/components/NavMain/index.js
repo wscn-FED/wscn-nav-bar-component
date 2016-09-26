@@ -9,13 +9,22 @@ class NavMain extends React.PureComponent {
         className: 'nav-main'
     }
 
+    mapConfigToItems(items) {
+        return items.map(({name, tabs, component}) => {
+            const DynamicComponent = NavItems[component];
+            const el = React.createElement(DynamicComponent, {
+                key: name,
+                name,
+                tabs
+            });
+            return el;
+        });
+    }
+
     render() {
         return (
             <div className={c(this.props.className)} >
-                {this.props.items.map(name => {
-                    const DynamicComponent = NavItems[name];
-                    return <DynamicComponent key={name} />;
-                })}
+                {this.mapConfigToItems(this.props.items)}
             </div>
         );
     }
