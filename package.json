@@ -80,7 +80,7 @@
     "classnames": "^2.2.5",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
-    "wscn-react-vendor": "0.0.1"
+    "wscn-react-vendor": "0.0.5"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
