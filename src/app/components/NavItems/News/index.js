@@ -12,22 +12,20 @@ class NewsTab extends React.PureComponent {
         className: 'news-tab'
     }
 
-    mapConfigToTabPane(tabs) {
-        return tabs.map(tab => {
-            const Content = withData(tab.api, res => res.data.results)(List);
-            return (
-                <TabPane name={tab.name} key={tab.name}>
-                    <Content renderItem={Card}/>
-                </TabPane>
-            );
-        });
-    }
+    TabPanes = this.props.tabs.map(tab => {
+        const Content = withData(tab.api, res => res.data.results)(List);
+        return (
+            <TabPane name={tab.name} key={tab.name}>
+                <Content renderItem={Card} />
+            </TabPane>
+        );
+    })
 
     render() {
         return (
             <div className={c(this.props.className)} data-open={this.props.open}>
                 <Tabs>
-                    {this.mapConfigToTabPane(this.props.tabs)}
+                    {this.TabPanes}
                 </Tabs>
             </div>
 
