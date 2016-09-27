@@ -1,0 +1,26 @@
+.live-list {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    .live-time {
+        height: 40px;
+        padding: 0 15px;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        height: 158px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            background-color: #F6F6F6;
+            width: 10px;
+            border-left: none;
+        }
+        &::-webkit-scrollbar-thumb:vertical {
+            background-color: #D8D8D8;
+            border-radius: 5px;
+            border: 2px solid #F6F6F6;
+            box-sizing: border-box;
+        }
+    }
+}

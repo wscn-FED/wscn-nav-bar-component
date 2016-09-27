@@ -1,0 +1,13 @@
+.live-time {
+    color: #333;
+    font-size: 13px;
+    vertical-align: middle;
+    border-bottom: 1px solid #EBEBEB;
+    background-color: #F6F6F6;
+    &:after {
+        content: "";
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
