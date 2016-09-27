@@ -1,3 +1,13 @@
 .nav-main {
     margin-left: 55px;
+    white-space: nowrap;
+    > div {
+        display: inline-block;
+        height: 100%;
+        width: 72px;
+    }
+
+    > * {
+        white-space: normal;
+    }
 }
