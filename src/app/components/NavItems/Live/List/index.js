@@ -1,6 +1,6 @@
 import React from 'react';
 import c from '../../../../utils/c';
-import Time from '../Time';
+import Clock from '../Clock';
 import './index.scss';
 
 export default
@@ -31,7 +31,7 @@ class List extends React.PureComponent {
     render() {
         return (
             <div className={c(this.props.className)}>
-                <Time />
+                <Clock />
                 {this.renderContent()}
             </div>
         );
