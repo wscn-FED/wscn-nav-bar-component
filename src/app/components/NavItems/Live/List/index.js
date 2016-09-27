@@ -10,11 +10,11 @@ class List extends React.PureComponent {
     }
 
     componentDidMount() {
-        if (this.props.activated) this.props.fetchData();
+        if (this.props.activated && this.props.open) this.props.fetchData();
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.activated) this.props.fetchData();
+        if (nextProps.activated && nextProps.open) this.props.fetchData();
     }
 
     renderContent() {
