@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 process.env.NODE_ENV = 'development';
 
 var path = require('path');
@@ -116,6 +118,14 @@ function runDevServer(port) {
                 // ignorePath: true,
                 pathRewrite: {
                     '^/api': ''
+                },
+                changeOrigin: true,
+                logLevel: 'debug'
+            },
+            '/api-markets/**': {
+                target: 'http://api-markets.wallstreetcn.com/v1',
+                pathRewrite: {
+                    '^/api-markets': ''
                 },
                 changeOrigin: true,
                 logLevel: 'debug'
