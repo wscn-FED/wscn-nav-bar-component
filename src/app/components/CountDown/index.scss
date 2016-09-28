@@ -1,0 +1,8 @@
+.count-down {
+    [data-show="false"] {
+        display: none;
+    }
+    > div {
+        display: inline-block;
+    }
+}
