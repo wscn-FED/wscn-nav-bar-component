@@ -28,9 +28,9 @@ class CalendarTab extends React.PureComponent {
                         <li key={item.id}>
                             <div>{parseTime(item.timestamp * 1000, '{h}:{m}')}</div>
                             <div>
-                                <div className="stars">{new Array(item.importance).fill().map(() => '❤️').join('')}</div>
+                                <div className="stars">{new Array(item.importance).fill().map(() => '❤️').join('')}{item.calendarType === 'FE' && '事件'}</div>
                                 <div><span>{item.country}</span>|{item.title}</div>
-                                <div>
+                                <div data-show={item.calendarType === 'FD'}>
                                     <div>前值：<span>{item.previous || '- -'}</span></div>
                                     <div>预测：<span>{item.forecast || '- -'}</span></div>
                                     <div>今值：<span>{item.actual || '- -'}</span></div>
