@@ -1,4 +1,7 @@
 .header-nav {
+    * {
+        box-sizing: border-box;
+    }
     background: rgba(38,47,56,0.92);
     font-size: 14px;
     color: #AAAAAA;
