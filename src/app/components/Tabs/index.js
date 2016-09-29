@@ -14,9 +14,7 @@ class Tabs extends React.Component {
 
     onTabClicked = index => () => this.setState({index})
 
-    c = withPrefix(this.props.prefix)
-
-    mapChildToNavItem = (child, index) => <div className={this.c('nav-item')} onClick={this.onTabClicked(index)} data-active={index === this.state.index}>{child.props.name}</div>
+    mapChildToNavItem = (child, index) => <div className={withPrefix(this.props.prefix)('nav-item')} onClick={this.onTabClicked(index)} data-active={index === this.state.index}>{child.props.name}</div>
 
     mapChildToNavContent = (child, index) => React.cloneElement(child, {
         activated: index === this.state.index
@@ -24,21 +22,21 @@ class Tabs extends React.Component {
 
     render() {
         const Children = React.Children.toArray(this.props.children);
-        const c = this.c;
-        if (!Children.length) return <div className={classname(c(), this.props.className)} />;
+        const p = withPrefix(this.props.prefix);
+        if (!Children.length) return <div className={classname(p(), this.props.className)} />;
         return (
-            <div className={classname(c(), this.props.className)} >
-                <div className={c('nav-container')} >
-                    <div className={c('nav')} >
+            <div className={classname(p(), this.props.className)} >
+                <div className={p('nav-container')} >
+                    <div className={p('nav')} >
                         {React.Children.map(Children, this.mapChildToNavItem)}
                         <Motion style={{
                             x: spring(this.state.index)
                         }}>
-                            {({x}) => <div style={{width: `${100 / this.props.children.length}%`, transform: `translate(${x * 100}%)`}} className={c('nav-indicator')} />}
+                            {({x}) => <div style={{width: `${100 / this.props.children.length}%`, transform: `translate(${x * 100}%)`}} className={p('nav-indicator')} />}
                         </Motion>
                     </div>
                 </div>
-                <div className={c('content')} >
+                <div className={p('content')} >
                     {Children.map(this.mapChildToNavContent)}
                 </div>
             </div>
