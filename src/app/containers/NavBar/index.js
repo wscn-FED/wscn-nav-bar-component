@@ -1,9 +1,9 @@
 import React from 'react';
-import c from '../../utils/classnames';
-import NavMain from '../NavMain';
-import NavRest from '../NavRest';
-import NavWidget from '../NavWidget';
-import NavLogo from '../NavLogo';
+import c from '#/utils/classnames';
+import NavMain from '#/containers/NavMain';
+import NavRest from '#/containers/NavRest';
+import NavWidget from '#/containers/NavWidget';
+import NavLogo from '#/containers/NavLogo';
 import './index.scss';
 
 

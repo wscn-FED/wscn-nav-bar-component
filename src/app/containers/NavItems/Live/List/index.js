@@ -1,5 +1,5 @@
 import React from 'react';
-import c from '../../../../utils/classnames';
+import c from '#/utils/classnames';
 import Clock from '../Clock';
 import './index.scss';
 

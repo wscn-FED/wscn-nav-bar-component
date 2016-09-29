@@ -1,5 +1,5 @@
 import React from 'react';
-import c from '../../../../utils/classnames';
+import c from '#/utils/classnames';
 import './index.scss';
 
 export default

@@ -1,6 +1,6 @@
 import React from 'react';
 import c from 'classnames';
-import NavItems from '../NavItems';
+import NavItems from '#/containers/NavItems';
 import './index.scss';
 
 export default

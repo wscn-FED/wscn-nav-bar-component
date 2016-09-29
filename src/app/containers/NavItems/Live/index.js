@@ -1,8 +1,8 @@
 import React from 'react';
-import withOpen from '../../../utils/withOpen';
-import withData from '../../../utils/withData';
-import c from '../../../utils/classnames';
-import Tabs, { TabPane } from '../../../components/Tabs';
+import withOpen from '#/utils/withOpen';
+import withData from '#/utils/withData';
+import c from '#/utils/classnames';
+import Tabs, { TabPane } from '#/components/Tabs';
 import List from './List';
 import Card from './Card';
 import './index.scss';
