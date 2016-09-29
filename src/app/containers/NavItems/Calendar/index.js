@@ -1,43 +1,57 @@
 import React from 'react';
 import withOpen from '#/utils/withOpen';
 import withData from '#/utils/withData';
-import c from '#/utils/classnames';
+import classnames, { withPrefix } from '#/utils/classnames';
 import { parseTime } from '#/utils/time';
 import Time from '#/components/Time';
 import CountDown from '#/components/CountDown';
+import './index.scss';
 
 
 class CalendarTab extends React.PureComponent {
     static defaultProps = {
-        className: 'calendar-tab'
+        prefix: 'calendar-tab'
     }
 
     render() {
-        if (this.props.loading) return <div>加载中...</div>;
-        if (this.props.error) return <div>加载失败...</div>;
+        const p = withPrefix(this.props.prefix);
+        if (this.props.loading) return <div className={classnames(this.props.className, p())} data-open={this.props.open}>加载中...</div>;
+        if (this.props.error) return <div className={classnames(this.props.className, p())} data-open={this.props.open}>加载失败...</div>;
         const to = this.props.data.reduce((prev, cur) => {
             if (cur.timestamp < Date.now()) return prev;
             if (cur.timestamp < prev.timestamp) return cur;
             return prev;
         }).timestamp * 1000;
         return (
-            <div className={c(this.props.className)} data-open={this.props.open}>
-                <div><Time date={new Date()} option="{y}-{m}-{d} 星期{a}" /> 据下次数据公布时间还有：<CountDown to={to}/></div>
-                <ul>
-                    {this.props.data.map(item => (
-                        <li key={item.id}>
-                            <div>{parseTime(item.timestamp * 1000, '{h}:{i}')}</div>
-                            <div>
-                                <div className="stars">{new Array(item.importance).fill().map(() => '❤️').join('')}{item.calendarType === 'FE' && '事件'}</div>
-                                <div><span>{item.country}</span>|{item.title}</div>
-                                <div data-show={item.calendarType === 'FD'}>
-                                    <div>前值：<span>{item.previous || '- -'}</span></div>
-                                    <div>预测：<span>{item.forecast || '- -'}</span></div>
-                                    <div>今值：<span>{item.actual || '- -'}</span></div>
+            <div className={classnames(this.props.className, p())} data-open={this.props.open}>
+                <div className={p('header')}>
+                    <Time date={new Date()} option="{y}-{m}-{d} 星期{a}" />
+                    <div className={p('count-down-container')}>
+                        据下次数据公布时间还有：<CountDown className="count-down" to={to}/>
+                    </div>
+                </div>
+                <ul className={p('list')}>
+                    {this.props.data.map(item => {
+                        let trend;
+                        const val = parseFloat(item.actual);
+                        if (isNaN(val) || val === 0) trend = 'neutral';
+                        else if (val > 0) trend = 'positive';
+                        else trend = 'negative';
+                        return (
+                            <li className={p('item')} key={item.id}>
+                                <div className={p('time')}>{parseTime(item.timestamp * 1000, '{h}:{i}')}</div>
+                                <div className={p('content')}>
+                                    <div className={p('stars')}>{new Array(item.importance).fill().map(() => '❤️').join('')}{item.calendarType === 'FE' && '事件'}</div>
+                                    <a href="//calendar.wallstreetcn.com" target="_blank" rel="noopener noreferrer"><div className={p('title-container')}><span className={p('country')}>{item.country}</span>{item.title}</div></a>
+                                    <div className={p('data')} data-show={item.calendarType === 'FD'}>
+                                        <div className={p('previous')}>前值：<span>{item.previous || '- -'}</span></div>
+                                        <div className={p('forecast')}>预测：<span>{item.forecast || '- -'}</span></div>
+                                        <div className={p('actual')}>今值：<span data-trend={trend}>{item.actual || '- -'}</span></div>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    ))}
+                            </li>
+                        );
+                    })}
                 </ul>
             </div>
         );
@@ -67,7 +81,7 @@ class Calendar extends React.PureComponent {
     render() {
         const Tab = this.CalendarTab;
         return (
-            <div className={c(this.props.className)}>
+            <div className={classnames(this.props.className)}>
                 <span>{this.props.name}</span>
                 <Tab open={this.props.open} />
             </div>

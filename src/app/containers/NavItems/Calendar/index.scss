@@ -1,0 +1,128 @@
+.nav-item-calendar {
+    div[data-open="true"] {
+        opacity: 1;
+        visibility: visible;
+    }
+    div[data-open="false"] {
+        opacity: 0;
+        visibility: hidden;
+    }
+    position: relative;
+    height: 100%;
+    text-align: center;
+    > div {
+        text-align: initial;
+    }
+    > span {
+        cursor: pointer;
+        vertical-align: middle;
+        font-size: 14px;
+        &:hover {
+            color: white;
+        }
+    }
+    &:after {
+        content: "";
+        height: 100%;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    .calendar-tab {
+        transition: all 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: white;
+        box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.40);
+        &:before {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translate(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 6px solid white;
+        }
+        width: 500px;
+        .calendar-tab-header {
+            height: 36px;
+            padding: 11px 15px;
+            position: relative;
+            background-color: #F6F6F6;
+            border-bottom: 1px solid #EBEBEB;
+            > * {
+                display: inline-block;
+                vertical-align: bottom;
+            }
+            .calendar-tab-count-down-container {
+                position: absolute;
+                right: 11px;
+                white-space: nowrap;
+                color: #333;
+                .count-down {
+                    display: inline-block;
+                }
+            }
+        }
+        .calendar-tab-list {
+            margin: 0;
+            padding: 0;
+            .calendar-tab-item {
+                border-bottom: 1px solid #EBEBEB;
+                position: relative;
+                color: #333;
+                .calendar-tab-time {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 65px;
+                    padding: 14px 16px;
+                    background-color: #F6F6F6;
+                    font-size: 13px;
+                }
+                .calendar-tab-content {
+                    margin-left: 65px;
+                    padding: 14px 16px;
+                    font-size: 13px;
+                    .calendar-tab-title-container, .calendar-tab-data {
+                        margin-top: 10px;
+                        > * {
+                            display: inline-block;
+                        }
+                    }
+                    .calendar-tab-title-container {
+                        line-height: (21 / 13);
+                        .calendar-tab-country {
+                            &:after {
+                                content: "|";
+                                margin: 0 0.5em;
+                                color: #D8D8D8;
+                            }
+                        }
+                    }
+                    .calendar-tab-data {
+                        font-size: 12px;
+                        color: #999;
+                        > div {
+                            margin-right: 25px;
+                            span {
+                                color: #333;
+                                &[data-trend="positive"] {
+                                    color: #E61E1E;
+                                }
+                                &[data-trend="negative"] {
+                                    color: #3CB41E;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
