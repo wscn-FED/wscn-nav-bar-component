@@ -1,10 +1,9 @@
 import React from 'react';
-import { parseTime } from '../../../../utils/time';
-import c from '../../../../utils/c';
+import Time from '#/components/Time';
 import './index.scss';
 
 export default
-class Time extends React.Component {
+class Clock extends React.Component {
     static defaultProps = {
         className: 'live-time'
     }
@@ -26,7 +25,7 @@ class Time extends React.Component {
 
     render() {
         return (
-            <div className={c(this.props.className)}>{parseTime(this.state.currentTime)}</div>
+            <Time className={this.props.className} date={new Date(this.state.currentTime)} />
         );
     }
 }

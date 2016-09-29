@@ -1,6 +1,6 @@
 import React from 'react';
-import c from '../../../../utils/c';
-import { parseTime } from '../../../../utils/time';
+import c from '#/utils/classnames';
+import { parseTime } from '#/utils/time';
 import './index.scss';
 
 export default

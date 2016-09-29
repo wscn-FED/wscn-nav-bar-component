@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NavBar from './components/NavBar';
+import NavBar from './containers/NavBar';
 import defaultConfigs from './defaultConfigs.json';
 import './styles/index.scss';
 
