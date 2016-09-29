@@ -1,10 +1,10 @@
 import React from 'react';
-import withOpen from '../../../utils/withOpen';
-import withData from '../../../utils/withData';
-import c from '../../../utils/classnames';
-import { parseTime } from '../../../utils/time';
-import Time from '../../../components/Time';
-import CountDown from '../../../components/CountDown';
+import withOpen from '#/utils/withOpen';
+import withData from '#/utils/withData';
+import c from '#/utils/classnames';
+import { parseTime } from '#/utils/time';
+import Time from '#/components/Time';
+import CountDown from '#/components/CountDown';
 
 
 class CalendarTab extends React.PureComponent {

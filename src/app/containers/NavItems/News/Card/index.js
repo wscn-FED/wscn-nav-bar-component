@@ -1,5 +1,5 @@
 import React from 'react';
-import classname, { withPrefix } from '../../../../utils/c';
+import classname, { withPrefix } from '../../../../utils/classnames';
 import { formatTime } from '../../../../utils/time';
 import './index.scss';
 

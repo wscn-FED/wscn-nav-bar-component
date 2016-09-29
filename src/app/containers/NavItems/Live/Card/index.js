@@ -1,5 +1,5 @@
 import React from 'react';
-import c from '../../../../utils/c';
+import c from '../../../../utils/classnames';
 import { parseTime } from '../../../../utils/time';
 import './index.scss';
 

@@ -2,7 +2,13 @@
     [data-show="false"] {
         display: none;
     }
+    color: #1482F0;
+    font-size: 12px;
     > div {
         display: inline-block;
+        .count-down-display-unit {
+            color: #999;
+            margin: 0 0.5em;
+        }
     }
 }

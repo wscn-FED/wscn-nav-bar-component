@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import Time from '../../../Time';
+import Time from '../../../../components/Time';
 
 export default
 class Clock extends React.Component {

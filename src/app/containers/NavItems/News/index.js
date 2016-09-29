@@ -1,10 +1,10 @@
 import React from 'react';
-import c from '../../../utils/c';
+import c from '../../../utils/classnames';
 import withOpen from '../../../utils/withOpen';
 import withData from '../../../utils/withData';
 import Card from './Card';
 import List from './List';
-import Tabs, { TabPane } from '../../Tabs';
+import Tabs, { TabPane } from '../../../components/Tabs';
 import './index.scss';
 
 class NewsTab extends React.PureComponent {

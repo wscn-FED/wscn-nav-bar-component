@@ -1,6 +1,6 @@
 import React from 'react';
 import { Motion, spring } from 'react-motion';
-import classname, { withPrefix } from '../../utils/c';
+import classname, { withPrefix } from '../../utils/classnames';
 import './index.scss';
 
 export default
