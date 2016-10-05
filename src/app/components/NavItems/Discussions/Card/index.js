@@ -12,17 +12,13 @@ class Card extends React.PureComponent {
     };
 
     render() {
+        const {title, summary, tags} = this.props.data;
+        const tag = tags.map((v) => <span key={v.id}>{v.name}</span>);
         return (
             <div className={c(this.props.className)}>
-                <h4 className={c('header')}>
-
-                </h4>
-                <p className={c('content')}>
-
-                </p>
-                <div className={c('tag')}>
-
-                </div>
+                <h4 className={c('header')}>{title}</h4>
+                <p className={c('content')}>{summary}</p>
+                <div className={c('tag')}>{tag}</div>
             </div>
         );
     }

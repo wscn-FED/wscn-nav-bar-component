@@ -36,6 +36,11 @@
                         "api": "/api/livenews?type=news&cid=4"
                     }
                 ]
+            },
+            {
+                "name": "社区",
+                "component": "Discussions",
+                "api": "/discussions-api/normal?page=1&limit=3&order=createdAt"
             }
         ],
         "rest": [
