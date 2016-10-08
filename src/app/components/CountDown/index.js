@@ -12,7 +12,7 @@ class CountDown extends React.Component {
     state = {}
 
     componentDidMount() {
-        this.interval = countdown(timespan => this.setState({timespan}), this.props.to);
+        this.interval = countdown(timespan => this.setState({timespan}), new Date(this.props.to));
     }
 
     componentWillUnmount() {

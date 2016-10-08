@@ -18,10 +18,10 @@ class CalendarTab extends React.PureComponent {
         if (this.props.loading) return <div className={classnames(this.props.className, p())} data-open={this.props.open}>加载中...</div>;
         if (this.props.error) return <div className={classnames(this.props.className, p())} data-open={this.props.open}>加载失败...</div>;
         const to = this.props.data.reduce((prev, cur) => {
-            if (cur.timestamp < Date.now()) return prev;
-            if (cur.timestamp < prev.timestamp) return cur;
+            if (new Date(cur.localDateTime) < new Date()) return prev;
+            if (new Date(cur.localDateTime) < new Date(prev.localDateTime)) return cur;
             return prev;
-        }).timestamp * 1000;
+        }).localDateTime;
         return (
             <div className={classnames(this.props.className, p())} data-open={this.props.open}>
                 <div className={p('header')}>
