@@ -1,0 +1,63 @@
+.discussion-card {
+    border: 1px solid #EBEBEB;
+    position: relative;
+    color: #282828;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    padding: 12px 16px 13px 16px;
+    box-sizing: border-box;
+    margin-right: 20px;
+    .discussion-card-header {
+        font-size: 14px;
+        color: #333333;
+        line-height: 23px;
+        margin: 0 0 12px 0;
+        height: 46px;
+        width: 168px;
+    }
+    .discussion-card-response {
+        margin: 0 0 10px 0;
+        span {
+            font-size: 12px;
+            color: #1482F0;
+            line-height: 12px;
+        }
+        .discussion-card-grey {
+            font-size: 12px;
+            color: #AAAAAA;
+            line-height: 12px;
+        }
+    }
+    .discussion-card-content {
+        font-size: 13px;
+        color: #666666;
+        letter-spacing: 0;
+        line-height: 21px;
+        margin: 10px 0;
+    }
+    .discussion-card-tags {
+        .discussion-card-tags-item {
+            font-size: 12px;
+            color: #282828;
+            letter-spacing: 0;
+            line-height: 12px;
+            padding: 5px 6px 7px 6px;
+            display: inline-block;
+            background: #F0F1F5;
+            border-radius: 2px;
+            margin-right: 10px;
+            &:nth-last-child(1) {
+                margin-right: 0;
+            }
+        }
+    }
+    .discussion-card-icon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40px;
+        height: 30px;
+    }
+}

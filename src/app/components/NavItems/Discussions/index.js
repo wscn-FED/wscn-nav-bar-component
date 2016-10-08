@@ -4,7 +4,6 @@
 import React from 'react';
 import withOpen from '../../../utils/withOpen';
 import withData from '../../../utils/withData';
-import c from '../../../utils/c';
 import Card from './Card';
 import './index.scss';
 
@@ -19,9 +18,8 @@ class DiscussionsContent extends React.PureComponent {
     render() {
         if (this.props.loading) return <div>加载中...</div>;
         if (this.props.error) return <div>加载失败</div>;
-        console.log(this.props.data);
         return (
-            <div className={c(this.props.className)} data-open={this.props.open}>
+            <div className={this.props.className} data-open={this.props.open}>
                 {this.props.data.map((v) => (
                     <Card key={v.id} data={v}/>
                 ))}
@@ -43,11 +41,11 @@ class Discussions extends React.PureComponent {
     }
 
     render() {
-        const D = this.DiscussionsContent;
+        const DiscussionsContainer = this.DiscussionsContent;
         return (
-            <div className={c(this.props.className)}>
+            <div className={this.props.className}>
                 <span>{this.props.name}</span>
-                <D open={this.props.open} api={this.props.api}/>
+                <DiscussionsContainer className="discussion-container" open={this.props.open} api={this.props.api}/>
             </div>
         );
     }
