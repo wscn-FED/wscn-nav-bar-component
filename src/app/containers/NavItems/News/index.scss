@@ -1,50 +1,17 @@
+@import "~#/styles/index.scss";
+
 .nav-item-news {
     position: relative;
     height: 100%;
-    text-align: center;
-    > div {
-        text-align: initial;
-    }
+    @include hoverable;
     > span {
-        cursor: pointer;
-        vertical-align: middle;
         font-size: 14px;
-        &:hover {
-            color: white;
-        }
-    }
-    &:after {
-        content: "";
-        height: 100%;
-        vertical-align: middle;
-        display: inline-block;
+        @include center;
     }
     .news-tab {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translate(-50%);
-        visibility: hidden;
-        opacity: 0;
-        background-color: white;
-        box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.40);
-        &:before {
-            content: "";
-            position: absolute;
-            top: -6px;
-            left: 50%;
-            transform: translate(-50%);
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-bottom: 6px solid white;
-        }
-        &[data-open="true"] {
-            visibility: visible;
-            opacity: 1;
-        }
+        @extend %tab;
         width: 380px;
         height: 240px;
-        transition: all 0.3s;
         > .tabs {
             height: 100%;
             .tabs-nav-container {

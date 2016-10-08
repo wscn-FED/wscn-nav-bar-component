@@ -1,52 +1,15 @@
+@import "~#/styles/index.scss";
+
 .nav-item-calendar {
-    div[data-open="true"] {
-        opacity: 1;
-        visibility: visible;
-    }
-    div[data-open="false"] {
-        opacity: 0;
-        visibility: hidden;
-    }
     position: relative;
     height: 100%;
-    text-align: center;
-    > div {
-        text-align: initial;
-    }
+    @include hoverable;
     > span {
-        cursor: pointer;
-        vertical-align: middle;
         font-size: 14px;
-        &:hover {
-            color: white;
-        }
-    }
-    &:after {
-        content: "";
-        height: 100%;
-        vertical-align: middle;
-        display: inline-block;
+        @include center;
     }
     .calendar-tab {
-        transition: all 0.3s;
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translate(-50%);
-        background-color: white;
-        box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.40);
-        &:before {
-            content: "";
-            position: absolute;
-            top: -6px;
-            left: 50%;
-            transform: translate(-50%);
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-bottom: 6px solid white;
-        }
+        @extend %tab;
         width: 500px;
         .calendar-tab-header {
             height: 36px;

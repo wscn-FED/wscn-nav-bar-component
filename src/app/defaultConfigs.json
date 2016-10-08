@@ -41,6 +41,10 @@
                 "name": "日历",
                 "component": "Calendar",
                 "api": "/api-markets/calendar.json"
+            },
+            {
+                "name": "更多",
+                "component": "More"
             }
         ],
         "rest": [
