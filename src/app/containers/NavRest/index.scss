@@ -1,5 +1,29 @@
 .nav-rest {
     > div {
         display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .content {
+        position: relative;
+        overflow: hidden;
+        .hoverable {
+            height: 100%;
+        }
+        .foldable-indicator {
+            height: 100%;
+            display: table;
+            > * {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+        .foldable-content {
+            height: 100%;
+            white-space: nowrap;
+            > div {
+                display: inline-block;
+            }
+        }
     }
 }

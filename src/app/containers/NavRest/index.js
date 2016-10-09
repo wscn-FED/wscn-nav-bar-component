@@ -1,19 +1,20 @@
 import React from 'react';
-import withDimension from '#/utils/withDimension';
+import Foldable from '#/components/Foldable';
+import Hoverable from '#/components/Hoverable';
 import './index.scss';
 
-@withDimension({once: true})
 export default
-class NavRest extends React.PureComponent {
+class NavRest extends React.Component {
     static defaultProps = {
         className: 'nav-rest'
     }
+
     render() {
-        console.log(this.props);
-        if (this.props.dimension.right && this.props.dimension.right > this.props.dimension.windowWidth) return <div className={this.props.className}>。。。</div>;
         return (
             <div className={this.props.className}>
-                {this.props.items.map(item => <div key={item.name}>{item.name}</div>)}
+                <Foldable className="content">
+                    {this.props.items.map(item => <Hoverable key={item.name} name={<span>{item.name}</span>}><div>{item.name}</div></Hoverable>)}
+                </Foldable>
             </div>
         );
     }

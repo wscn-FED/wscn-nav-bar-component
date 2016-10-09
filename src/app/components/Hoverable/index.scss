@@ -6,6 +6,12 @@
         width: 100%;
         height: 100%;
         @include hoverable;
+        display: table;
+        text-align: center;
+        > * {
+            vertical-align: middle;
+            display: table-cell;
+        }
     }
     &-content {
         @extend %tab;

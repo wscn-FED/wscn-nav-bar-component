@@ -33,7 +33,7 @@ class Foldable extends React.Component {
         return (
             <div className={classname(p(), this.props.className)}>
                 <Motion style={style.indicator}>
-                    {({x, opacity}) => <div onClick={this.unfold} className={p('indicator')} style={{transform: `translate(${x * 100}%)`, opacity}}>...</div>}
+                    {({x, opacity}) => <div onClick={this.unfold} className={p('indicator')} style={{transform: `translate(${x * 100}%)`, opacity}}><span>...</span></div>}
                 </Motion>
                 <Motion style={style.content}>
                     {({opacity}) => <div onClick={this.fold} className={p('content')} style={{ opacity }}>{this.props.children}</div>}
