@@ -19,7 +19,7 @@ class DiscussionsContent extends React.PureComponent {
         if (this.props.loading) return <div>加载中...</div>;
         if (this.props.error) return <div>加载失败</div>;
         return (
-            <div className={this.props.className} data-open={this.props.open}>
+            <div className={this.props.className}>
                 {this.props.data.map((v) => (
                     <Card key={v.id} data={v}/>
                 ))}
@@ -46,7 +46,7 @@ class Discussions extends React.PureComponent {
             <div className={this.props.className}>
                 <span>{this.props.name}</span>
                 <div className="discussion-wrapper" data-open={this.props.open}>
-                    <DiscussionsContainer className="discussion-container" open={this.props.open} api={this.props.api}/>
+                    <DiscussionsContainer className="discussion-container" api={this.props.api}/>
                 </div>
             </div>
         );
