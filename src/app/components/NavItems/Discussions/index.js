@@ -45,7 +45,9 @@ class Discussions extends React.PureComponent {
         return (
             <div className={this.props.className}>
                 <span>{this.props.name}</span>
-                <DiscussionsContainer className="discussion-container" open={this.props.open} api={this.props.api}/>
+                <div className="discussion-wrapper" data-open={this.props.open}>
+                    <DiscussionsContainer className="discussion-container" open={this.props.open} api={this.props.api}/>
+                </div>
             </div>
         );
     }

@@ -20,7 +20,7 @@
             color: white;
         }
     }
-    .discussion-container {
+    .discussion-wrapper {
         box-sizing: border-box;
         padding: 20px 0 20px 20px;
         position: absolute;
@@ -28,10 +28,7 @@
         left: 50%;
         transform: translate(-50%);
         background-color: #ffffff;
-        white-space: nowrap;
-        > * {
-            white-space: normal;
-        }
+
         transition: 0.3s all;
         visibility: hidden;
         opacity: 0;
@@ -50,5 +47,12 @@
             visibility: visible;
             opacity: 1;
         }
+        .discussion-container {
+            white-space: nowrap;
+            > * {
+                white-space: normal;
+            }
+        }
     }
+
 }
