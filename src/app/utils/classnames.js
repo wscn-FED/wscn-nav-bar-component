@@ -15,8 +15,7 @@ function prefix(prefixArr, classNameArr) {
 
 export default (...args) => {
     const arr = dedupe(classnames(...args).split(' '));
-    const res = new String(arr.join(' ')); // eslint-disable-line
-    res.withPrefix = (...prefixArr) => prefix(prefixArr);
+    const res = arr.join(' '); // eslint-disable-line
     return res;
 };
 
@@ -24,4 +23,3 @@ export const withPrefix = (...prefixArr) => (...args) => {
     const arr = dedupe(classnames(...args).split(' '));
     return prefix(dedupe(prefixArr), arr);
 };
-
