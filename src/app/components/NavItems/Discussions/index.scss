@@ -32,10 +32,10 @@
         > * {
             white-space: normal;
         }
-        //visibility: hidden;
-        //opacity: 0;
-        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.40);
         transition: 0.3s all;
+        visibility: hidden;
+        opacity: 0;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.40);
         &:before {
             content: "";
             position: absolute;

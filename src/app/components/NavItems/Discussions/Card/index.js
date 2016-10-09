@@ -15,7 +15,7 @@ class Card extends React.PureComponent {
     );
 
     responseCount = this.props.data.responseCount === 0
-        ? <p className="discussion-card-response"><span className="discussion-card-grey">还没有回答,  </span><span>分享点见识吧</span></p>
+        ? <p className="discussion-card-response"><span className="discussion-card-grey">还没有回答, </span><span>分享点见识吧</span></p>
         : <p className="discussion-card-response"><span>{this.props.data.responseCount}个回复</span></p>;
 
     render() {
@@ -24,7 +24,7 @@ class Card extends React.PureComponent {
         const titString = trimString(title, 48);
         return (
             <a className={this.props.className} href={url}>
-                <h4 className="discussion-card-header">{titString}</h4>
+                <p className="discussion-card-header">{titString}</p>
                 {this.responseCount}
                 <p className="discussion-card-content">{sumString}</p>
                 <div className="discussion-card-tags">{this.Tag}</div>
