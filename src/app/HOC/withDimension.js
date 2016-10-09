@@ -60,11 +60,7 @@ export default
         }
 
         render() {
-            return (
-                <ComposedComponent ref={this.bindRef} {...this.props} dimension={this.state} >
-                    {this.props.children}
-                </ComposedComponent>
-            );
+            return <ComposedComponent ref={this.bindRef} {...this.props} dimension={this.state} />;
         }
     }
     return withDimension;

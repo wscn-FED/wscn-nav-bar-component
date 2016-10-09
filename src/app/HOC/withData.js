@@ -53,11 +53,7 @@ export default (config, map, {fetchOnRerender, fetchAfterMount = true} = {}) => 
         }
 
         render() {
-            return (
-                <ComposedComponent {...this.props} {...this.state} fetchData={this.fetchData} >
-                    {this.props.children}
-                </ComposedComponent>
-            );
+            return <ComposedComponent {...this.props} {...this.state} fetchData={this.fetchData} />;
         }
     }
 

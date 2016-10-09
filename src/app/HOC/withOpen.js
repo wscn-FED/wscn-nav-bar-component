@@ -20,15 +20,11 @@ export default ComposedComponent => {
         onMouseLeave = () => this.setState({open: false})
 
         bindRef = ref => {
-            this.el = ReactDOM.findDOMNode(ref); // eslint-disable-line 
+            this.el = ReactDOM.findDOMNode(ref); // eslint-disable-line
         }
 
         render() {
-            return (
-                <ComposedComponent ref={this.bindRef} {...this.props} {...this.state} >
-                    {this.props.children}
-                </ComposedComponent>
-            );
+            return <ComposedComponent ref={this.bindRef} {...this.props} {...this.state} />;
         }
     }
     return Open;
