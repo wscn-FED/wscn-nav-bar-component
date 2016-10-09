@@ -41,6 +41,15 @@
                 "name": "社区",
                 "component": "Discussions",
                 "api": "/discussions-api/normal?page=1&limit=3&order=createdAt"
+            },
+            {
+                "name": "日历",
+                "component": "Calendar",
+                "api": "/api-markets/calendar.json"
+            },
+            {
+                "name": "更多",
+                "component": "More"
             }
         ],
         "rest": [

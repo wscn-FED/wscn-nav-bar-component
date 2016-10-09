@@ -1,0 +1,100 @@
+@import "~#/styles/index.scss";
+
+.nav-item-more {
+    height: 100%;
+    text-align: center;
+    @include hoverable;
+    > * {
+        text-align: initial;
+    }
+    > span {
+        font-size: 14px;
+        vertical-align: middle;
+        &:after {
+            content: "";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .more-tab {
+        &[data-open="true"] {
+            opacity: 1;
+            visibility: visible;
+        }
+        &[data-open="false"] {
+            opacity: 0;
+            visibility: hidden;
+        }
+        cursor: initial;
+        background-color: rgba(38, 47, 56, 0.96);
+        width: 100vw;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition: 0.3s all ease;
+        padding: 30px 122px;
+        white-space: nowrap;
+        > * {
+            white-space: normal;
+        }
+
+        font-size: 14px;
+
+        .column {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 100px;
+            ul, li {
+                margin: 0;
+                padding: 0;
+            }
+
+            .title {
+                color: white;
+            }
+
+            li {
+                margin-top: 30px;
+                color: #AAA;
+            }
+
+            li[data-tag] {
+                position: relative;
+                &:after {
+                    content: attr(data-tag);
+                    display: block;
+                    position: absolute;
+                    left: 100%;
+                    bottom: 100%;
+                    transform: translate(6px, 50%);
+                    color: white;
+                    background-color: #F44242;
+                    padding: 3px 2px;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .jianwen {
+            width: 116px;
+            li {
+                display: inline-block;
+                &:nth-child(2n+1) {
+                    margin-right: 45%;
+                }
+            }
+        }
+
+        .download {
+            .qr-code-container {
+                text-align: center;
+                img {
+                    width: 90px;
+                    margin-bottom: 10px;
+                }
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@import "~#/styles/index.scss";
+
+.nav-item-news {
+    position: relative;
+    height: 100%;
+    @include hoverable;
+    > span {
+        font-size: 14px;
+        @include center;
+    }
+    .news-tab {
+        @extend %tab;
+        width: 380px;
+        height: 240px;
+        > .tabs {
+            height: 100%;
+            .tabs-nav-container {
+                padding: 0 37px;
+                height: 41px;
+            }
+        }
+    }
+}
