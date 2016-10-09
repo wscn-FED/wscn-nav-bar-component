@@ -1,15 +1,16 @@
 import React from 'react';
-import c from '../../../utils/c';
 import withOpen from '../../../utils/withOpen';
 import withData from '../../../utils/withData';
-import Card from './Card';
-import List from './List';
+import c from '../../../utils/c';
 import Tabs, { TabPane } from '../../Tabs';
+import List from './List';
+import Card from './Card';
 import './index.scss';
 
-class NewsTab extends React.PureComponent {
+
+class LiveTab extends React.PureComponent {
     static defaultProps = {
-        className: 'news-tab'
+        className: 'live-tab'
     }
 
     TabPanes = this.props.tabs.map(tab => {
@@ -28,24 +29,22 @@ class NewsTab extends React.PureComponent {
                     {this.TabPanes}
                 </Tabs>
             </div>
-
         );
     }
 }
 
-
 @withOpen
 export default
-class News extends React.PureComponent {
+class Live extends React.PureComponent {
     static defaultProps = {
-        className: 'nav-item-news'
+        className: 'nav-item-live'
     }
 
     render() {
         return (
-            <div className={c(this.props.className)} >
+            <div className={c(this.props.className)}>
                 <span>{this.props.name}</span>
-                <NewsTab open={this.props.open} tabs={this.props.tabs} />
+                <LiveTab open={this.props.open} tabs={this.props.tabs} />
             </div>
         );
     }

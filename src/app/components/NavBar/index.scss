@@ -3,6 +3,7 @@
     font-size: 14px;
     color: #AAAAAA;
     height: 60px;
+    white-space: nowrap;
     ul, ul li {
         list-style: none;
     }
@@ -18,17 +19,5 @@
         display: inline-block;
         vertical-align: middle;
         position: relative;
-    }
-    .nav-logo {
-        padding: 0 30px;
-        img {
-            vertical-align: middle;
-        }
-        &:after {
-            content: "";
-            height: 100%;
-            display: inline-block;
-            vertical-align: middle;
-        }
     }
 }

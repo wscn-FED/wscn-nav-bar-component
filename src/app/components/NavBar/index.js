@@ -16,7 +16,7 @@ class NavBar extends React.PureComponent {
         const { config } = this.props;
         return (
             <nav className={c(this.props.className)} >
-                <NavLogo config={config.logo} />
+                <NavLogo />
                 <NavMain items={config.main} />
                 <NavRest items={config.rest} />
                 <NavWidget items={config.widget} />

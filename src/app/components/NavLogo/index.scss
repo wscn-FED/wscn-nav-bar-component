@@ -1,0 +1,14 @@
+.nav-logo {
+    width: 195px;
+    box-sizing: border-box;
+    padding: 0 30px;
+    img {
+        vertical-align: middle;
+    }
+    &:after {
+        content: "";
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}

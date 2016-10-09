@@ -119,6 +119,15 @@ function runDevServer(port) {
                 },
                 changeOrigin: true,
                 logLevel: 'debug'
+            },
+            '/discussions-api/**': {
+                target: 'http://api.wallstreetcn.com/hatano/v1/discussions',
+                // ignorePath: true,
+                pathRewrite: {
+                    '^/discussions-api': ''
+                },
+                changeOrigin: true,
+                logLevel: 'debug'
             }
         }
     }).listen(port, '0.0.0.0', (err, result) => {
