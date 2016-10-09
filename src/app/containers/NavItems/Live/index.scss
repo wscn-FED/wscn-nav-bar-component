@@ -1,23 +1,15 @@
 @import "~#/styles/index.scss";
 
 .nav-item-live {
-    position: relative;
-    height: 100%;
-    @include hoverable;
-    > span {
+    .hoverable-name {
         font-size: 14px;
-        @include center;
     }
     .live-tab {
-        @extend %tab;
         width: 440px;
         height: 240px;
-        > .tabs {
-            height: 100%;
-            .tabs-nav-container {
-                padding: 0 37px;
-                height: 41px;
-            }
+        .tabs-nav-container {
+            padding: 0 37px;
+            height: 41px;
         }
     }
 }

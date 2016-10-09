@@ -1,15 +1,10 @@
 @import "~#/styles/index.scss";
 
 .nav-item-calendar {
-    position: relative;
-    height: 100%;
-    @include hoverable;
-    > span {
+    .hoverable-name {
         font-size: 14px;
-        @include center;
     }
     .calendar-tab {
-        @extend %tab;
         width: 500px;
         .calendar-tab-header {
             height: 36px;

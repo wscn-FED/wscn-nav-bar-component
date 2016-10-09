@@ -1,8 +1,8 @@
 import React from 'react';
-import withOpen from '#/utils/withOpen';
-import withData from '#/utils/withData';
+import withData from '#/HOC/withData';
 import classnames, { withPrefix } from '#/utils/classnames';
 import { parseTime } from '#/utils/time';
+import Hoverable from '#/components/Hoverable';
 import Time from '#/components/Time';
 import CountDown from '#/components/CountDown';
 import './index.scss';
@@ -23,7 +23,7 @@ class CalendarTab extends React.PureComponent {
             return prev;
         }).localDateTime;
         return (
-            <div className={classnames(this.props.className, p())} data-open={this.props.open}>
+            <div className={classnames(this.props.className, p())}>
                 <div className={p('header')}>
                     <Time date={new Date()} option="{y}-{m}-{d} 星期{a}" />
                     <div className={p('count-down-container')}>
@@ -59,7 +59,6 @@ class CalendarTab extends React.PureComponent {
 }
 
 
-@withOpen
 export default
 class Calendar extends React.PureComponent {
     static defaultProps = {
@@ -81,10 +80,9 @@ class Calendar extends React.PureComponent {
     render() {
         const Tab = this.CalendarTab;
         return (
-            <div className={classnames(this.props.className)}>
-                <span>{this.props.name}</span>
-                <Tab open={this.props.open} />
-            </div>
+            <Hoverable className={this.props.className} name={<span>{this.props.name}</span>}>
+                <Tab />
+            </Hoverable>
         );
     }
 }
