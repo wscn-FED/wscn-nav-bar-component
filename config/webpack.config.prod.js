@@ -7,6 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var url = require('url');
 var paths = require('./paths');
+var svgoConfig = require('./svgo.config.json');
 
 var Dashboard = require('webpack-dashboard');
 var DashboardPlugin = require('webpack-dashboard/plugin');
@@ -91,6 +92,10 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'eslint',
                 include: paths.appSrc
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svgo?' + JSON.stringify(svgoConfig)
             }
         ],
         loaders: [
@@ -111,7 +116,12 @@ module.exports = {
                 loader: 'json'
             },
             {
-                test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
+                test: /\.svg$/,
+                loader: 'svg-sprite',
+                include: /static\/icons/
+            },
+            {
+                test: /\.(jpg|png|gif|eot|ttf|woff|woff2)(\?.*)?$/,
                 include: [paths.appSrc, paths.appNodeModules],
                 loader: 'file',
                 query: {
