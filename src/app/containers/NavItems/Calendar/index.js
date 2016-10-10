@@ -5,6 +5,7 @@ import { parseTime } from '#/utils/time';
 import Hoverable from '#/components/Hoverable';
 import Time from '#/components/Time';
 import CountDown from '#/components/CountDown';
+import Icon from '#/components/Icon';
 import './index.scss';
 
 
@@ -25,6 +26,7 @@ class CalendarTab extends React.PureComponent {
         return (
             <div className={classnames(this.props.className, p())}>
                 <div className={p('header')}>
+                    <Icon symbolId="time" />
                     <Time date={new Date()} option="{y}-{m}-{d} 星期{a}" />
                     <div className={p('count-down-container')}>
                         据下次数据公布时间还有：<CountDown className="count-down" to={to}/>
@@ -41,7 +43,10 @@ class CalendarTab extends React.PureComponent {
                             <li className={p('item')} key={item.id}>
                                 <div className={p('time')}>{parseTime(item.timestamp * 1000, '{h}:{i}')}</div>
                                 <div className={p('content')}>
-                                    <div className={p('stars')}>{new Array(item.importance).fill().map(() => '❤️').join('')}{item.calendarType === 'FE' && '事件'}</div>
+                                    <div className={p('stars')}>
+                                        {new Array(item.importance).fill().map((_, index) => <Icon symbolId="star" key={index}/>)}
+                                        {item.calendarType === 'FE' && <span>事件</span>}
+                                    </div>
                                     <a href="//calendar.wallstreetcn.com" target="_blank" rel="noopener noreferrer"><div className={p('title-container')}><span className={p('country')}>{item.country}</span>{item.title}</div></a>
                                     <div className={p('data')} data-show={item.calendarType === 'FD'}>
                                         <div className={p('previous')}>前值：<span>{item.previous || '- -'}</span></div>
@@ -80,7 +85,7 @@ class Calendar extends React.PureComponent {
     render() {
         const Tab = this.CalendarTab;
         return (
-            <Hoverable className={this.props.className} name={<span>{this.props.name}</span>}>
+            <Hoverable className={this.props.className} name={this.props.name}>
                 <Tab />
             </Hoverable>
         );

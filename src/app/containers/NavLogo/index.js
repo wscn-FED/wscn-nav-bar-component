@@ -1,5 +1,6 @@
 import React from 'react';
 import c from 'classnames';
+import Icon from '#/components/Icon';
 import './index.scss';
 
 export default
@@ -12,7 +13,7 @@ class NavLogo extends React.PureComponent {
         return (
             <div className={c(this.props.className)}>
                 <a href="/">
-                    <img src="//walicdn.wallstcn.com/wscn/img/logo.png" alt="" />
+                    <Icon symbolId="logo" />
                 </a>
             </div>
         );

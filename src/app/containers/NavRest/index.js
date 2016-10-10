@@ -13,7 +13,7 @@ class NavRest extends React.Component {
         return (
             <div className={this.props.className}>
                 <Foldable className="content">
-                    {this.props.items.map(item => <Hoverable key={item.name} name={<span>{item.name}</span>}><div>{item.name}</div></Hoverable>)}
+                    {this.props.items.map(item => <Hoverable key={item.name} name={item.name}><div>{item.name}</div></Hoverable>)}
                 </Foldable>
             </div>
         );
