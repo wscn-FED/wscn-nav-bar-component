@@ -53,12 +53,12 @@
                 "component": "Weex",
                 "tabs": [
                     {
-                        "name": "资讯",
+                        "name": "最新观点",
                         "api": "/api/posts?type=fxmkt&limit=2&page=1",
                         "component": "News"
                     },
                     {
-                        "name": "实时",
+                        "name": "实时解读",
                         "api": "/api/livenews?channelId=5&page=1&limit=10&min_updated=0",
                         "component": "Live"
                     }
