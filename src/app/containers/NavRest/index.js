@@ -3,7 +3,6 @@ import Foldable from '#/components/Foldable';
 import NavItems from '#/containers/NavItems';
 import './index.scss';
 
-const { Weex } = NavItems;
 
 export default
 class NavRest extends React.Component {
@@ -15,7 +14,11 @@ class NavRest extends React.Component {
         return (
             <div className={this.props.className}>
                 <Foldable className="content">
-                    <Weex {...this.props.items[0]}/>
+                    {this.props.items.map(item => {
+                        const DynamicComponent = NavItems[item.component];
+                        if (DynamicComponent) return <DynamicComponent {...item} key={item.name}/>;
+                        return <div className="nav-item" key={item.name}>{item.name}</div>;
+                    })}
                 </Foldable>
             </div>
         );
