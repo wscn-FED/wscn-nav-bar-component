@@ -19,7 +19,7 @@ var AUTOPREFIXER_BROWSERS = [
 ];
 
 module.exports = {
-    devtool: 'eval',
+    devtool: 'source-map',
     cache: true,
     entry: [
         require.resolve('webpack-dev-server/client') + '?/',
