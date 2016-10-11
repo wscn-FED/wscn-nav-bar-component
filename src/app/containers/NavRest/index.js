@@ -1,7 +1,9 @@
 import React from 'react';
 import Foldable from '#/components/Foldable';
-import Hoverable from '#/components/Hoverable';
+import NavItems from '#/containers/NavItems';
 import './index.scss';
+
+const { Weex } = NavItems;
 
 export default
 class NavRest extends React.Component {
@@ -13,7 +15,7 @@ class NavRest extends React.Component {
         return (
             <div className={this.props.className}>
                 <Foldable className="content">
-                    {this.props.items.map(item => <Hoverable key={item.name} name={item.name}><div>{item.name}</div></Hoverable>)}
+                    <Weex {...this.props.items[0]}/>
                 </Foldable>
             </div>
         );

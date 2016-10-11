@@ -48,9 +48,24 @@
             }
         ],
         "rest": [
-            {"name": "Weex"},
-            {"name": "Bao"},
-            {"name": "Gold"},
+            {
+                "name": "WEEX",
+                "component": "Weex",
+                "tabs": [
+                    {
+                        "name": "资讯",
+                        "api": "/api/posts?type=fxmkt&limit=2&page=1",
+                        "component": "News"
+                    },
+                    {
+                        "name": "实时",
+                        "api": "/api/livenews?channelId=5&page=1&limit=10&min_updated=0",
+                        "component": "Live"
+                    }
+                ]
+            },
+            {"name": "选股宝"},
+            {"name": "黄金头条"},
             {"name": "Download"}
         ],
         "widget": [

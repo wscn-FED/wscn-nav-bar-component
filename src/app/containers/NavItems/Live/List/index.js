@@ -1,12 +1,14 @@
 import React from 'react';
 import c from '#/utils/classnames';
 import Clock from '../Clock';
+import Card from '../Card';
 import './index.scss';
 
 export default
 class List extends React.PureComponent {
     static defaultProps = {
-        className: 'live-list'
+        className: 'live-list',
+        renderItem: Card
     }
 
     componentDidMount() {

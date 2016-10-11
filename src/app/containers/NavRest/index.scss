@@ -6,7 +6,6 @@
     }
     .content {
         position: relative;
-        overflow: hidden;
         .hoverable {
             height: 100%;
         }
@@ -14,6 +13,7 @@
             height: 100%;
             white-space: nowrap;
             > div {
+                white-space: normal;
                 display: inline-block;
             }
         }

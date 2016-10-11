@@ -1,11 +1,13 @@
 import React from 'react';
 import c from '#/utils/classnames';
+import Card from '../Card';
 import './index.scss';
 
 export default
 class List extends React.PureComponent {
     static defaultProps = {
-        className: 'news-list'
+        className: 'news-list',
+        renderItem: Card
     }
 
     componentDidMount() {

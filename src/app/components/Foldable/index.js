@@ -51,7 +51,6 @@ class Foldable extends React.Component {
                 <Motion style={style.content}>
                     {({opacity}) => (
                         <div
-                            onClick={this.fold}
                             className={p('content')}
                             style={{
                                 opacity,
