@@ -10,10 +10,18 @@ class NavRest extends React.Component {
         className: 'nav-rest'
     }
 
+    fold = () => {
+        if (this.FoldableInstance.fold) this.FoldableInstance.fold();
+    }
+
+    bindFoldable = ref => {
+        this.FoldableInstance = ref;
+    }
+
     render() {
         return (
             <div className={this.props.className}>
-                <Foldable className="content">
+                <Foldable ref={this.bindFoldable} onExpand={this.props.onExpand} className="content">
                     {this.props.items.map(item => {
                         const DynamicComponent = NavItems[item.component];
                         if (DynamicComponent) return <DynamicComponent {...item} key={item.name}/>;

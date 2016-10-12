@@ -10,10 +10,18 @@ class Widget extends React.Component {
         className: 'nav-widget'
     }
 
+    fold = () => {
+        if (this.SearchInstance.fold) this.SearchInstance.fold();
+    }
+
+    bindSearch = ref => {
+        this.SearchInstance = ref;
+    }
+
     render() {
         return (
             <div className={this.props.className}>
-                <Search />
+                <Search ref={this.bindSearch} onExpand={this.props.onExpand} />
                 <div>profile</div>
             </div>
         );

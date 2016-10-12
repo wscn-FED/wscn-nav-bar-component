@@ -16,7 +16,10 @@ class Foldable extends React.Component {
 
     fold = () => this.setState({fold: true})
 
-    unfold = () => this.setState({fold: false})
+    unfold = () => {
+        this.setState({fold: false});
+        if (this.props.onExpand) this.props.onExpand();
+    }
 
     toggle = () => this.setState({fold: !this.state.fold})
 

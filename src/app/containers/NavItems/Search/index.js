@@ -20,8 +20,15 @@ class Search extends React.Component {
         } else this.submit();
     }
 
-    expand = () => this.setState({
-        expanded: true
+    expand = () => {
+        this.setState({
+            expanded: true
+        });
+        if (this.props.onExpand) this.props.onExpand();
+    }
+
+    fold = () => this.setState({
+        expanded: false
     })
 
     submit = e => {
