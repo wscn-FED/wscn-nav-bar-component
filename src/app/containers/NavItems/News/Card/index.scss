@@ -20,6 +20,18 @@
             bottom: 0;
             color: #999999;
             font-size: 12px;
+            .news-card-time {
+                display: inline-block;
+                .icon {
+                    width: 12px;
+                    height: 12px;
+                    vertical-align: middle;
+                    margin-right: 6px;
+                }
+                span {
+                    vertical-align: middle;
+                }
+            }
             .news-card-author {
                 display: initial;
                 margin-right: 20px;

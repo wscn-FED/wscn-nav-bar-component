@@ -1,0 +1,43 @@
+.nav-item-search {
+    margin-right: 14px;
+    form {
+        position: relative;
+        overflow: hidden;
+    }
+    form[data-expanded="false"] {
+        input {
+            transform: scaleX(0);
+        }
+    }
+    input, button {
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+    input {
+        transform-origin: right;
+        transition: all 0.3s ease;
+        width: 277px;
+        color: white;
+        padding: 6px 20px 6px 0;
+        border-bottom: 1px solid #666;
+        &:focus {
+            border-bottom-color: white;
+        }
+    }
+    button {
+        cursor: pointer;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        color: #999;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: color 0.3s ease;
+        &:hover {
+            color: white;
+        }
+    }
+}

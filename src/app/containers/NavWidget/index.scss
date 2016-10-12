@@ -1,0 +1,14 @@
+.nav-widget {
+    position: absolute;
+    right: 30px;
+    > div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-import withOpen from '#/utils/withOpen';
 import classname from '#/utils/classnames';
+import Hoverable from '#/components/Hoverable';
 import './index.scss';
 
 function generateColumn({title, items, className}) {
@@ -74,7 +74,7 @@ class Download extends React.PureComponent {
     }
 }
 
-@withOpen
+
 export default
 class More extends React.PureComponent {
     static defaultProps = {
@@ -83,9 +83,8 @@ class More extends React.PureComponent {
 
     render() {
         return (
-            <div className={this.props.className}>
-                <span>更多</span>
-                <div className="more-tab" data-open={this.props.open}>
+            <Hoverable className={this.props.className} name={this.props.name}>
+                <div className="more-tab">
                     {JianWen}
                     {WEEX}
                     {Others}
@@ -94,7 +93,7 @@ class More extends React.PureComponent {
                         {name: '华尔街见闻', qrcode: 'https://walicdn.wallstcn.com//wscn/img/footer-qrcode.png?9197eaf99c', href: '//wallstreetcn.com'}
                     ]} />
                 </div>
-            </div>
+            </Hoverable>
         );
     }
 }

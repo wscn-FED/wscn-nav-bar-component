@@ -1,43 +1,30 @@
 @import "~#/styles/index.scss";
 
 .nav-item-more {
-    height: 100%;
-    text-align: center;
-    @include hoverable;
-    > * {
-        text-align: initial;
-    }
-    > span {
+    position: static;
+    .hoverable-name {
         font-size: 14px;
-        vertical-align: middle;
-        &:after {
-            content: "";
-            height: 100%;
-            display: inline-block;
-            vertical-align: middle;
-        }
     }
-    .more-tab {
-        &[data-open="true"] {
-            opacity: 1;
-            visibility: visible;
-        }
-        &[data-open="false"] {
-            opacity: 0;
-            visibility: hidden;
-        }
-        cursor: initial;
-        background-color: rgba(38, 47, 56, 0.96);
+    .hoverable-content {
         width: 100vw;
         position: absolute;
         top: 100%;
         left: 0;
-        transition: 0.3s all ease;
+        transform: translate(0);
+        &:before {
+            display: none;
+        }
+    }
+    .more-tab {
+        background-color: rgba(38, 47, 56, 0.96);
+        width: 100vw;
         padding: 30px 122px;
         white-space: nowrap;
         > * {
             white-space: normal;
         }
+
+        overflow: hidden;
 
         font-size: 14px;
 

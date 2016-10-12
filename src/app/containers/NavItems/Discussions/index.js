@@ -2,8 +2,9 @@
  * Created by fengyuanzemin on 16/9/28.
  */
 import React from 'react';
-import withOpen from '#/utils/withOpen';
-import withData from '#/utils/withData';
+import withOpen from '#/HOC/withOpen';
+import withData from '#/HOC/withData';
+import Hoverable from '#/components/Hoverable';
 import Card from './Card';
 import './index.scss';
 
@@ -43,12 +44,9 @@ class Discussions extends React.PureComponent {
     render() {
         const DiscussionsContainer = this.DiscussionsContent;
         return (
-            <div className={this.props.className}>
-                <span>{this.props.name}</span>
-                <div className="discussion-wrapper" data-open={this.props.open}>
-                    <DiscussionsContainer className="discussion-container" api={this.props.api}/>
-                </div>
-            </div>
+            <Hoverable className={this.props.className} name={this.props.name}>
+                <DiscussionsContainer className="discussion-container" api={this.props.api}/>
+            </Hoverable>
         );
     }
 }

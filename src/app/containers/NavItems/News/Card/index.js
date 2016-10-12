@@ -1,6 +1,7 @@
 import React from 'react';
 import classname, { withPrefix } from '#/utils/classnames';
 import { formatTime } from '#/utils/time';
+import Icon from '#/components/Icon';
 import './index.scss';
 
 export default
@@ -20,7 +21,7 @@ class Card extends React.PureComponent {
                     </a>
                     <div className={c('footer')}>
                         <span className={c('author')}>文 / <a href={user.url}>{user.screenName || user.username}</a></span>
-                        <span className={c('time')}>{formatTime(createdAt)}</span>
+                        <div className={c('time')}><Icon symbolId="time" /><span>{formatTime(createdAt)}</span></div>
                     </div>
                 </div>
             </li>

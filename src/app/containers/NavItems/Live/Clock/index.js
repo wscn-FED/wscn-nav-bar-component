@@ -1,5 +1,6 @@
 import React from 'react';
 import Time from '#/components/Time';
+import Icon from '#/components/Icon';
 import './index.scss';
 
 export default
@@ -25,7 +26,10 @@ class Clock extends React.Component {
 
     render() {
         return (
-            <Time className={this.props.className} date={new Date(this.state.currentTime)} />
+            <div className={this.props.className} >
+                <Icon symbolId="time" />
+                <Time date={new Date(this.state.currentTime)} />
+            </div>
         );
     }
 }

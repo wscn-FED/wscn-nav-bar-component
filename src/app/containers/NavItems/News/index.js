@@ -1,7 +1,6 @@
 import React from 'react';
-import c from '#/utils/classnames';
-import withOpen from '#/utils/withOpen';
-import withData from '#/utils/withData';
+import withData from '#/HOC/withData';
+import Hoverable from '#/components/Hoverable';
 import Tabs, { TabPane } from '#/components/Tabs';
 import Card from './Card';
 import List from './List';
@@ -23,18 +22,14 @@ class NewsTab extends React.PureComponent {
 
     render() {
         return (
-            <div className={c(this.props.className)} data-open={this.props.open}>
-                <Tabs>
-                    {this.TabPanes}
-                </Tabs>
-            </div>
-
+            <Tabs className={this.props.className}>
+                {this.TabPanes}
+            </Tabs>
         );
     }
 }
 
 
-@withOpen
 export default
 class News extends React.PureComponent {
     static defaultProps = {
@@ -43,10 +38,9 @@ class News extends React.PureComponent {
 
     render() {
         return (
-            <div className={c(this.props.className)} >
-                <span>{this.props.name}</span>
-                <NewsTab open={this.props.open} tabs={this.props.tabs} />
-            </div>
+            <Hoverable className={this.props.className} name={this.props.name}>
+                <NewsTab tabs={this.props.tabs} />
+            </Hoverable>
         );
     }
 }
