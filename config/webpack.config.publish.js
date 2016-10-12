@@ -22,6 +22,7 @@ var AUTOPREFIXER_BROWSERS = [
 const outputFileName = 'react-market.min.js';
 module.exports = {
     entry: [
+        path.join(paths.ownNodeModules, 'core-js/modules/es6.object.assign'),
         path.join(paths.appSrc, 'entry')
     ],
     output: {
