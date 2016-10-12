@@ -13,11 +13,11 @@ class Search extends React.Component {
     }
 
     onButtonClick = e => {
-        e.preventDefault();
         if (!this.state.expanded) {
+            e.preventDefault();
             this.expand();
             this.inputEl.focus();
-        } else this.submit();
+        }
     }
 
     expand = () => {
@@ -33,7 +33,8 @@ class Search extends React.Component {
 
     submit = e => {
         if (e) e.preventDefault();
-        location.href = '//www.wallstreetcn.com';
+        const value = e.target.querySelector('#search').value;
+        location.href = `${this.props.api}${encodeURIComponent(value)}`;
     }
 
     bindRef = ref => {
@@ -43,9 +44,9 @@ class Search extends React.Component {
     render() {
         return (
             <div className={this.props.className}>
-                <form onSubmit={e => e.preventDefault()} data-expanded={this.state.expanded} >
+                <form onSubmit={this.submit} data-expanded={this.state.expanded} >
                     <input ref={this.bindRef} id="search" type="search" placeholder="搜索您想要的信息" />
-                    <button type="submit" onClick={this.onButtonClick}><Icon symbolId="search" /></button>
+                    <button type="submit" onClick={this.onButtonClick} ><Icon symbolId="search" /></button>
                 </form>
             </div>
         );

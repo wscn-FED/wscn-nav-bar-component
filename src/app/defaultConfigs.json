@@ -84,7 +84,10 @@
             }
         ],
         "widget": [
-            {"name": "Search"},
+            {
+                "name": "Search",
+                "api": "//wallstreetcn.com/search?q="
+            },
             {"name": "Notification"},
             {"name": "User"}
         ]
