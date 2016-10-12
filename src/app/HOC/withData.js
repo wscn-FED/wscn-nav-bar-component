@@ -33,8 +33,13 @@ export default (config, map, {fetchOnRerender, fetchAfterMount = true} = {}) => 
                 loading: true
             });
             this.latestFetchAt = Date.now();
-            axios(config)
-            .then(res => {
+            let p;
+            if (Array.isArray(config)) {
+                p = Promise.all(config.map(item => axios(item)));
+            } else {
+                p = axios(config);
+            }
+            p.then(res => {
                 if (this.mounted) {
                     this.setState({
                         loading: false,
