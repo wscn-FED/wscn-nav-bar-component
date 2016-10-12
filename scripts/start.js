@@ -122,6 +122,15 @@ function runDevServer(port) {
                 changeOrigin: true,
                 logLevel: 'debug'
             },
+            '/discussions-api/**': {
+                target: 'http://api.wallstreetcn.com/hatano/v1/discussions',
+                // ignorePath: true,
+                pathRewrite: {
+                    '^/discussions-api': ''
+                },
+                changeOrigin: true,
+                logLevel: 'debug'
+            },
             '/api-markets/**': {
                 target: 'http://api-markets.wallstreetcn.com/v1',
                 pathRewrite: {

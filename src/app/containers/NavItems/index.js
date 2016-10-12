@@ -5,6 +5,7 @@ import More from './More';
 import Weex from './Weex';
 import Search from './Search';
 import Profile from './Profile';
+import Discussions from './Discussions';
 
 export default {
     News,
@@ -13,5 +14,6 @@ export default {
     More,
     Weex,
     Search,
-    Profile
+    Profile,
+    Discussions
 };
