@@ -29,7 +29,10 @@ class MarketsTab extends React.PureComponent {
         className: 'markets-tab'
     }
 
-    ContentList = this.props.tabs.map(tab => withData(tab.api, res => res.map((item, index) => item.data.data[['snapshot', 'candle'][index]]), {fetchAfterMount: false})(List));
+    ContentList = this.props.tabs.map(tab => withData(tab.api, res => res.map((item, index) => {
+        if (item.data.code != 200) throw (new Error('fetch failed'));
+        return item.data.data[['snapshot', 'candle'][index]];
+    }), {fetchAfterMount: false})(List));
 
     render() {
         return (
