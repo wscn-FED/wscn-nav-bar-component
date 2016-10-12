@@ -25,7 +25,7 @@ class NavRest extends React.Component {
                     {this.props.items.map(item => {
                         const DynamicComponent = NavItems[item.component];
                         if (DynamicComponent) return <DynamicComponent {...item} key={item.name}/>;
-                        return <div className="nav-item" key={item.name}>{item.name}</div>;
+                        return <a href={item.href} target="_blank" rel="noopener noreferrer"><div className="nav-item" key={item.name}>{item.name}</div></a>;
                     })}
                 </Foldable>
             </div>

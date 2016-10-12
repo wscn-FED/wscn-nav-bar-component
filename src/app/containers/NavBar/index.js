@@ -35,6 +35,7 @@ class NavBar extends React.PureComponent {
             <nav className={c(this.props.className)} >
                 <NavLogo />
                 <NavMain items={config.main} />
+                |
                 <NavRest ref={this.bindNavRest} items={config.rest} onExpand={this.foldNavWidget} />
                 <NavWidget ref={this.bindNavWidget} items={config.widget} onExpand={this.foldNavRest} />
             </nav>

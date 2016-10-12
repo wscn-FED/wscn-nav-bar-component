@@ -20,15 +20,17 @@ class Card extends React.PureComponent {
 
     render() {
         const {title, summary, iconUrl, url} = this.props.data;
-        const sumString = trimString(summary, 72);
+        const sumString = trimString(summary, 68);
         const titString = trimString(title, 48);
         return (
-            <a className={this.props.className} href={url}>
-                <p className="discussion-card-header">{titString}</p>
-                {this.responseCount}
-                <p className="discussion-card-content">{sumString}</p>
-                <div className="discussion-card-tags">{this.Tag}</div>
-                <img src={iconUrl} alt="" className="discussion-card-icon"/>
+            <a href={url}>
+                <div className={this.props.className}>
+                    <p className="discussion-card-header">{titString}</p>
+                    {this.responseCount}
+                    <p className="discussion-card-content">{sumString}</p>
+                    <div className="discussion-card-tags">{this.Tag}</div>
+                    <img src={iconUrl} alt="" className="discussion-card-icon"/>
+                </div>
             </a>
         );
     }

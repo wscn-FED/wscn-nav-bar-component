@@ -24,7 +24,7 @@ class List extends React.PureComponent {
         const Item = this.props.renderItem;
         return (
             <ul className={c(this.props.className)}>
-                {this.props.data.map((datum, index) => <Item key={this.props.getKey ? this.props.getKey(datum) : index} {...datum} />)}
+                {this.props.data.map((datum, index) => <Item isWeex={this.props.isWeex} key={this.props.getKey ? this.props.getKey(datum) : index} {...datum} />)}
             </ul>
         );
     }

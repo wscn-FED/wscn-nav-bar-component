@@ -69,9 +69,19 @@
                     }
                 ]
             },
-            {"name": "选股宝"},
-            {"name": "黄金头条"},
-            {"name": "下载"}
+            {
+                "name": "选股宝",
+                "href": "//bao.wallstreetcn.com/static/app_pc.html?from=wscnpc_navbar"
+
+            },
+            {
+                "name": "黄金头条",
+                "href": "//www.goldtoutiao.com/events/app/index.html?from=wscn_navbar"
+            },
+            {
+                "name": "下载",
+                "href": "//activity.wallstreetcn.com/app/index.html?from=pc_navbar"
+            }
         ],
         "widget": [
             {"name": "Search"},
