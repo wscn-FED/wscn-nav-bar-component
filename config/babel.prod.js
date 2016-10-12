@@ -10,6 +10,6 @@ module.exports = {
     'babel-plugin-syntax-trailing-function-commas',
     'babel-plugin-transform-class-properties',
     'babel-plugin-transform-object-rest-spread',
-    'babel-plugin-transform-react-constant-elements',
+    // 'babel-plugin-transform-react-constant-elements',
   ]
 };

@@ -36,6 +36,7 @@ var AUTOPREFIXER_BROWSERS = [
 
 module.exports = {
     entry: [
+        path.join(paths.ownNodeModules, 'core-js/modules/es6.object.assign'),
         path.join(paths.appSrc, 'entry')
     ],
     output: {
