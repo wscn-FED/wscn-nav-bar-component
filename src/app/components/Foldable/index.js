@@ -1,5 +1,5 @@
 import React from 'react';
-import { Motion, spring } from 'react-motion';
+import { Motion, spring, presets } from 'react-motion';
 import classname, { withPrefix } from '#/utils/classnames';
 import Icon from '#/components/Icon';
 import './index.scss';
@@ -26,11 +26,11 @@ class Foldable extends React.Component {
     render() {
         const style = {
             indicator: {
-                opacity: spring(Number(this.state.fold)),
-                x: spring(Number(!this.state.fold) * 10)
+                opacity: spring(Number(this.state.fold), {...presets.stiff}),
+                x: spring(Number(!this.state.fold) * 10, {...presets.stiff})
             },
             content: {
-                opacity: spring(Number(!this.state.fold))
+                opacity: spring(Number(!this.state.fold), {...presets.stiff})
             }
         };
         const p = withPrefix(this.props.prefix);
