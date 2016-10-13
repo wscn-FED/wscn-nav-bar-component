@@ -1,0 +1,58 @@
+.nav-item-markets {
+    .hoverable-name {
+        font-size: 14px;
+    }
+    .markets-tab {
+        width: 510px;
+        height: 240px;
+        .tabs-nav-container {
+            padding: 0 37px;
+            height: 41px;
+        }
+    }
+    .markets-list {
+        margin: 0;
+        padding: 20px 12px;
+        white-space: nowrap;
+    }
+
+    .markets-card {
+        &[data-trend="positive"] {
+            background-color: #F44242;
+        }
+        &[data-trend="negative"] {
+            background-color: #22C761;
+        }
+        white-space: normal;
+        display: inline-block;
+        width: 146px;
+        height: 146px;
+        margin: 0 8px;
+        padding: 10px;
+        vertical-align: top;
+        position: relative;
+        font-size: 12px;
+        color: white;
+        .name {
+            margin-bottom: 6px;
+        }
+        .change {
+            font-size: 24px;
+            position: absolute;
+            right: 10px;
+            top: 50px;
+        }
+        .change-rate {
+            position: absolute;
+            right: 10px;
+            top: 78px;
+        }
+        .chart {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 16px;
+            height: 20px;
+        }
+    }
+}
