@@ -9,6 +9,9 @@
             transform: scaleX(0);
         }
     }
+    form[data-expanded="true"] {
+        z-index: 2;
+    }
     input, button {
         background: transparent;
         border: none;

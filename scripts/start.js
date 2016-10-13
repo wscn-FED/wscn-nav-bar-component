@@ -138,6 +138,14 @@ function runDevServer(port) {
                 },
                 changeOrigin: true,
                 logLevel: 'debug'
+            },
+            '/forexdata/**': {
+                target: 'https://forexdata.wallstreetcn.com',
+                pathRewrite: {
+                    '^/forexdata': ''
+                },
+                changeOrigin: true,
+                logLevel: 'debug'
             }
         }
     }).listen(port, '0.0.0.0', (err, result) => {

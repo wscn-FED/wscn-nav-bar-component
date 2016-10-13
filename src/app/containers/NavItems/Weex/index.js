@@ -26,7 +26,7 @@ class WeexTab extends React.PureComponent {
             <Tabs className={this.props.className}>
                 {this.ContentList.map((Content, index) => (
                     <TabPane name={this.props.tabs[index].name} key={this.props.tabs[index].name}>
-                        <Content open={this.props.open} />
+                        <Content open={this.props.open} isWeex="true" />
                     </TabPane>
                 ))}
             </Tabs>

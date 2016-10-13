@@ -9,8 +9,12 @@ function generateColumn({title, items, className}) {
             <div className="title">{title}</div>
             <ul>
                 {items.map(item => {
-                    if (item.tag) return <li key={item.name} data-tag={item.tag}><a href={item.href} target="_blank" rel="noopener noreferrer">{item.name}</a></li>;
-                    return <li key={item.name}><a href={item.href} target="_blank" rel="noopener noreferrer">{item.name}</a></li>;
+                    const attrs = {
+                        key: item.name
+                    };
+                    if (item.tag) attrs['data-tag'] = item.tag;
+                    if (item.href) return <li {...attrs}><a href={item.href} target="_blank" rel="noopener noreferrer">{item.name}</a></li>;
+                    return <li {...attrs}>{item.name}</li>;
                 })}
             </ul>
         </div>
@@ -22,10 +26,10 @@ const JianWen = generateColumn({
     items: [
         {name: '资讯', href: '//wallstreetcn.com/news'},
         {name: '社区', href: '//s.wallstreetcn.com/discussions'},
-        {name: '实时', href: '//markets.wallstreetcn.com'},
-        {name: '专栏', href: '//zhuanlan.wallstreetcn.com', tag: 'new'},
+        {name: '实时', href: '//live.wallstreetcn.com'},
+        {name: '专栏', href: '//wallstreetcn.com/columns'},
         {name: '行情', href: '//markets.wallstreetcn.com'},
-        {name: '影音', href: '//audio.wallstreetcn.com', tag: 'new'},
+        {name: '影音', tag: 'coming soon'},
         {name: '日历', href: '//calendar.wallstreetcn.com'}
     ],
     className: 'jianwen'
