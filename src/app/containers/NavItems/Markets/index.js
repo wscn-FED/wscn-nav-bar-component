@@ -1,6 +1,7 @@
 import React from 'react';
 import withData from '#/HOC/withData';
 import Loading from '#/components/Loading';
+import Retry from '#/components/Retry';
 import Hoverable from '#/components/Hoverable';
 import Tabs, { TabPane } from '#/components/Tabs';
 import './index.scss';
@@ -81,7 +82,7 @@ class List extends React.PureComponent {
 
     render() {
         if (this.props.loading) return <Loading className="markets-loading" />;
-        if (this.props.error) return <div>加载失败</div>;
+        if (this.props.error) return <Retry className="markets-retry" onClick={this.props.fetchData} />;
         let data = this.props.data.map(datum => objToArr(datum));
         data = data[0].map((x, i) => data.map(d => d[i]));
         return (
