@@ -17,7 +17,7 @@ export default ComposedComponent => {
 
         onMouseEnter = () => this.setState({open: true})
 
-        onMouseLeave = () => this.setState({open: true})
+        onMouseLeave = () => this.setState({open: false})
 
         bindRef = ref => {
             this.el = ReactDOM.findDOMNode(ref); // eslint-disable-line
