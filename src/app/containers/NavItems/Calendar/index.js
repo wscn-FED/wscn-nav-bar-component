@@ -2,6 +2,7 @@ import React from 'react';
 import withData from '#/HOC/withData';
 import classnames, { withPrefix } from '#/utils/classnames';
 import { parseTime } from '#/utils/time';
+import Loading from '#/components/Loading';
 import Hoverable from '#/components/Hoverable';
 import Time from '#/components/Time';
 import CountDown from '#/components/CountDown';
@@ -16,7 +17,7 @@ class CalendarTab extends React.PureComponent {
 
     render() {
         const p = withPrefix(this.props.prefix);
-        if (this.props.loading) return <div className={classnames(this.props.className, p())} data-open={this.props.open}>加载中...</div>;
+        if (this.props.loading) return <Loading className="calendar-loading" />;
         if (this.props.error) return <div className={classnames(this.props.className, p())} data-open={this.props.open}>加载失败...</div>;
         const to = this.props.data.reduce((prev, cur) => {
             if (new Date(cur.localDateTime) < new Date()) return prev;

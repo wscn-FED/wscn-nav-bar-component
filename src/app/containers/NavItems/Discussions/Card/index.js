@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import trimString from '#/utils/trimString.js';
+import Icon from '#/components/Icon';
 import './index.scss';
 
 export default
@@ -15,8 +16,8 @@ class Card extends React.PureComponent {
     );
 
     responseCount = this.props.data.responseCount === 0
-        ? <p className="discussion-card-response"><span className="discussion-card-grey">还没有回答, </span><span>分享点见识吧</span></p>
-        : <p className="discussion-card-response"><span>{this.props.data.responseCount}个回复</span></p>;
+        ? <p className="discussion-card-response"><Icon symbolId="dialogue" /><span className="discussion-card-grey">还没有回答, </span><span>分享点见识吧</span></p>
+        : <p className="discussion-card-response"><Icon symbolId="dialogue" /><span>{this.props.data.responseCount}个回复</span></p>;
 
     render() {
         const {title, summary, iconUrl, url} = this.props.data;

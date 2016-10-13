@@ -13,12 +13,18 @@
     .discussion-card-header {
         font-size: 14px;
         color: #333333;
-        line-height: 23px;
+        line-height: (23 / 14);
         margin: 0 0 12px 0;
         height: 46px;
         width: 168px;
     }
     .discussion-card-response {
+        .icon {
+            margin-right: 6px;
+            width: 12px;
+            height: 11px;
+            vertical-align: middle;
+        }
         margin: 0 0 10px 0;
         span {
             font-size: 12px;
@@ -35,10 +41,13 @@
         font-size: 13px;
         color: #666666;
         letter-spacing: 0;
-        line-height: 21px;
+        line-height: (21 / 13);
         margin: 10px 0;
     }
     .discussion-card-tags {
+        position: absolute;
+        bottom: 13px;
+        left: 16px;
         .discussion-card-tags-item {
             font-size: 12px;
             color: #282828;

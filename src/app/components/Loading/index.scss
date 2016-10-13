@@ -1,0 +1,21 @@
+.nav-loading-item {
+    animation-name: flash;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    display: block;
+    margin: 0 auto;
+    padding: 80px 0;
+    min-width: 400px;
+    text-align: center;
+}
+
+@keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}

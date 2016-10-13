@@ -1,5 +1,6 @@
 import React from 'react';
 import withData from '#/HOC/withData';
+import Loading from '#/components/Loading';
 import Hoverable from '#/components/Hoverable';
 import Tabs, { TabPane } from '#/components/Tabs';
 import './index.scss';
@@ -52,8 +53,8 @@ class Card extends React.PureComponent {
             <div className={this.props.className} data-trend={change > 0 ? 'positive' : 'negative'}>
                 <div className="name">{name}</div>
                 <div className="value">{Number(last).toFixed(precision)}</div>
-                <div className="change">{change > 0 && '+'} {Number(change).toFixed(precision)}</div>
-                <div className="change-rate">{Number(changeRate).toFixed(precision)}%</div>
+                <div className="change">{change > 0 && '+'}{Number(change).toFixed(precision)}</div>
+                <div className="change-rate">{changeRate > 0 && '+'}{Number(changeRate).toFixed(precision)}%</div>
                 <Chart data={this.props.data[1]} />
             </div>
         );
@@ -79,7 +80,7 @@ class List extends React.PureComponent {
     }
 
     render() {
-        if (this.props.loading) return <div>加载中...</div>;
+        if (this.props.loading) return <Loading className="markets-loading" />;
         if (this.props.error) return <div>加载失败</div>;
         let data = this.props.data.map(datum => objToArr(datum));
         data = data[0].map((x, i) => data.map(d => d[i]));
