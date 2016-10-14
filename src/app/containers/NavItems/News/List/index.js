@@ -1,5 +1,7 @@
 import React from 'react';
 import c from '#/utils/classnames';
+import Loading from '#/components/Loading';
+import Retry from '#/components/Retry';
 import Card from '../Card';
 import './index.scss';
 
@@ -19,8 +21,8 @@ class List extends React.PureComponent {
     }
 
     render() {
-        if (this.props.loading) return <div>加载中...</div>;
-        if (this.props.error) return <div>加载失败</div>;
+        if (this.props.loading) return <Loading className="news-loading" />;
+        if (this.props.error) return <Retry className="news-retry" onClick={this.props.fetchData} />;
         const Item = this.props.renderItem;
         return (
             <ul className={c(this.props.className)}>
