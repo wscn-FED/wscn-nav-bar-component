@@ -24,7 +24,7 @@ class Card extends React.PureComponent {
         const sumString = trimString(summary, 68);
         const titString = trimString(title, 48);
         return (
-            <a href={url}>
+            <a href={url} target="_blank" rel="noopener noreferrer">
                 <div className={this.props.className}>
                     <p className="discussion-card-header">{titString}</p>
                     {this.responseCount}
