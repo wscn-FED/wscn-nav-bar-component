@@ -3,6 +3,7 @@
         {
             "name": "资讯",
             "component": "News",
+            "href": "wallstreetcn.com/news",
             "tabs": [
                 {
                     "name": "美国",
@@ -21,6 +22,7 @@
         {
             "name": "实时",
             "component": "Live",
+            "href": "live.wallstreetcn.com",
             "tabs": [
                 {
                     "name": "全球",
@@ -39,6 +41,7 @@
         {
             "name": "行情",
             "component": "Markets",
+            "href": "markets.wallstreetcn.com",
             "tabs": [
                 {
                     "name": "期货",
@@ -70,11 +73,13 @@
         {
             "name": "社区",
             "component": "Discussions",
+            "href": "s.wallstreetcn.com/discussions",
             "api": "/discussions-api/normal?page=1&limit=3&order=createdAt"
         },
         {
             "name": "日历",
             "component": "Calendar",
+            "href": "http://calendar.wallstreetcn.com",
             "api": "/api-markets/calendar.json"
         },
         {
@@ -86,6 +91,7 @@
         {
             "name": "WEEX",
             "component": "Weex",
+            "href": "http://fx.weex.in",
             "tabs": [
                 {
                     "name": "最新观点",
@@ -102,7 +108,6 @@
         {
             "name": "选股宝",
             "href": "//bao.wallstreetcn.com/static/app_pc.html?from=wscnpc_navbar"
-
         },
         {
             "name": "黄金头条",

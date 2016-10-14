@@ -37,7 +37,7 @@ class News extends React.PureComponent {
 
     render() {
         return (
-            <Hoverable className={this.props.className} name={this.props.name}>
+            <Hoverable className={this.props.className} name={this.props.name} href={this.props.href} >
                 <NewsTab tabs={this.props.tabs} />
             </Hoverable>
         );

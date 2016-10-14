@@ -95,7 +95,7 @@ class Calendar extends React.PureComponent {
     render() {
         const Tab = this.CalendarTab;
         return (
-            <Hoverable className={this.props.className} name={this.props.name}>
+            <Hoverable className={this.props.className} name={this.props.name} href={this.props.href} >
                 <Tab />
             </Hoverable>
         );

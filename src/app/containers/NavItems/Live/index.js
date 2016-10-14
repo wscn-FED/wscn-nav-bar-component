@@ -37,7 +37,7 @@ class Live extends React.PureComponent {
 
     render() {
         return (
-            <Hoverable className={this.props.className} name={this.props.name}>
+            <Hoverable className={this.props.className} name={this.props.name} href={this.props.href} >
                 <LiveTab tabs={this.props.tabs} />
             </Hoverable>
         );
