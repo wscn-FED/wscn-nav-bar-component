@@ -10,7 +10,6 @@
     "build": " node ./scripts/build.js",
     "publish": "webpack --config config/webpack.config.publish.js",
     "dll-dev": "webpack --config config/webpack.dll.config.js --progress",
-    "dll": "NODE_ENV=production webpack --config config/webpack.dll.config.js --progress",
     "build-dev": "npm run dll-dev && node ./scripts/start.js"
   },
   "keywords": [
@@ -92,7 +91,7 @@
     "classnames": "^2.2.5",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
-    "wscn-react-vendor": "0.0.5"
+    "wscn-react-vendor": "0.0.10"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
