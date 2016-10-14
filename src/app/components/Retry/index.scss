@@ -1,0 +1,15 @@
+.nav-retry-item {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 60px 0;
+    min-width: 400px;
+    text-align: center;
+    svg {
+        margin-bottom: 23px;
+    }
+    .prompt span {
+        color: #88BBFF;
+        cursor: pointer;
+    }
+}

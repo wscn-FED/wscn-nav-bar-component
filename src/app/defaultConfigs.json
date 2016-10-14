@@ -43,38 +43,28 @@
                 "tabs": [
                     {
                         "name": "期货",
-                        "api": [
-                            "/forexdata/real?en_prod_code=XAUUSD,XAGUSD,UKOil&fields=prod_name,last_px,px_change,px_change_rate,price_precision,securities_type",
-                            "/forexdata/kline?prod_code=XAUUSD,XAGUSD,UKOil&candle_period=5&data_count=80&end_time=0&fields=close_px"
-                        ]
+                        "indices": ["XAUUSD","XAGUSD","UKOil"],
+                        "api": "/forexdata"
                     },
                     {
                         "name": "债券",
-                        "api": [
-                            "/forexdata/real?en_prod_code=US10Year,Japan10Year,Germany10Year&fields=prod_name,last_px,px_change,px_change_rate,price_precision,securities_type",
-                            "/forexdata/kline?prod_code=US10Year,Japan10Year,Germany10Year&candle_period=5&data_count=80&end_time=0&fields=close_px"
-                        ]
+                        "indices": ["US10Year","Japan10Year","Germany10Year"],
+                        "api": "/forexdata"
                     },
                     {
                         "name": "外汇",
-                        "api": [
-                            "/forexdata/real?en_prod_code=EURUSD,USDJPY,USDCNH&fields=prod_name,last_px,px_change,px_change_rate,price_precision,securities_type",
-                            "/forexdata/kline?prod_code=EURUSD,USDJPY,USDCNH&candle_period=5&data_count=80&end_time=0&fields=close_px"
-                        ]
+                        "indices": ["EURUSD","USDCNH","USDJPY"],
+                        "api": "/forexdata"
                     },
                     {
                         "name": "股指",
-                        "api": [
-                            "/forexdata/real?en_prod_code=SPX500INDEX,JPN225INDEX,EUSTX50INDEX&fields=prod_name,last_px,px_change,px_change_rate,price_precision,securities_type",
-                            "/forexdata/kline?prod_code=SPX500INDEX,JPN225INDEX,EUSTX50INDEX&candle_period=5&data_count=80&end_time=0&fields=close_px"
-                        ]
+                        "indices": ["SPX500INDEX","JPN225INDEX","EUSTX50INDEX"],
+                        "api": "/forexdata"
                     },
                     {
                         "name": "沪深",
-                        "api": [
-                            "/forexdata/real?en_prod_code=000001,399001,399006&fields=prod_name,last_px,px_change,px_change_rate,price_precision,securities_type",
-                            "/forexdata/kline?prod_code=000001,399001,399006&candle_period=5&data_count=80&end_time=0&fields=close_px"
-                        ]
+                        "indices": ["000001","399001","399006"],
+                        "api": "/forexdata"
                     }
                 ]
             },

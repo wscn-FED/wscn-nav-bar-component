@@ -34,7 +34,7 @@ class Search extends React.Component {
     submit = e => {
         if (e) e.preventDefault();
         const value = e.target.querySelector('#search').value;
-        location.href = `${this.props.api}${encodeURIComponent(value)}`;
+        window.open(`${this.props.api}${encodeURIComponent(value)}`);
     }
 
     bindRef = ref => {

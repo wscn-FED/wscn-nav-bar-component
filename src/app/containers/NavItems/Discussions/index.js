@@ -4,6 +4,8 @@
 import React from 'react';
 import withOpen from '#/HOC/withOpen';
 import withData from '#/HOC/withData';
+import Loading from '#/components/Loading';
+import Retry from '#/components/Retry';
 import Hoverable from '#/components/Hoverable';
 import Card from './Card';
 import './index.scss';
@@ -14,11 +16,9 @@ class DiscussionsContent extends React.PureComponent {
         className: 'discussions-content'
     };
 
-    // data, loading, error, fetchData, open, api
-
     render() {
-        if (this.props.loading) return <div>加载中...</div>;
-        if (this.props.error) return <div>加载失败</div>;
+        if (this.props.loading) return <Loading className="discussions-loading" />;
+        if (this.props.error) return <Retry className="discussions-retry" onClick={this.props.fetchData} />;
         return (
             <div className={this.props.className}>
                 {this.props.data.map((v) => (

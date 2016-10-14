@@ -1,5 +1,7 @@
 import React from 'react';
 import withData from '#/HOC/withData';
+import Loading from '#/components/Loading';
+import Retry from '#/components/Retry';
 import Hoverable from '#/components/Hoverable';
 import Tabs, { TabPane } from '#/components/Tabs';
 import './index.scss';
@@ -47,22 +49,19 @@ class Card extends React.PureComponent {
     }
 
     render() {
-        const [ name, last, change, changeRate, precision ] = this.props.data[0];
+        const [ name, last, change, changeRate, precision, type, indexName ] = this.props.data.snapshot;
         return (
-            <div className={this.props.className} data-trend={change > 0 ? 'positive' : 'negative'}>
-                <div className="name">{name}</div>
-                <div className="value">{Number(last).toFixed(precision)}</div>
-                <div className="change">{change > 0 && '+'} {Number(change).toFixed(precision)}</div>
-                <div className="change-rate">{Number(changeRate).toFixed(precision)}%</div>
-                <Chart data={this.props.data[1]} />
-            </div>
+            <a href={`//markets.wallstreetcn.com/${type}/${indexName}`} target="_blank" rel="noopener noreferrer">
+                <div className={this.props.className} data-trend={change > 0 ? 'positive' : 'negative'}>
+                    <div className="name">{name}</div>
+                    <div className="value">{Number(last).toFixed(precision)}</div>
+                    <div className="change">{change > 0 && '+'}{Number(change).toFixed(precision)}</div>
+                    <div className="change-rate">{changeRate > 0 && '+'}{Number(changeRate).toFixed(precision)}%</div>
+                    <Chart data={this.props.data.candle} />
+                </div>
+            </a>
         );
     }
-}
-
-function objToArr(obj) {
-    const { fields, ...rest } = obj; //eslint-disable-line
-    return Object.keys(rest).map(key => obj[key]);
 }
 
 class List extends React.PureComponent {
@@ -79,18 +78,23 @@ class List extends React.PureComponent {
     }
 
     render() {
-        if (this.props.loading) return <div>加载中...</div>;
-        if (this.props.error) return <div>加载失败</div>;
-        let data = this.props.data.map(datum => objToArr(datum));
-        data = data[0].map((x, i) => data.map(d => d[i]));
+        if (this.props.loading) return <Loading className="markets-loading" />;
+        if (this.props.error) return <Retry className="markets-retry" onClick={this.props.fetchData} />;
         return (
             <ul className={this.props.className}>
-                {data.map(datum => (
-                    <Card data={datum} key={datum[0][0]}/>
+                {this.props.data.map(datum => (
+                    <Card data={datum} key={datum.snapshot[0]}/>
                 ))}
             </ul>
         );
     }
+}
+
+function getURLs(indices, api) {
+    return [
+        `${api}/real?en_prod_code=${indices.join(',')}&fields=prod_name,last_px,px_change,px_change_rate,price_precision,securities_type`,
+        `${api}/kline?prod_code=${indices.join(',')}&candle_period=5&data_count=80&end_time=0&fields=close_px`
+    ];
 }
 
 class MarketsTab extends React.PureComponent {
@@ -98,10 +102,13 @@ class MarketsTab extends React.PureComponent {
         className: 'markets-tab'
     }
 
-    ContentList = this.props.tabs.map(tab => withData(tab.api, res => res.map((item, index) => {
-        if (item.data.code != 200) throw (new Error('fetch failed'));
-        return item.data.data[['snapshot', 'candle'][index]];
-    }), {fetchAfterMount: false})(List));
+    ContentList = this.props.tabs.map(tab => withData(getURLs(tab.indices, tab.api), res => {
+        if (res.some(item => item.data.code != 200)) throw (new Error('fetch failed'));
+        return tab.indices.map(indexName => ({
+            snapshot: res[0].data.data.snapshot[indexName].concat(indexName),
+            candle: res[1].data.data.candle[indexName]
+        }));
+    }, {fetchAfterMount: false})(List));
 
     render() {
         return (
