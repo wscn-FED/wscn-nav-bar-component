@@ -30,7 +30,7 @@ class Card extends React.PureComponent {
                     {this.responseCount}
                     <p className="discussion-card-content">{sumString}</p>
                     <div className="discussion-card-tags">{this.Tag}</div>
-                    <img src={iconUrl} alt="" className="discussion-card-icon"/>
+                    {iconUrl && <img src={iconUrl} alt="" className="discussion-card-icon"/>}
                 </div>
             </a>
         );
