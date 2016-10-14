@@ -16,6 +16,14 @@ class DiscussionsContent extends React.PureComponent {
         className: 'discussions-content'
     };
 
+    componentDidMount() {
+        if (this.props.open && !this.props.data) this.props.fetchData();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.open && !nextProps.data) this.props.fetchData();
+    }
+
     render() {
         if (this.props.loading) return <Loading className="discussions-loading" />;
         if (this.props.error) return <Retry className="discussions-retry" onClick={this.props.fetchData} />;
@@ -38,13 +46,13 @@ class Discussions extends React.PureComponent {
 
     constructor(props) {
         super(props);
-        this.DiscussionsContent = withData(this.props.api, res => res.data.results)(DiscussionsContent);
+        this.DiscussionsContent = withData(this.props.api, res => res.data.results, {fetchAfterMount: false})(DiscussionsContent);
     }
 
     render() {
         const DiscussionsContainer = this.DiscussionsContent;
         return (
-            <Hoverable className={this.props.className} name={this.props.name}>
+            <Hoverable className={this.props.className} name={this.props.name} href={this.props.href} >
                 <DiscussionsContainer className="discussion-container" api={this.props.api}/>
             </Hoverable>
         );

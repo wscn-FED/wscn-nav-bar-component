@@ -42,7 +42,7 @@ class Weex extends React.PureComponent {
 
     render() {
         return (
-            <Hoverable className={this.props.className} name={this.props.name}>
+            <Hoverable className={this.props.className} name={this.props.name} href={this.props.href} >
                 <WeexTab tabs={this.props.tabs} />
             </Hoverable>
         );

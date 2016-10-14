@@ -16,6 +16,14 @@ class CalendarTab extends React.PureComponent {
         prefix: 'calendar-tab'
     }
 
+    componentDidMount() {
+        if (this.props.open && !this.props.data) this.props.fetchData();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.open && !nextProps.data) this.props.fetchData();
+    }
+
     render() {
         const p = withPrefix(this.props.prefix);
         if (this.props.loading) return <Loading className="calendar-loading" />;
@@ -82,12 +90,12 @@ class Calendar extends React.PureComponent {
             limit: 3,
             importance: 3
         }
-    }, res => res.data.results)(CalendarTab)
+    }, res => res.data.results, {fetchAfterMount: false})(CalendarTab)
 
     render() {
         const Tab = this.CalendarTab;
         return (
-            <Hoverable className={this.props.className} name={this.props.name}>
+            <Hoverable className={this.props.className} name={this.props.name} href={this.props.href} >
                 <Tab />
             </Hoverable>
         );
