@@ -14,8 +14,8 @@ export default class Icon extends React.PureComponent {
   render() {
     const { className, symbolId } = this.props;
     const iconClass = className
-      ? `icon icon-${symbolId} ${className}`
-      : `icon icon-${symbolId}`;
+      ? `wscn-nav-icon wscn-nav-icon-${symbolId} ${className}`
+      : `wscn-nav-icon wscn-nav-icon-${symbolId}`;
     return (
       <svg className={iconClass}>
         <use xlinkHref={`#${symbolId}`} />
