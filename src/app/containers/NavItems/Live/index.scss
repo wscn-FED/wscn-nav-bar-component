@@ -7,6 +7,9 @@
     .live-tab {
         width: 440px;
         height: 240px;
+        .tabs-nav-indicator:after {
+            background-color: #F6F6F6;
+        }
         .tabs-nav-container {
             padding: 0 37px;
             height: 41px;
