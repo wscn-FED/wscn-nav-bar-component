@@ -11,19 +11,18 @@ class NewsTab extends React.PureComponent {
         className: 'news-tab'
     }
 
-    TabPanes = this.props.tabs.map(tab => {
-        const Content = withData(tab.api, res => res.data.results, {fetchAfterMount: false})(List);
-        return (
-            <TabPane name={tab.name} key={tab.name}>
-                <Content renderItem={Card} />
-            </TabPane>
-        );
-    })
+    ContentList = this.props.tabs.map(tab => withData(tab.api, res => res.data.results, {fetchAfterMount: false})(List));
 
     render() {
         return (
             <Tabs className={this.props.className}>
-                {this.TabPanes}
+                {
+                    this.ContentList.map((Content, index) => (
+                        <TabPane name={this.props.tabs[index].name} key={this.props.tabs[index].name}>
+                            <Content renderItem={Card} open={this.props.open} />
+                        </TabPane>
+                    ))
+                }
             </Tabs>
         );
     }
@@ -38,7 +37,7 @@ class News extends React.PureComponent {
 
     render() {
         return (
-            <Hoverable className={this.props.className} name={this.props.name}>
+            <Hoverable className={this.props.className} name={this.props.name} href={this.props.href} >
                 <NewsTab tabs={this.props.tabs} />
             </Hoverable>
         );

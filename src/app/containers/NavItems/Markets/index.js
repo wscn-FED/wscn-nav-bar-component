@@ -132,7 +132,7 @@ class Markets extends React.PureComponent {
     }
     render() {
         return (
-            <Hoverable className={this.props.className} name={this.props.name} >
+            <Hoverable className={this.props.className} name={this.props.name} href={this.props.href} >
                 <MarketsTab tabs={this.props.tabs} />
             </Hoverable>
         );

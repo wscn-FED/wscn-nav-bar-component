@@ -27,8 +27,11 @@ export default (config, map, {fetchOnRerender, fetchAfterMount = true} = {}) => 
 
         mounted = false;
 
+        fetching = false;
+
         fetchData = () => {
             if (this.latestFetchAt && Date.now() - this.latestFetchAt < MINIMUM_FETCH_INTERVAL) return;
+            if (this.fetching) return;
             this.setState({
                 loading: true
             });
@@ -45,6 +48,7 @@ export default (config, map, {fetchOnRerender, fetchAfterMount = true} = {}) => 
                         loading: false,
                         data: map ? map(res) : res
                     });
+                    this.fetching = false;
                 }
             })
             .catch(err => {
@@ -53,6 +57,7 @@ export default (config, map, {fetchOnRerender, fetchAfterMount = true} = {}) => 
                         error: err,
                         loading: false
                     });
+                    this.fetching = false;
                 }
             });
         }
