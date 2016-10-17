@@ -1,7 +1,7 @@
 process.env.NODE_ENV = 'production';
 
 var chalk = require('chalk');
-var fs = require('fs-extra')
+var fs = require('fs-extra');
 var path = require('path');
 var filesize = require('filesize');
 var gzipSize = require('gzip-size').sync;
