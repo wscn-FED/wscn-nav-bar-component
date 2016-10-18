@@ -22,7 +22,7 @@ class Widget extends React.Component {
         return (
             <div className={this.props.className}>
                 <Search ref={this.bindSearch} onExpand={this.props.onExpand} {...this.props.items.find(item => item.name === 'Search')} />
-                <Profile />
+                <Profile {...this.props.items.find(item => item.name === 'Notification')} />
             </div>
         );
     }

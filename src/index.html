@@ -21,6 +21,28 @@
 -->
 </body>
 <script>
-    new WSCNNavBar().init(document.querySelector('#root'));
+    var option = {
+        "widget": [
+            {
+                "name": "Search",
+                "api": "//wallstreetcn.com/search?q="
+            },
+            {
+                "name": "Notification",
+                "loginCBK": loginFn,
+                "registerCBK":registerFn
+            },
+            {
+                "name": "User"
+            }
+        ]
+    };
+    function loginFn() {
+        alert('login')
+    }
+    function registerFn() {
+        alert('register')
+    }
+    new WSCNNavBar(option).init(document.querySelector('#root'));
 </script>
 </html>
