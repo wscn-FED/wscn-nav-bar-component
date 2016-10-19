@@ -13,10 +13,12 @@ class Search extends React.Component {
     }
 
     onButtonClick = e => {
+        e.preventDefault();
         if (!this.state.expanded) {
-            e.preventDefault();
             this.expand();
             this.inputEl.focus();
+        } else {
+            this.fold();
         }
     }
 
@@ -44,9 +46,9 @@ class Search extends React.Component {
     render() {
         return (
             <div className={this.props.className}>
-                <form onSubmit={this.submit} data-expanded={this.state.expanded} >
-                    <input ref={this.bindRef} id="search" type="search" placeholder="搜索您想要的信息" />
-                    <button type="submit" onClick={this.onButtonClick} ><Icon symbolId="search" /></button>
+                <form onSubmit={this.submit} data-expanded={this.state.expanded}>
+                    <input ref={this.bindRef} id="search" type="search" placeholder="搜索您想要的信息"/>
+                    <span className="search-btn" onClick={this.onButtonClick}><Icon symbolId="search"/></span>
                 </form>
             </div>
         );
