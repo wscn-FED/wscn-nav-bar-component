@@ -21,23 +21,23 @@ class NavBar extends React.PureComponent {
         this.NavWidgetInstance = ref;
     }
 
-    foldNavWidget = () => {
-        if (this.NavWidgetInstance.fold) this.NavWidgetInstance.fold();
+    toggleNavWidget = () => {
+        if (this.NavWidgetInstance.toggleFE) this.NavWidgetInstance.toggleFE();
     }
 
-    foldNavRest = () => {
-        if (this.NavRestInstance.fold) this.NavRestInstance.fold();
+    toggleNavRest = () => {
+        if (this.NavRestInstance.toggleFE) this.NavRestInstance.toggleFE();
     }
 
     render() {
-        const { config } = this.props;
+        const {config} = this.props;
         return (
-            <nav className={c(this.props.className)} >
+            <nav className={c(this.props.className)}>
                 <NavLogo />
-                <NavMain items={config.main} />
+                <NavMain items={config.main}/>
                 |
-                <NavRest ref={this.bindNavRest} items={config.rest} onExpand={this.foldNavWidget} />
-                <NavWidget ref={this.bindNavWidget} items={config.widget} onExpand={this.foldNavRest} />
+                <NavRest ref={this.bindNavRest} items={config.rest} onExpand={this.toggleNavWidget}/>
+                <NavWidget ref={this.bindNavWidget} items={config.widget} onExpand={this.toggleNavRest}/>
             </nav>
         );
     }

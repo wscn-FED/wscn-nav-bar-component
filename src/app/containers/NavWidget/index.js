@@ -8,15 +8,15 @@ export default
 class Widget extends React.Component {
     static defaultProps = {
         className: 'nav-widget'
-    }
+    };
 
-    fold = () => {
-        if (this.SearchInstance.fold) this.SearchInstance.fold();
-    }
+    toggleFE = () => {
+        if (this.SearchInstance.toggleFE) this.SearchInstance.toggleFE();
+    };
 
     bindSearch = ref => {
         this.SearchInstance = ref;
-    }
+    };
 
     render() {
         return (
