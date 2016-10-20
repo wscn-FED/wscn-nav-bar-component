@@ -9,7 +9,7 @@ export default (config, map, {fetchOnRerender, fetchAfterMount = true} = {}) => 
             data: null,
             loading: true,
             error: null
-        }
+        };
 
         componentDidMount() {
             if (fetchAfterMount) this.fetchData();
@@ -52,6 +52,7 @@ export default (config, map, {fetchOnRerender, fetchAfterMount = true} = {}) => 
                 }
             })
             .catch(err => {
+                console.log(err);
                 if (this.mounted) {
                     this.setState({
                         error: err,
@@ -60,7 +61,7 @@ export default (config, map, {fetchOnRerender, fetchAfterMount = true} = {}) => 
                     this.fetching = false;
                 }
             });
-        }
+        };
 
         render() {
             return <ComposedComponent {...this.props} {...this.state} fetchData={this.fetchData} />;

@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 process.env.NODE_ENV = 'development';
 
 var path = require('path');
@@ -56,7 +54,7 @@ function setupCompiler(port) {
         if (!hasErrors && !hasWarnings) {
             console.log(chalk.green('Compiled successfully!'));
             console.log();
-            console.log('The app is running at http://0.0.0.0:' + port + '/');
+            console.log('The app is running at http://localhost:' + port + '/');
             console.log();
             return;
         }
@@ -112,43 +110,43 @@ function runDevServer(port) {
         watchOptions: {
             ignored: /node_modules/
         },
-        proxy: {
-            '/api/**': {
-                target: 'http://api.wallstreetcn.com/v2',
-                // ignorePath: true,
-                pathRewrite: {
-                    '^/api': ''
-                },
-                changeOrigin: true,
-                logLevel: 'debug'
-            },
-            '/discussions-api/**': {
-                target: 'http://api.wallstreetcn.com/hatano/v1/discussions',
-                // ignorePath: true,
-                pathRewrite: {
-                    '^/discussions-api': ''
-                },
-                changeOrigin: true,
-                logLevel: 'debug'
-            },
-            '/api-markets/**': {
-                target: 'http://api-markets.wallstreetcn.com/v1',
-                pathRewrite: {
-                    '^/api-markets': ''
-                },
-                changeOrigin: true,
-                logLevel: 'debug'
-            },
-            '/forexdata/**': {
-                target: 'https://forexdata.wallstreetcn.com',
-                pathRewrite: {
-                    '^/forexdata': ''
-                },
-                changeOrigin: true,
-                logLevel: 'debug'
-            }
-        }
-    }).listen(port, '0.0.0.0', (err, result) => {
+        // proxy: {
+        //     '/api/**': {
+        //         target: 'http://api.wallstreetcn.com/v2',
+        //         // ignorePath: true,
+        //         pathRewrite: {
+        //             '^/api': ''
+        //         },
+        //         changeOrigin: true,
+        //         logLevel: 'debug'
+        //     },
+        //     '/discussions-api/**': {
+        //         target: 'http://api.wallstreetcn.com/hatano/v1/discussions',
+        //         // ignorePath: true,
+        //         pathRewrite: {
+        //             '^/discussions-api': ''
+        //         },
+        //         changeOrigin: true,
+        //         logLevel: 'debug'
+        //     },
+        //     '/api-markets/**': {
+        //         target: 'http://api-markets.wallstreetcn.com/v1',
+        //         pathRewrite: {
+        //             '^/api-markets': ''
+        //         },
+        //         changeOrigin: true,
+        //         logLevel: 'debug'
+        //     },
+        //     '/forexdata/**': {
+        //         target: 'https://forexdata.wallstreetcn.com',
+        //         pathRewrite: {
+        //             '^/forexdata': ''
+        //         },
+        //         changeOrigin: true,
+        //         logLevel: 'debug'
+        //     }
+        // }
+    }).listen(port,  (err, result) => {
         if (err) {
             return console.log(err);
         }
@@ -156,7 +154,7 @@ function runDevServer(port) {
         // clearConsole();
         console.log(chalk.cyan('Starting the development server...'));
         console.log();
-        // openBrowser(port);
+        openBrowser(port);
     });
 }
 
