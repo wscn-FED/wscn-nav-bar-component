@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 export default ComposedComponent => {
     class Open extends Component {
-        state = {open: false}
+        state = {open: false};
 
         componentDidMount() {
             this.el.addEventListener('mouseenter', this.onMouseEnter);
@@ -15,13 +15,13 @@ export default ComposedComponent => {
             this.el.removeEventListener('mouseleave', this.onMouseLeave);
         }
 
-        onMouseEnter = () => this.setState({open: true})
+        onMouseEnter = () => this.setState({open: true});
 
-        onMouseLeave = () => this.setState({open: false})
+        onMouseLeave = () => this.setState({open: false});
 
         bindRef = ref => {
             this.el = ReactDOM.findDOMNode(ref); // eslint-disable-line
-        }
+        };
 
         render() {
             return <ComposedComponent ref={this.bindRef} {...this.props} {...this.state} />;

@@ -18,7 +18,7 @@
         outline: none;
     }
     input {
-        transform-origin: right;
+        transform-origin: 250px;
         transition: all 0.3s ease;
         width: 277px;
         color: white;
@@ -28,7 +28,7 @@
             border-bottom-color: white;
         }
     }
-    button {
+    .search-btn {
         cursor: pointer;
         padding: 0;
         width: 20px;

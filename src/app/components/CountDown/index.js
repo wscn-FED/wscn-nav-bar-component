@@ -7,9 +7,9 @@ export default
 class CountDown extends React.Component {
     static defaultProps = {
         prefix: 'count-down'
-    }
+    };
 
-    state = {}
+    state = {};
 
     componentDidMount() {
         this.interval = countdown(timespan => this.setState({timespan}), new Date(this.props.to));

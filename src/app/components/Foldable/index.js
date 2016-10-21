@@ -1,6 +1,6 @@
 import React from 'react';
-import { Motion, spring, presets } from 'react-motion';
-import classname, { withPrefix } from '#/utils/classnames';
+import {Motion, spring, presets} from 'react-motion';
+import classname, {withPrefix} from '#/utils/classnames';
 import Icon from '#/components/Icon';
 import './index.scss';
 
@@ -8,20 +8,16 @@ export default
 class Foldable extends React.Component {
     static defaultProps = {
         prefix: 'foldable'
-    }
+    };
 
     state = {
         fold: false
-    }
+    };
 
-    fold = () => this.setState({fold: true})
-
-    unfold = () => {
-        this.setState({fold: false});
+    toggleFE = () => {
+        this.setState({fold: !this.state.fold});
         if (this.props.onExpand) this.props.onExpand();
-    }
-
-    toggle = () => this.setState({fold: !this.state.fold})
+    };
 
     render() {
         const style = {
@@ -39,7 +35,7 @@ class Foldable extends React.Component {
                 <Motion style={style.indicator}>
                     {({x, opacity}) => (
                         <div
-                            onClick={this.unfold}
+                            onClick={this.toggleFE}
                             className={p('indicator')}
                             style={{
                                 transform: `translate(${x * 100}%)`,
@@ -47,7 +43,7 @@ class Foldable extends React.Component {
                                 visibility: this.state.fold ? 'visible' : 'hidden'
                             }}
                         >
-                            <Icon symbolId="dots" />
+                            <Icon symbolId="dots"/>
                         </div>
                     )}
                 </Motion>

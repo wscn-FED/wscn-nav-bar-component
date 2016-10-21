@@ -1,6 +1,6 @@
 {
   "name": "wscn-nav-bar-component",
-  "version": "0.0.1",
+  "version": "0.0.13",
   "description": "wscn-nav-bar-component",
   "main": "dist/js/main.js",
   "scripts": {
@@ -10,7 +10,6 @@
     "build": " node ./scripts/build.js",
     "publish": "webpack --config config/webpack.config.publish.js",
     "dll-dev": "webpack --config config/webpack.dll.config.js --progress",
-    "dll": "NODE_ENV=production webpack --config config/webpack.dll.config.js --progress",
     "build-dev": "npm run dll-dev && node ./scripts/start.js"
   },
   "keywords": [
@@ -88,12 +87,12 @@
     "webpack-dashboard": "^0.1.8",
     "webpack-dev-server": "^1.16.1"
   },
-  "dependencies": {
+  "peerDependencies": {
     "axios": "^0.14.0",
     "classnames": "^2.2.5",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
-    "wscn-react-vendor": "0.0.5"
+    "wscn-react-vendor": "^0.0.9"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"

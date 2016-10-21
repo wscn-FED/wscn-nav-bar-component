@@ -9,27 +9,26 @@ var paths = require('./paths');
 var svgoConfig = require('./svgo.config.json');
 
 var AUTOPREFIXER_BROWSERS = [
-  'Android 2.3',
-  'Android >= 4',
-  'Chrome >= 35',
-  'Firefox >= 31',
-  'Explorer >= 9',
-  'iOS >= 7',
-  'Opera >= 12',
-  'Safari >= 7.1'
+    'Android 2.3',
+    'Android >= 4',
+    'Chrome >= 35',
+    'Firefox >= 31',
+    'Explorer >= 9',
+    'iOS >= 7',
+    'Opera >= 12',
+    'Safari >= 7.1'
 ];
 
-const outputFileName = 'react-market.min.js';
+const outputFileName = require('../package.json').name + '.min.js';
 module.exports = {
     entry: [
-        path.join(paths.ownNodeModules, 'core-js/modules/es6.object.assign'),
         path.join(paths.appSrc, 'entry')
     ],
     output: {
         path: paths.appDist,
         filename: 'js/' + outputFileName,
         publicPath: '/',
-        libraryTarget: 'umd',
+        libraryTarget: 'var',
         umdNamedDefine: true
     },
     resolve: {
@@ -49,25 +48,10 @@ module.exports = {
         }
     },
     externals: {
-        'react': {
-            root: 'React',
-            commonjs: 'react',
-            commonjs2: 'react',
-            amd: 'react'
-        },
-        'react-dom': {
-            root: 'ReactDOM',
-            commonjs: 'react-dom',
-            commonjs2: 'react-dom',
-            amd: 'react-dom',
-        },
-        'react-addons-css-transition-group': {
-            root: ['React', 'addons', 'CSSTransitionGroup'],
-            commonjs: 'react-addons-css-transition-group',
-            commonjs2: 'react-addons-css-transition-group',
-            amd: 'react-addons-css-transition-group'
-        },
-        'axios': 'axios'
+        'react': 'var React',
+        'react-dom': 'var ReactDOM',
+        // 'react-addons-css-transition-group': 'var',
+        'axios': 'var axios'
     },
     resolveLoader: {
         root: paths.ownNodeModules,
@@ -80,10 +64,10 @@ module.exports = {
                 loader: 'eslint',
                 include: paths.appSrc
             },
-            // {
-            //     test: /\.svg$/,
-            //     loader: 'svgo?' + JSON.stringify(svgoConfig)
-            // }
+            {
+                test: /\.svg$/,
+                loader: 'svgo?' + JSON.stringify(svgoConfig)
+            }
         ],
         loaders: [
             {

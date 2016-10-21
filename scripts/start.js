@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 process.env.NODE_ENV = 'development';
 
 var path = require('path');
@@ -56,7 +54,7 @@ function setupCompiler(port) {
         if (!hasErrors && !hasWarnings) {
             console.log(chalk.green('Compiled successfully!'));
             console.log();
-            console.log('The app is running at http://0.0.0.0:' + port + '/');
+            console.log('The app is running at http://localhost:' + port + '/');
             console.log();
             return;
         }
@@ -148,7 +146,7 @@ function runDevServer(port) {
                 logLevel: 'debug'
             }
         }
-    }).listen(port, '0.0.0.0', (err, result) => {
+    }).listen(port,  (err, result) => {
         if (err) {
             return console.log(err);
         }
@@ -156,7 +154,7 @@ function runDevServer(port) {
         // clearConsole();
         console.log(chalk.cyan('Starting the development server...'));
         console.log();
-        // openBrowser(port);
+        openBrowser(port);
     });
 }
 

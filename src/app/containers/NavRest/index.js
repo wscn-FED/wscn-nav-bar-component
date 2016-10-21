@@ -10,8 +10,8 @@ class NavRest extends React.Component {
         className: 'nav-rest'
     }
 
-    fold = () => {
-        if (this.FoldableInstance.fold) this.FoldableInstance.fold();
+    toggleFE = (status) => {
+        if (this.FoldableInstance.toggleFE) this.FoldableInstance.toggleFE(status);
     }
 
     bindFoldable = ref => {

@@ -4,8 +4,8 @@ var webpack = require('webpack');
 var AssetsPlugin = require('assets-webpack-plugin');
 var paths = require('./paths');
 
-var deps = require('../package.json').dependencies;
-delete deps['wscn-react-vendor'];
+var deps = require('../package.json').peerDependencies;
+
 console.log(Object.keys(deps));
 
 var config = {
@@ -22,7 +22,7 @@ var config = {
         ]
     },
     output: {
-        path: path.resolve(paths.appDev+"/static/vendor"),
+        path: path.resolve(paths.appDev + "/static/vendor"),
         filename: "[name].js",
         library: "[name]", //和DllPlugin的name对应
         libraryTarget: 'var',
