@@ -1,0 +1,40 @@
+.nav-rest {
+    position: relative;
+    z-index: 1;
+    > div {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .content {
+        position: relative;
+        .hoverable {
+            height: 100%;
+        }
+        .foldable-content {
+            height: 100%;
+            white-space: nowrap;
+            .nav-item, .nav-item-weex {
+                padding: 0 15px;
+                white-space: normal;
+                display: inline-block;
+            }
+            .nav-item {
+                display: inline-block;
+                text-align: center;
+                height: 100%;
+                vertical-align: top;
+                cursor: pointer;
+                &:hover {
+                    color: white;
+                }
+                &:after {
+                    content: "";
+                    height: 100%;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}

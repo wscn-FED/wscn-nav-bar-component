@@ -1,0 +1,14 @@
+.nav-main {
+    margin-left: 55px;
+    white-space: nowrap;
+    > div {
+        display: inline-block;
+        height: 100%;
+        padding: 0 15px;
+        vertical-align: middle;
+    }
+
+    > * {
+        white-space: normal;
+    }
+}

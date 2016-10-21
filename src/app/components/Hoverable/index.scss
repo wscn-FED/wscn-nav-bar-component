@@ -1,0 +1,31 @@
+@import "~#/styles/index.scss";
+
+.hoverable {
+    position: relative;
+    &[data-active="true"] {
+        background-color: #49535C;
+    }
+    &-name {
+        width: 100%;
+        height: 100%;
+        @include hoverable;
+        display: table;
+        text-align: center;
+        > * {
+            vertical-align: middle;
+        }
+        svg {
+            margin-left: 6px;
+            width: 10px;
+        }
+        &:after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    &-content {
+        @extend %tab;
+    }
+}

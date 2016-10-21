@@ -1,0 +1,21 @@
+.live-card {
+    border-bottom: 1px solid #EBEBEB;
+    position: relative;
+    color: #282828;
+    .time {
+        width: 65px;
+        background-color: #F6F6F6;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+    .title {
+        margin-left: 65px;
+        padding: 16px;
+        color: #282828;
+        line-height: (21 / 13);
+    }
+}

@@ -7,11 +7,12 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var url = require('url');
 var paths = require('./paths');
+var svgoConfig = require('./svgo.config.json');
 
 var Dashboard = require('webpack-dashboard');
 var DashboardPlugin = require('webpack-dashboard/plugin');
 var dashboard = new Dashboard();
-var vendor = 'wscn-react-vendor.min.js';
+var vendor = 'wscn-react-vendor.js';
 // var homepagePath = require(paths.appPackageJson).homepage;
 // var publicPath = homepagePath ? url.parse(homepagePath).pathname : '/';
 var publicPath = '/';
@@ -19,7 +20,7 @@ if (!publicPath.endsWith('/')) {
     // Prevents incorrect paths in file-loader
     publicPath += '/';
 }
-const outputFileName = 'react-market.min.js';
+const outputFileName = require('../package.json').name + '.min.js';
 
 
 var AUTOPREFIXER_BROWSERS = [
@@ -40,8 +41,8 @@ module.exports = {
     output: {
         path: paths.appBuild,
         filename: 'static/js/' + outputFileName,
-        publicPath: publicPath,
-        libraryTarget: 'umd',
+        publicPath: '/',
+        libraryTarget: 'var',
         umdNamedDefine: true
     },
     resolve: {
@@ -61,25 +62,10 @@ module.exports = {
         }
     },
     externals: {
-        'react': {
-            root: 'React',
-            commonjs: 'react',
-            commonjs2: 'react',
-            amd: 'react'
-        },
-        'react-dom': {
-            root: 'ReactDOM',
-            commonjs: 'react-dom',
-            commonjs2: 'react-dom',
-            amd: 'react-dom',
-        },
-        'react-addons-css-transition-group': {
-            root: ['React', 'addons', 'CSSTransitionGroup'],
-            commonjs: 'react-addons-css-transition-group',
-            commonjs2: 'react-addons-css-transition-group',
-            amd: 'react-addons-css-transition-group'
-        },
-        'axios': 'axios'
+        'react': 'var React',
+        'react-dom': 'var ReactDOM',
+        // 'react-addons-css-transition-group': 'var',
+        'axios': 'var axios'
     },
     resolveLoader: {
         root: paths.ownNodeModules,
@@ -91,6 +77,10 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'eslint',
                 include: paths.appSrc
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svgo?' + JSON.stringify(svgoConfig)
             }
         ],
         loaders: [
@@ -111,7 +101,12 @@ module.exports = {
                 loader: 'json'
             },
             {
-                test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?$/,
+                test: /\.svg$/,
+                loader: 'svg-sprite',
+                include: /static\/icons/
+            },
+            {
+                test: /\.(jpg|png|gif|eot|ttf|woff|woff2)(\?.*)?$/,
                 include: [paths.appSrc, paths.appNodeModules],
                 loader: 'file',
                 query: {

@@ -1,0 +1,15 @@
+@import "~#/styles/index.scss";
+
+.nav-item-news {
+    .hoverable-name {
+        font-size: 14px;
+    }
+    .news-tab {
+        width: 380px;
+        height: 240px;
+        .tabs-nav-container {
+            padding: 0 37px;
+            height: 41px;
+        }
+    }
+}

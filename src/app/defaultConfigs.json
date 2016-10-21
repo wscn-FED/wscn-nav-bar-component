@@ -1,17 +1,313 @@
 {
-    "logo": "Logo",
+  "development": {
     "main": [
-        "News"
+      {
+        "name": "资讯",
+        "component": "News",
+        "href": "//wallstreetcn.com/news",
+        "tabs": [
+          {
+            "name": "美国",
+            "api": "/api/posts?type=news&limit=2&cid=16"
+          },
+          {
+            "name": "中国",
+            "api": "/api/posts?type=news&limit=2&cid=17"
+          },
+          {
+            "name": "欧洲",
+            "api": "/api/posts?type=news&limit=2&cid=15"
+          }
+        ]
+      },
+      {
+        "name": "实时",
+        "component": "Live",
+        "href": "//live.wallstreetcn.com",
+        "tabs": [
+          {
+            "name": "全球",
+            "api": "/api/livenews?type=news&cid=1"
+          },
+          {
+            "name": "A股",
+            "api": "/api/livenews?type=news&cid=2"
+          },
+          {
+            "name": "美股",
+            "api": "/api/livenews?type=news&cid=4"
+          }
+        ]
+      },
+      {
+        "name": "行情",
+        "component": "Markets",
+        "href": "//markets.wallstreetcn.com",
+        "tabs": [
+          {
+            "name": "期货",
+            "indices": [
+              "XAUUSD",
+              "XAGUSD",
+              "UKOil"
+            ],
+            "api": "https://forexdata.wallstreetcn.com"
+          },
+          {
+            "name": "债券",
+            "indices": [
+              "US10Year",
+              "Japan10Year",
+              "Germany10Year"
+            ],
+            "api": "https://forexdata.wallstreetcn.com"
+          },
+          {
+            "name": "外汇",
+            "indices": [
+              "EURUSD",
+              "USDCNH",
+              "USDJPY"
+            ],
+            "api": "https://forexdata.wallstreetcn.com"
+          },
+          {
+            "name": "股指",
+            "indices": [
+              "SPX500INDEX",
+              "JPN225INDEX",
+              "EUSTX50INDEX"
+            ],
+            "api": "https://forexdata.wallstreetcn.com"
+          },
+          {
+            "name": "沪深",
+            "indices": [
+              "000001",
+              "399001",
+              "399006"
+            ],
+            "api": "https://forexdata.wallstreetcn.com"
+          }
+        ]
+      },
+      {
+        "name": "社区",
+        "component": "Discussions",
+        "href": "//s.wallstreetcn.com/discussions",
+        "api": "https://api.wallstreetcn.com/hatano/v1/discussions/normal?page=1&limit=3&order=createdAt"
+      },
+      {
+        "name": "日历",
+        "component": "Calendar",
+        "href": "//http://calendar.wallstreetcn.com",
+        "api": "http://api-markets.wallstreetcn.com/v1/calendar.json"
+      },
+      {
+        "name": "更多",
+        "component": "More"
+      }
     ],
     "rest": [
-        "Weex",
-        "Bao",
-        "Gold",
-        "Download"
+      {
+        "name": "WEEX",
+        "component": "Weex",
+        "href": "//fx.weex.in",
+        "tabs": [
+          {
+            "name": "最新观点",
+            "api": "/api/posts?type=fxmkt&limit=2&page=1",
+            "component": "News"
+          },
+          {
+            "name": "实时解读",
+            "api": "/api/livenews?channelId=5&page=1&limit=10&min_updated=0",
+            "component": "Live"
+          }
+        ]
+      },
+      {
+        "name": "选股宝",
+        "href": "//bao.wallstreetcn.com/static/app_pc.html?from=wscnpc_navbar"
+      },
+      {
+        "name": "黄金头条",
+        "href": "//www.goldtoutiao.com/events/app/index.html?from=wscn_navbar"
+      },
+      {
+        "name": "下载",
+        "href": "//activity.wallstreetcn.com/app/index.html?from=pc_navbar"
+      }
     ],
     "widget": [
-        "Search",
-        "Notification",
-        "User"
+      {
+        "name": "Search",
+        "api": "//wallstreetcn.com/search?q="
+      },
+      {
+        "name": "Notification",
+        "loginCBK": " ",
+        "registerCBK": " "
+      },
+      {
+        "name": "User"
+      }
     ]
+  },
+  "production": {
+    "main": [
+      {
+        "name": "资讯",
+        "component": "News",
+        "href": "//wallstreetcn.com/news",
+        "tabs": [
+          {
+            "name": "美国",
+            "api": "http://api.wallstreetcn.com/v2/posts?type=news&limit=2&cid=16"
+          },
+          {
+            "name": "中国",
+            "api": "http://api.wallstreetcn.com/v2/posts?type=news&limit=2&cid=17"
+          },
+          {
+            "name": "欧洲",
+            "api": "http://api.wallstreetcn.com/v2/posts?type=news&limit=2&cid=15"
+          }
+        ]
+      },
+      {
+        "name": "实时",
+        "component": "Live",
+        "href": "//live.wallstreetcn.com",
+        "tabs": [
+          {
+            "name": "全球",
+            "api": "http://api.wallstreetcn.com/v2/livenews?type=news&cid=1"
+          },
+          {
+            "name": "A股",
+            "api": "http://api.wallstreetcn.com/v2/livenews?type=news&cid=2"
+          },
+          {
+            "name": "美股",
+            "api": "http://api.wallstreetcn.com/v2/livenews?type=news&cid=4"
+          }
+        ]
+      },
+      {
+        "name": "行情",
+        "component": "Markets",
+        "href": "//markets.wallstreetcn.com",
+        "tabs": [
+          {
+            "name": "期货",
+            "indices": [
+              "XAUUSD",
+              "XAGUSD",
+              "UKOil"
+            ],
+            "api": "https://forexdata.wallstreetcn.com"
+          },
+          {
+            "name": "债券",
+            "indices": [
+              "US10Year",
+              "Japan10Year",
+              "Germany10Year"
+            ],
+            "api": "https://forexdata.wallstreetcn.com"
+          },
+          {
+            "name": "外汇",
+            "indices": [
+              "EURUSD",
+              "USDCNH",
+              "USDJPY"
+            ],
+            "api": "https://forexdata.wallstreetcn.com"
+          },
+          {
+            "name": "股指",
+            "indices": [
+              "SPX500INDEX",
+              "JPN225INDEX",
+              "EUSTX50INDEX"
+            ],
+            "api": "https://forexdata.wallstreetcn.com"
+          },
+          {
+            "name": "沪深",
+            "indices": [
+              "000001",
+              "399001",
+              "399006"
+            ],
+            "api": "https://forexdata.wallstreetcn.com"
+          }
+        ]
+      },
+      {
+        "name": "社区",
+        "component": "Discussions",
+        "href": "//s.wallstreetcn.com/discussions",
+        "api": "https://api.wallstreetcn.com/hatano/v1/discussions/normal?page=1&limit=3&order=createdAt"
+      },
+      {
+        "name": "日历",
+        "component": "Calendar",
+        "href": "//http://calendar.wallstreetcn.com",
+        "api": "http://api-markets.wallstreetcn.com/v1/calendar.json"
+      },
+      {
+        "name": "更多",
+        "component": "More"
+      }
+    ],
+    "rest": [
+      {
+        "name": "WEEX",
+        "component": "Weex",
+        "href": "//fx.weex.in",
+        "tabs": [
+          {
+            "name": "最新观点",
+            "api": "http://api.wallstreetcn.com/v2/posts?type=fxmkt&limit=2&page=1",
+            "component": "News"
+          },
+          {
+            "name": "实时解读",
+            "api": "http://api.wallstreetcn.com/v2/livenews?channelId=5&page=1&limit=10&min_updated=0",
+            "component": "Live"
+          }
+        ]
+      },
+      {
+        "name": "选股宝",
+        "href": "//bao.wallstreetcn.com/static/app_pc.html?from=wscnpc_navbar"
+      },
+      {
+        "name": "黄金头条",
+        "href": "//www.goldtoutiao.com/events/app/index.html?from=wscn_navbar"
+      },
+      {
+        "name": "下载",
+        "href": "//activity.wallstreetcn.com/app/index.html?from=pc_navbar"
+      }
+    ],
+    "widget": [
+      {
+        "name": "Search",
+        "api": "//wallstreetcn.com/search?q="
+      },
+      {
+        "name": "Notification",
+        "loginCBK": " ",
+        "registerCBK": " "
+      },
+      {
+        "name": "User"
+      }
+    ]
+  }
+
 }

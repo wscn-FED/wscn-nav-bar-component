@@ -38,8 +38,10 @@ module.exports = {
         "prefer-template": 0,
         "no-global-assign": [0],
         "no-unsafe-negation": 0,
-        "no-mixed-operators":[0],
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "no-mixed-operators": [0],
+        "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+        "import/no-extraneous-dependencies": [0],
+        "import/no-unresolved": [0]
     },
 
     "plugins": [
