@@ -110,42 +110,42 @@ function runDevServer(port) {
         watchOptions: {
             ignored: /node_modules/
         },
-        // proxy: {
-        //     '/api/**': {
-        //         target: 'http://api.wallstreetcn.com/v2',
-        //         // ignorePath: true,
-        //         pathRewrite: {
-        //             '^/api': ''
-        //         },
-        //         changeOrigin: true,
-        //         logLevel: 'debug'
-        //     },
-        //     '/discussions-api/**': {
-        //         target: 'http://api.wallstreetcn.com/hatano/v1/discussions',
-        //         // ignorePath: true,
-        //         pathRewrite: {
-        //             '^/discussions-api': ''
-        //         },
-        //         changeOrigin: true,
-        //         logLevel: 'debug'
-        //     },
-        //     '/api-markets/**': {
-        //         target: 'http://api-markets.wallstreetcn.com/v1',
-        //         pathRewrite: {
-        //             '^/api-markets': ''
-        //         },
-        //         changeOrigin: true,
-        //         logLevel: 'debug'
-        //     },
-        //     '/forexdata/**': {
-        //         target: 'https://forexdata.wallstreetcn.com',
-        //         pathRewrite: {
-        //             '^/forexdata': ''
-        //         },
-        //         changeOrigin: true,
-        //         logLevel: 'debug'
-        //     }
-        // }
+        proxy: {
+            '/api/**': {
+                target: 'http://api.wallstreetcn.com/v2',
+                // ignorePath: true,
+                pathRewrite: {
+                    '^/api': ''
+                },
+                changeOrigin: true,
+                logLevel: 'debug'
+            },
+            '/discussions-api/**': {
+                target: 'http://api.wallstreetcn.com/hatano/v1/discussions',
+                // ignorePath: true,
+                pathRewrite: {
+                    '^/discussions-api': ''
+                },
+                changeOrigin: true,
+                logLevel: 'debug'
+            },
+            '/api-markets/**': {
+                target: 'http://api-markets.wallstreetcn.com/v1',
+                pathRewrite: {
+                    '^/api-markets': ''
+                },
+                changeOrigin: true,
+                logLevel: 'debug'
+            },
+            '/forexdata/**': {
+                target: 'https://forexdata.wallstreetcn.com',
+                pathRewrite: {
+                    '^/forexdata': ''
+                },
+                changeOrigin: true,
+                logLevel: 'debug'
+            }
+        }
     }).listen(port,  (err, result) => {
         if (err) {
             return console.log(err);

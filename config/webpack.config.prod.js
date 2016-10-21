@@ -155,20 +155,20 @@ module.exports = {
         new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'}),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.DedupePlugin(),
-        // new webpack.optimize.UglifyJsPlugin({
-        //     compress: {
-        //         screw_ie8: true,
-        //         warnings: false
-        //     },
-        //     mangle: {
-        //         screw_ie8: true,
-        //         except: ['$super', '$', 'exports', 'require']
-        //     },
-        //     output: {
-        //         comments: false,
-        //         screw_ie8: true
-        //     }
-        // }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                screw_ie8: true,
+                warnings: false
+            },
+            mangle: {
+                screw_ie8: true,
+                except: ['$super', '$', 'exports', 'require']
+            },
+            output: {
+                comments: false,
+                screw_ie8: true
+            }
+        }),
         new DashboardPlugin(dashboard.setData),
         new ExtractTextPlugin('static/css/[name].css')
     ]
