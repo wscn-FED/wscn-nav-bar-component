@@ -28,7 +28,7 @@ class Search extends React.Component {
 
     submit = e => {
         if (e) e.preventDefault();
-        const value = e.target.querySelector('#search').value;
+        const value = e.target.querySelector('#navbar-search').value;
         window.open(`${this.props.api}${encodeURIComponent(value)}`);
     };
 
