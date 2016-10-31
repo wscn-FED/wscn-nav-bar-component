@@ -19,7 +19,7 @@ class Card extends React.PureComponent {
                 <div className={c('content-container')}>
                     <a href={this.props.isWeex ? `//strategy.weex.in/weex/node/${id}` : url} target="_blank"
                        rel="noopener noreferrer">
-                        <h1 className={c('title')}>{title}</h1>
+                        <span className={c('title')}>{title}</span>
                     </a>
                     <div className={c('footer')}>
                         <span className={c('author')}>文 /
