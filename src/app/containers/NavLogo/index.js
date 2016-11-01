@@ -7,13 +7,13 @@ export default
 class NavLogo extends React.PureComponent {
     static defaultProps = {
         className: 'nav-logo'
-    }
+    };
 
     render() {
         return (
             <div className={c(this.props.className)}>
-                <a href="/">
-                    <Icon symbolId="logo" />
+                <a href="//wallstreetcn.com">
+                    <Icon symbolId="logo"/>
                 </a>
             </div>
         );
