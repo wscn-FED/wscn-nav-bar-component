@@ -1,6 +1,6 @@
 {
   "name": "wscn-nav-bar-component",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "wscn-nav-bar-component",
   "main": "dist/js/main.js",
   "scripts": {
@@ -92,7 +92,7 @@
     "classnames": "^2.2.5",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
-    "wscn-react-vendor": "^0.0.9"
+    "wscn-react-vendor": "^0.0.11"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
