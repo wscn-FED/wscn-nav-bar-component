@@ -11,23 +11,31 @@ export default
 class NavBar extends React.PureComponent {
     static defaultProps = {
         className: 'header-nav'
+    };
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowResize);
     }
+
+    handleWindowResize = () => {
+        console.log(window.innerWidth);
+    };
 
     bindNavRest = ref => {
         this.NavRestInstance = ref;
-    }
+    };
 
     bindNavWidget = ref => {
         this.NavWidgetInstance = ref;
-    }
+    };
 
     toggleNavWidget = () => {
         if (this.NavWidgetInstance.toggleFE) this.NavWidgetInstance.toggleFE();
-    }
+    };
 
     toggleNavRest = () => {
         if (this.NavRestInstance.toggleFE) this.NavRestInstance.toggleFE();
-    }
+    };
 
     render() {
         const {config} = this.props;

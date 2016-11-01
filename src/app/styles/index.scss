@@ -11,6 +11,8 @@ body {
     &[data-open="false"] {
         opacity: 0;
         visibility: hidden;
+      //opacity: 1;
+      //visibility: visible;
     }
     transition: all 0.3s ease;
     position: absolute;

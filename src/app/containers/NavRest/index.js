@@ -8,20 +8,20 @@ export default
 class NavRest extends React.Component {
     static defaultProps = {
         className: 'nav-rest'
-    }
+    };
 
     toggleFE = (status) => {
         if (this.FoldableInstance.toggleFE) this.FoldableInstance.toggleFE(status);
-    }
+    };
 
     bindFoldable = ref => {
         this.FoldableInstance = ref;
-    }
+    };
 
     render() {
         return (
             <div className={this.props.className}>
-                <Foldable ref={this.bindFoldable} onExpand={this.props.onExpand} className="content">
+                <Foldable ref={this.bindFoldable} onExpand={this.props.onExpand} className="content" foldableWidth="1430">
                     {this.props.items.map(item => {
                         const DynamicComponent = NavItems[item.component];
                         if (DynamicComponent) return <DynamicComponent {...item} key={item.name}/>;

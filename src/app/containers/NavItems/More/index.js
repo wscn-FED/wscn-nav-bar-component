@@ -5,19 +5,21 @@ import './index.scss';
 
 function generateColumn({title, items, className}) {
     return (
-        <div className={classname('column', className)}>
+        <div key={'more' + title} className={classname('column', className)}>
             <div className="title">{title}</div>
             <ul>
                 {items.map(item => {
                     const attrs = {
-                        key: item.name
+                        key: 'more' + item.name
                     };
                     if (item.tag) {
                         attrs['data-tag'] = item.tag;
                     }
 
                     if (item.href) {
-                        return <li {...attrs}><a href={item.href} target="_blank"rel="noopener noreferrer">{item.name}</a></li>;
+                        return (<li {...attrs}>
+                            <a href={item.href} target="_blank" rel="noopener noreferrer">{item.name}</a>
+                        </li>);
                     }
 
 
@@ -36,7 +38,9 @@ class Download extends React.PureComponent {
                 <ul>
                     {this.props.apps.map(app => (
                         <li key={app.name} className="qr-code-container">
-                            <img className="qr-code" src={app.qrcode} role="presentation"/>
+                            <a href={app.href} target="_blank" rel="noopener noreferrer">
+                                <img className="qr-code" src={app.qrcode} role="presentation"/>
+                            </a>
                             <a href={app.href} target="_blank" rel="noopener noreferrer">
                                 <div>{app.name}</div>
                             </a>
@@ -56,19 +60,13 @@ class More extends React.PureComponent {
     };
 
     render() {
-        console.log(this.props.includes);
-        const includes = this.props.includes.map(item => generateColumn(item));
+        const props = this.props;
+        const includes = props.includes.map(item => generateColumn(item));
         return (
-            <Hoverable className={this.props.className} name={this.props.name}>
+            <Hoverable className={props.className} name={props.name}>
                 <div className="more-tab">
                     {includes}
-                    <Download apps={[
-                        {
-                            name: '华尔街见闻',
-                            qrcode: 'https://walicdn.wallstcn.com//wscn/img/footer-qrcode.png?9197eaf99c',
-                            href: '//wallstreetcn.com'
-                        }
-                    ]}/>
+                    <Download apps={props.downloadsMap}/>
                 </div>
             </Hoverable>
         );

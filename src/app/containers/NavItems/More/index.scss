@@ -79,12 +79,17 @@
         .download {
             .qr-code-container {
                 text-align: center;
+                float: left;
+                margin-right: 20px;
+                font-size: 12px;
+                a{
+                  display: block;
+                }
                 img {
                     width: 90px;
                     margin-bottom: 10px;
                     display: inherit;
                 }
-                font-size: 12px;
             }
         }
     }

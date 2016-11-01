@@ -7,14 +7,31 @@ import './index.scss';
 export default
 class Foldable extends React.Component {
     static defaultProps = {
-        prefix: 'foldable'
+        prefix: 'foldable',
+        foldableMaxWidth: 1430,
+        foldableMinWidth: 1200
     };
 
     state = {
-        fold: false
+        fold: window.innerWidth <= 1200
+    };
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowResize);
+    }
+
+    handleWindowResize = () => {
+        if (window.innerWidth <= 1200) {
+            this.setState({fold: true});
+        }
     };
 
     toggleFE = () => {
+        if (window.innerWidth >= this.props.foldableMaxWidth) return;
+        // if (window.innerWidth <= 1200) {
+        //     this.setState({fold: true});
+        //     return;
+        // }
         this.setState({fold: !this.state.fold});
         if (this.props.onExpand) this.props.onExpand();
     };

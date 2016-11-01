@@ -100,7 +100,7 @@
       {
         "name": "日历",
         "component": "Calendar",
-        "href": "//http://calendar.wallstreetcn.com",
+        "href": "://calendar.wallstreetcn.com",
         "api": "http://api-markets.wallstreetcn.com/v1/calendar.json"
       },
       {
@@ -179,6 +179,23 @@
                 "href": "//wallstreetcn.com/joinus"
               }
             ]
+          }
+        ],
+        "downloadsMap": [
+          {
+            "name": "华尔街见闻",
+            "qrcode": "https://wpimg.wallstcn.com/a6/f0/89/-2x.png",
+            "href": "https://activity.wallstreetcn.com/app/index.html?from=wscn__navba"
+          },
+          {
+            "name": "选股宝",
+            "qrcode": "https://wpimg.wallstcn.com/83/3b/34/-2x.png",
+            "href": "https://bao.wallstreetcn.com/static/app_pc.html?from=wscn__navbar"
+          },
+          {
+            "name": "黄金头条",
+            "qrcode": "https://wpimg.wallstcn.com/f9/99/bf/-2x.png",
+            "href": "http://www.goldtoutiao.com/events/app/index.html?from=wscn__navbar"
           }
         ]
       }
@@ -330,7 +347,7 @@
       {
         "name": "日历",
         "component": "Calendar",
-        "href": "//http://calendar.wallstreetcn.com",
+        "href": "://calendar.wallstreetcn.com",
         "api": "http://api-markets.wallstreetcn.com/v1/calendar.json"
       },
       {
@@ -409,6 +426,23 @@
                 "href": "//wallstreetcn.com/joinus"
               }
             ]
+          }
+        ],
+        "downloadsMap": [
+          {
+            "name": "华尔街见闻",
+            "qrcode": "https://wpimg.wallstcn.com/a6/f0/89/-2x.png",
+            "href": "https://activity.wallstreetcn.com/app/index.html?from=wscn__navba"
+          },
+          {
+            "name": "选股宝",
+            "qrcode": "https://wpimg.wallstcn.com/83/3b/34/-2x.png",
+            "href": "https://bao.wallstreetcn.com/static/app_pc.html?from=wscn__navbar"
+          },
+          {
+            "name": "黄金头条",
+            "qrcode": "https://wpimg.wallstcn.com/f9/99/bf/-2x.png",
+            "href": "http://www.goldtoutiao.com/events/app/index.html?from=wscn__navbar"
           }
         ]
       }
