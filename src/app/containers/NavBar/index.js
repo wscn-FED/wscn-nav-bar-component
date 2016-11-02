@@ -12,15 +12,6 @@ class NavBar extends React.PureComponent {
     static defaultProps = {
         className: 'header-nav'
     };
-
-    componentDidMount() {
-        window.addEventListener('resize', this.handleWindowResize);
-    }
-
-    handleWindowResize = () => {
-        console.log(window.innerWidth);
-    };
-
     bindNavRest = ref => {
         this.NavRestInstance = ref;
     };
@@ -43,7 +34,7 @@ class NavBar extends React.PureComponent {
             <nav className={c(this.props.className)}>
                 <NavLogo />
                 <NavMain items={config.main}/>
-                |
+                <span className="header-nav-rules">|</span>
                 <NavRest ref={this.bindNavRest} items={config.rest} onExpand={this.toggleNavWidget}/>
                 <NavWidget ref={this.bindNavWidget} items={config.widget} onExpand={this.toggleNavRest}/>
             </nav>

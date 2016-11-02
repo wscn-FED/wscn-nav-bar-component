@@ -28,6 +28,7 @@ class Profile extends React.PureComponent {
         return (
             <div className="nav-item-profile">
                 <span onClick={this.loginClick} className="sign-in">登录</span>
+                <span className="profile-rules">|</span>
                 <span onClick={this.registerClick} className="sign-up">注册</span>
             </div>
         );

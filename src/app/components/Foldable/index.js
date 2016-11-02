@@ -13,7 +13,8 @@ class Foldable extends React.Component {
     };
 
     state = {
-        fold: window.innerWidth <= 1200
+        fold: false,
+        hide: window.innerWidth <= 1200
     };
 
     componentDidMount() {
@@ -21,18 +22,20 @@ class Foldable extends React.Component {
     }
 
     handleWindowResize = () => {
-        if (window.innerWidth <= 1200) {
-            this.setState({fold: true});
+        if (window.innerWidth <= this.props.foldableMinWidth) {
+            this.setState({hide: true});
+        } else {
+            this.setState({hide: false});
+        }
+        if (window.innerWidth >= this.props.foldableMaxWidth) {
+            this.setState({fold: false});
         }
     };
 
     toggleFE = () => {
         if (window.innerWidth >= this.props.foldableMaxWidth) return;
-        // if (window.innerWidth <= 1200) {
-        //     this.setState({fold: true});
-        //     return;
-        // }
         this.setState({fold: !this.state.fold});
+        if (window.innerWidth <= this.props.foldableMinWidth) return;
         if (this.props.onExpand) this.props.onExpand();
     };
 
@@ -47,7 +50,7 @@ class Foldable extends React.Component {
             }
         };
         const p = withPrefix(this.props.prefix);
-        return (
+        const f = (
             <div className={classname(p(), this.props.className)}>
                 <Motion style={style.indicator}>
                     {({x, opacity}) => (
@@ -77,7 +80,9 @@ class Foldable extends React.Component {
                         </div>
                     )}
                 </Motion>
-            </div>
+            </div>);
+        return (
+            this.state.hide ? null : f
         );
     }
 }
