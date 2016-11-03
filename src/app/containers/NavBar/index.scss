@@ -1,5 +1,5 @@
 $break-medium:1200px;
-$break-small:960px;
+$break-small:1000px;
 
 .header-nav {
     * {
@@ -41,7 +41,7 @@ $break-small:960px;
     display: none;
   }
   .nav-widget{
-    right: 0px;
+    right: 10px;
   }
   #navbar-search{
     width: 100px;
@@ -67,7 +67,7 @@ $break-small:960px;
         display: none;
     }
     .nav-widget{
-      right: 0px;
+      right: 10px;
     }
   #navbar-search{
     width: 100px;
