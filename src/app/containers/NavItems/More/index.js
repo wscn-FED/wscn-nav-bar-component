@@ -5,8 +5,8 @@ import './index.scss';
 
 function generateColumn({title, items, className}) {
     return (
-        <div key={'more' + title} className={classname('column', className)}>
-            <div className="title">{title}</div>
+        <div key={'more' + title} className={classname('nav-column', className)}>
+            <div className="nav-column-title">{title}</div>
             <ul>
                 {items.map(item => {
                     const attrs = {
@@ -33,8 +33,8 @@ function generateColumn({title, items, className}) {
 class Download extends React.PureComponent {
     render() {
         return (
-            <div className="column download">
-                <div className="title">App下载</div>
+            <div className="nav-column download">
+                <div className="nav-column-title">App下载</div>
                 <ul>
                     {this.props.apps.map(app => (
                         <li key={app.name} className="qr-code-container">

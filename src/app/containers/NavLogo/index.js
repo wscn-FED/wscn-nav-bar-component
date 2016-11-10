@@ -12,7 +12,7 @@ class NavLogo extends React.PureComponent {
     render() {
         return (
             <div className={c(this.props.className)}>
-                <a href="//wallstreetcn.com">
+                <a className="nav-logo-conatiner" href="//wallstreetcn.com">
                     <Icon symbolId="logo"/>
                 </a>
             </div>
