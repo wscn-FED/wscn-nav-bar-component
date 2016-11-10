@@ -14,8 +14,11 @@
     }
     .live-card-title {
         margin-left: 65px;
-        padding: 16px;
+        padding: 12px;
         color: #282828;
         line-height: (21 / 13);
+      &:hover {
+        color: #1482f0;
+      }
     }
 }

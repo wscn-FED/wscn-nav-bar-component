@@ -1,12 +1,25 @@
 .nav-item-profile {
-    span {
-        margin: 0 16px;
-        cursor: pointer;
+  height: 100%;
+  line-height: 100%;
+  span {
+    padding: 0 8px;
+    cursor: pointer;
+  }
+  .profile-rules {
+    margin: 0px;
+    color: #666;
+  }
+  .sign-in,.sign-up{
+    height: 100%;
+    line-height: 60px;
+    display: inline-block;
+  }
+  .sign-in {
+    color: #3D9EFF;
+  }
+  .sign-up {
+    &:hover {
+      color: #fff;
     }
-    .profile-rules{
-        margin: 0px;
-    }
-    .sign-in {
-        color: #3D9EFF;
-    }
+  }
 }

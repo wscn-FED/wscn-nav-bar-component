@@ -21,7 +21,7 @@ class Hoverable extends React.PureComponent {
                 <div className={classname(p(), this.props.className)} data-active={location.href.includes(url)}>
                     <a href={this.props.href} target="_blank" rel="noopener noreferrer">
                         <div className={p('name')}>
-                            <span>{this.props.name}</span>
+                            {this.props.name}
                             <Icon symbolId="arrow-down"/>
                         </div>
                     </a>
@@ -34,7 +34,7 @@ class Hoverable extends React.PureComponent {
         return (
             <div className={classname(p(), this.props.className)}>
                 <div className={p('name')}>
-                    <span>{this.props.name}</span>
+                    {this.props.name}
                     <Icon symbolId="arrow-down"/>
                 </div>
                 <div className={p('content')} data-open={this.props.open}>

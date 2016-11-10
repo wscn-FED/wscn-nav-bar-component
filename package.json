@@ -1,6 +1,6 @@
 {
   "name": "wscn-nav-bar-component",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "wscn-nav-bar-component",
   "main": "dist/js/main.js",
   "scripts": {
