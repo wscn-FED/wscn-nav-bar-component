@@ -9,13 +9,16 @@
     margin: 0px;
     color: #666;
   }
-  .sign-in,.sign-up{
+  .sign-in, .sign-up {
     height: 100%;
     line-height: 60px;
     display: inline-block;
   }
   .sign-in {
-    color: #3D9EFF;
+    color: #3399FF;
+    &:hover {
+      color: #59ACFF;
+    }
   }
   .sign-up {
     &:hover {
