@@ -100,7 +100,7 @@
       {
         "name": "日历",
         "component": "Calendar",
-        "href": "://calendar.wallstreetcn.com",
+        "href": "//calendar.wallstreetcn.com",
         "api": "http://api-markets.wallstreetcn.com/v1/calendar.json"
       },
       {
@@ -343,7 +343,7 @@
       {
         "name": "日历",
         "component": "Calendar",
-        "href": "://calendar.wallstreetcn.com",
+        "href": "//calendar.wallstreetcn.com",
         "api": "http://api-markets.wallstreetcn.com/v1/calendar.json"
       },
       {
