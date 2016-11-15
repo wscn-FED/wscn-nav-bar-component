@@ -138,7 +138,7 @@
             ]
           },
           {
-            "title": "WEEX",
+            "title": "一起交易",
             "items": [
               {
                 "name": "外汇",
@@ -198,7 +198,7 @@
     ],
     "rest": [
       {
-        "name": "WEEX",
+        "name": "一起交易",
         "component": "Weex",
         "href": "//fx.weex.in",
         "tabs": [
@@ -381,7 +381,7 @@
             ]
           },
           {
-            "title": "WEEX",
+            "title": "一起交易",
             "items": [
               {
                 "name": "外汇",
@@ -441,7 +441,7 @@
     ],
     "rest": [
       {
-        "name": "WEEX",
+        "name": "一起交易",
         "component": "Weex",
         "href": "//fx.weex.in",
         "tabs": [

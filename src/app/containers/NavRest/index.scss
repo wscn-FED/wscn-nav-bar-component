@@ -20,18 +20,13 @@
                 display: inline-block;
             }
             .nav-item {
-                display: inline-block;
+                display: inline;
                 text-align: center;
                 height: 100%;
+                line-height: 60px;
                 cursor: pointer;
                 &:hover {
                     color: white;
-                }
-                &:after {
-                    content: "";
-                    height: 100%;
-                    display: inline-block;
-                    vertical-align: middle;
                 }
             }
         }

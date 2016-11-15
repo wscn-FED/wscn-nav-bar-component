@@ -2,3 +2,5 @@ node_modules
 .git
 /build
 .idea*
+
+npm-debug.log

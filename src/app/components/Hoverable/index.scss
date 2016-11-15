@@ -3,7 +3,7 @@
 .hoverable {
   position: relative;
   .hoverable-name {
-    line-height: 100%;
+    display:inline;
   }
   &[data-active="true"] {
     background-color: #49535C;
