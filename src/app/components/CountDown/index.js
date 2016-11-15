@@ -22,7 +22,7 @@ class CountDown extends React.Component {
     render() {
         if (!this.state.timespan) return null;
         const {timespan} = this.state;
-        if (!timespan.hours) return false;
+        // if (!timespan.hours) return false;
         const arr = [['years', '年'], ['months', '月'], ['days', '日'], ['hours', '小时'], ['minutes', '分'], ['seconds', '秒']].map(([key, display]) => [key, display, timespan[key]]);
 
         const p = withPrefix(this.props.prefix);
