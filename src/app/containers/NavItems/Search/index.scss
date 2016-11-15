@@ -1,9 +1,11 @@
 .nav-item-search {
   margin-right: 14px;
-  vertical-align: -13px!important;
+  height: 100%;
   form {
     position: relative;
     overflow: hidden;
+    margin-top: 20px;
+    margin-top: 19px;
   }
   form[data-expanded="false"] {
     input {

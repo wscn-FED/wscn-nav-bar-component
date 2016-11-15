@@ -51,7 +51,7 @@ class CalendarTab extends React.PureComponent {
                         else trend = 'negative';
                         return (
                             <li className={p('item')} key={item.id}>
-                                <div className={p('time')}>{parseTime(new Date(item.localDateTime), '{h}:{i}')}</div>
+                                <div className={p('time')}>{parseTime(new Date(item.localDateTime.replace(/-/g, '/')), '{h}:{i}')}</div>
                                 <div className={p('content')}>
                                     <div className={p('stars')}>
                                         {new Array(item.importance).fill().map((_, index) => <Icon symbolId="star" key={index}/>)}
