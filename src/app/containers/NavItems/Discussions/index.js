@@ -53,7 +53,7 @@ class Discussions extends React.PureComponent {
         const DiscussionsContainer = this.DiscussionsContent;
         return (
             <Hoverable className={this.props.className} name={this.props.name} href={this.props.href} >
-                <DiscussionsContainer className="discussion-container" api={this.props.api}/>
+                <DiscussionsContainer className="nav-discussion-container" api={this.props.api}/>
             </Hoverable>
         );
     }
