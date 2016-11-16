@@ -45,7 +45,7 @@ export default (config, map, {fetchOnRerender, fetchAfterMount = true} = {}) => 
             p.then(res => {
                 if (this.mounted) {
                     this.setState({
-                        loading: false,
+                        loading: true,
                         data: map ? map(res) : res
                     });
                     this.fetching = false;
