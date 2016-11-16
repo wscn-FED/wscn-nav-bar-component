@@ -28,6 +28,13 @@
     }
 }
 
+@for $z from 0 through 3 {
+  .zIndex#{$z}{
+    z-index: $z;
+  }
+}
+
+
 @mixin hoverable($color: white) {
     cursor: pointer;
     transition: color 0.3s ease;
@@ -42,3 +49,4 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+

@@ -102,6 +102,98 @@
         "component": "Calendar",
         "href": "//calendar.wallstreetcn.com",
         "api": "http://api-markets.wallstreetcn.com/v1/calendar.json"
+      },
+      {
+        "name": "更多",
+        "component": "More",
+        "includes": [
+          {
+            "title": "华尔街见闻",
+            "className": "jianwen",
+            "items": [
+              {
+                "name": "资讯",
+                "href": "//wallstreetcn.com/news"
+              },
+              {
+                "name": "社区",
+                "href": "//s.wallstreetcn.com/discussions"
+              },
+              {
+                "name": "实时",
+                "href": "//live.wallstreetcn.com"
+              },
+              {
+                "name": "专栏",
+                "href": "//wallstreetcn.com/columns"
+              },
+              {
+                "name": "行情",
+                "href": "//markets.wallstreetcn.com"
+              },
+              {
+                "name": "日历",
+                "href": "//calendar.wallstreetcn.com"
+              }
+            ]
+          },
+          {
+            "title": "一起交易",
+            "items": [
+              {
+                "name": "外汇",
+                "href": "//fx.weex.in"
+              },
+              {
+                "name": "基金",
+                "href": "//fx.weex.in/"
+              }
+            ]
+          },
+          {
+            "title": "其他产品",
+            "items": [
+              {
+                "name": "选股宝",
+                "href": "//bao.wallstreetcn.com/static/app_pc.html?from=wscnpc_navbar"
+              },
+              {
+                "name": "贵金属",
+                "href": "//www.goldtoutiao.com/"
+              }
+            ]
+          },
+          {
+            "title": "加入我们",
+            "items": [
+              {
+                "name": "W Club",
+                "href": "//club.wallstreetcn.com"
+              },
+              {
+                "name": "见闻招聘",
+                "href": "//wallstreetcn.com/joinus"
+              }
+            ]
+          }
+        ],
+        "downloadsMap": [
+          {
+            "name": "华尔街见闻",
+            "qrcode": "https://wpimg.wallstcn.com/a6/f0/89/-2x.png",
+            "href": "https://activity.wallstreetcn.com/app/index.html?from=wscn__navba"
+          },
+          {
+            "name": "选股宝",
+            "qrcode": "https://wpimg.wallstcn.com/83/3b/34/-2x.png",
+            "href": "https://bao.wallstreetcn.com/static/app_pc.html?from=wscn__navbar"
+          },
+          {
+            "name": "黄金头条",
+            "qrcode": "https://wpimg.wallstcn.com/f9/99/bf/-2x.png",
+            "href": "http://www.goldtoutiao.com/events/app/index.html?from=wscn__navbar"
+          }
+        ]
       }
     ],
     "rest": [
@@ -133,11 +225,6 @@
       {
         "name": "下载",
         "href": "//activity.wallstreetcn.com/app/index.html?from=pc_navbar"
-      },
-      {
-        "name": "峰会",
-        "href": "//activity.wallstreetcn.com/2016summit",
-        "tag":"hot"
       }
     ],
     "widget": [
@@ -258,6 +345,98 @@
         "component": "Calendar",
         "href": "//calendar.wallstreetcn.com",
         "api": "http://api-markets.wallstreetcn.com/v1/calendar.json"
+      },
+      {
+        "name": "更多",
+        "component": "More",
+        "includes": [
+          {
+            "title": "华尔街见闻",
+            "className": "jianwen",
+            "items": [
+              {
+                "name": "资讯",
+                "href": "//wallstreetcn.com/news"
+              },
+              {
+                "name": "社区",
+                "href": "//s.wallstreetcn.com/discussions"
+              },
+              {
+                "name": "实时",
+                "href": "//live.wallstreetcn.com"
+              },
+              {
+                "name": "专栏",
+                "href": "//wallstreetcn.com/columns"
+              },
+              {
+                "name": "行情",
+                "href": "//markets.wallstreetcn.com"
+              },
+              {
+                "name": "日历",
+                "href": "//calendar.wallstreetcn.com"
+              }
+            ]
+          },
+          {
+            "title": "一起交易",
+            "items": [
+              {
+                "name": "外汇",
+                "href": "//fx.weex.in"
+              },
+              {
+                "name": "基金",
+                "href": "//fx.weex.in/"
+              }
+            ]
+          },
+          {
+            "title": "其他产品",
+            "items": [
+              {
+                "name": "选股宝",
+                "href": "//bao.wallstreetcn.com/static/app_pc.html?from=wscnpc_navbar"
+              },
+              {
+                "name": "贵金属",
+                "href": "//www.goldtoutiao.com/"
+              }
+            ]
+          },
+          {
+            "title": "加入我们",
+            "items": [
+              {
+                "name": "W Club",
+                "href": "//club.wallstreetcn.com"
+              },
+              {
+                "name": "见闻招聘",
+                "href": "//wallstreetcn.com/joinus"
+              }
+            ]
+          }
+        ],
+        "downloadsMap": [
+          {
+            "name": "华尔街见闻",
+            "qrcode": "https://wpimg.wallstcn.com/a6/f0/89/-2x.png",
+            "href": "https://activity.wallstreetcn.com/app/index.html?from=wscn__navba"
+          },
+          {
+            "name": "选股宝",
+            "qrcode": "https://wpimg.wallstcn.com/83/3b/34/-2x.png",
+            "href": "https://bao.wallstreetcn.com/static/app_pc.html?from=wscn__navbar"
+          },
+          {
+            "name": "黄金头条",
+            "qrcode": "https://wpimg.wallstcn.com/f9/99/bf/-2x.png",
+            "href": "http://www.goldtoutiao.com/events/app/index.html?from=wscn__navbar"
+          }
+        ]
       }
     ],
     "rest": [
@@ -289,11 +468,6 @@
       {
         "name": "下载",
         "href": "//activity.wallstreetcn.com/app/index.html?from=pc_navbar"
-      },
-      {
-        "name": "峰会",
-        "href": "//activity.wallstreetcn.com/2016summit",
-        "tag":"hot"
       }
     ],
     "widget": [

@@ -1,34 +1,48 @@
 .nav-rest {
+  position: relative;
+  z-index: 1;
+  > div {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  a[data-tag] {
     position: relative;
-    z-index: 1;
-    > div {
+    &:after {
+      content: attr(data-tag);
+      display: block;
+      position: absolute;
+      left: 75%;
+      top: 5px;
+      color: white;
+      background-color: #F44242;
+      padding: 1px 4px;
+      font-size: 12px;
+    }
+  }
+  .content {
+    position: relative;
+    .hoverable {
+      height: 100%;
+    }
+    .foldable-content {
+      height: 100%;
+      white-space: nowrap;
+      .nav-item, .nav-item-weex {
+        padding: 0 15px;
+        white-space: normal;
         display: inline-block;
+      }
+      .nav-item {
+        display: inline;
+        text-align: center;
         height: 100%;
-        vertical-align: middle;
-    }
-    .content {
-        position: relative;
-        .hoverable {
-            height: 100%;
+        line-height: 60px;
+        cursor: pointer;
+        &:hover {
+          color: white;
         }
-        .foldable-content {
-            height: 100%;
-            white-space: nowrap;
-            .nav-item, .nav-item-weex {
-                padding: 0 15px;
-                white-space: normal;
-                display: inline-block;
-            }
-            .nav-item {
-                display: inline;
-                text-align: center;
-                height: 100%;
-                line-height: 60px;
-                cursor: pointer;
-                &:hover {
-                    color: white;
-                }
-            }
-        }
+      }
     }
+  }
 }
