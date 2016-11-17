@@ -164,15 +164,15 @@
         "tabs": [
           {
             "name": "美国",
-            "api": "http://api.wallstreetcn.com/v2/posts?type=news&limit=2&cid=16"
+            "api": "https://api.wallstreetcn.com/v2/posts?type=news&limit=2&cid=16"
           },
           {
             "name": "中国",
-            "api": "http://api.wallstreetcn.com/v2/posts?type=news&limit=2&cid=17"
+            "api": "https://api.wallstreetcn.com/v2/posts?type=news&limit=2&cid=17"
           },
           {
             "name": "欧洲",
-            "api": "http://api.wallstreetcn.com/v2/posts?type=news&limit=2&cid=15"
+            "api": "https://api.wallstreetcn.com/v2/posts?type=news&limit=2&cid=15"
           }
         ]
       },
@@ -183,15 +183,15 @@
         "tabs": [
           {
             "name": "全球",
-            "api": "http://api.wallstreetcn.com/v2/livenews?type=news&cid=1"
+            "api": "https://api.wallstreetcn.com/v2/livenews?type=news&cid=1"
           },
           {
             "name": "A股",
-            "api": "http://api.wallstreetcn.com/v2/livenews?type=news&cid=2"
+            "api": "https://api.wallstreetcn.com/v2/livenews?type=news&cid=2"
           },
           {
             "name": "美股",
-            "api": "http://api.wallstreetcn.com/v2/livenews?type=news&cid=4"
+            "api": "https://api.wallstreetcn.com/v2/livenews?type=news&cid=4"
           }
         ]
       },
@@ -257,7 +257,7 @@
         "name": "日历",
         "component": "Calendar",
         "href": "//calendar.wallstreetcn.com",
-        "api": "http://api-markets.wallstreetcn.com/v1/calendar.json"
+        "api": "https://api-markets.wallstreetcn.com/v1/calendar.json"
       }
     ],
     "rest": [
@@ -268,12 +268,12 @@
         "tabs": [
           {
             "name": "最新观点",
-            "api": "http://api.wallstreetcn.com/v2/posts?type=fxmkt&limit=2&page=1",
+            "api": "https://api.wallstreetcn.com/v2/posts?type=fxmkt&limit=2&page=1",
             "component": "News"
           },
           {
             "name": "实时解读",
-            "api": "http://api.wallstreetcn.com/v2/livenews?channelId=5&page=1&limit=10&min_updated=0",
+            "api": "https://api.wallstreetcn.com/v2/livenews?channelId=5&page=1&limit=10&min_updated=0",
             "component": "Live"
           }
         ]

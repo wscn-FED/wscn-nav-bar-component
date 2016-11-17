@@ -112,7 +112,7 @@ function runDevServer(port) {
         },
         proxy: {
             '/api/**': {
-                target: 'http://api.wallstreetcn.com/v2',
+                target: 'https://api.wallstreetcn.com/v2',
                 // ignorePath: true,
                 pathRewrite: {
                     '^/api': ''
@@ -121,7 +121,7 @@ function runDevServer(port) {
                 logLevel: 'debug'
             },
             '/discussions-api/**': {
-                target: 'http://api.wallstreetcn.com/hatano/v1/discussions',
+                target: 'https://api.wallstreetcn.com/hatano/v1/discussions',
                 // ignorePath: true,
                 pathRewrite: {
                     '^/discussions-api': ''
@@ -130,7 +130,7 @@ function runDevServer(port) {
                 logLevel: 'debug'
             },
             '/api-markets/**': {
-                target: 'http://api-markets.wallstreetcn.com/v1',
+                target: 'https://api-markets.wallstreetcn.com/v1',
                 pathRewrite: {
                     '^/api-markets': ''
                 },
