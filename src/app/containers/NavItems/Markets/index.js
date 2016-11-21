@@ -12,7 +12,7 @@ const HEIGHT = 20;
 class Chart extends React.PureComponent {
     static defaultProps = {
         className: 'chart'
-    }
+    };
 
     getPoints() {
         const values = this.props.data.map(([val]) => val);
@@ -46,7 +46,7 @@ class Chart extends React.PureComponent {
 class Card extends React.PureComponent {
     static defaultProps = {
         className: 'markets-card'
-    }
+    };
 
     render() {
         const [ name, last, change, changeRate, precision, type, indexName ] = this.props.data.snapshot;
@@ -56,7 +56,7 @@ class Card extends React.PureComponent {
                     <div className="name">{name}</div>
                     <div className="value">{Number(last).toFixed(precision)}</div>
                     <div className="change">{change > 0 && '+'}{Number(change).toFixed(precision)}</div>
-                    <div className="change-rate">{changeRate > 0 && '+'}{Number(changeRate).toFixed(precision)}%</div>
+                    <div className="change-rate">{changeRate > 0 && '+'}{Number(changeRate).toFixed(2)}%</div>
                     <Chart data={this.props.data.candle} />
                 </div>
             </a>
@@ -67,7 +67,7 @@ class Card extends React.PureComponent {
 class List extends React.PureComponent {
     static defaultProps = {
         className: 'markets-list'
-    }
+    };
 
     componentDidMount() {
         if (this.props.activated && this.props.open) this.props.fetchData();
@@ -100,7 +100,7 @@ function getURLs(indices, api) {
 class MarketsTab extends React.PureComponent {
     static defaultProps = {
         className: 'markets-tab'
-    }
+    };
 
     ContentList = this.props.tabs.map(tab => withData(getURLs(tab.indices, tab.api), res => {
         if (res.some(item => item.data.code != 200)) throw (new Error('fetch failed'));
@@ -129,7 +129,7 @@ export default
 class Markets extends React.PureComponent {
     static defaultProps = {
         className: 'nav-item-markets'
-    }
+    };
     render() {
         return (
             <Hoverable className={this.props.className} name={this.props.name} href={this.props.href} >
