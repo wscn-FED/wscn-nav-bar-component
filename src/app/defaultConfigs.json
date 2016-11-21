@@ -45,7 +45,7 @@
         "href": "//markets.wallstreetcn.com",
         "tabs": [
           {
-            "name": "期货",
+            "name": "商品",
             "indices": [
               "XAUUSD",
               "XAGUSD",
@@ -201,7 +201,7 @@
         "href": "//markets.wallstreetcn.com",
         "tabs": [
           {
-            "name": "期货",
+            "name": "商品",
             "indices": [
               "XAUUSD",
               "XAGUSD",
