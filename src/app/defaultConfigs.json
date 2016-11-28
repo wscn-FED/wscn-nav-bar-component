@@ -92,16 +92,15 @@
         ]
       },
       {
-        "name": "社区",
-        "component": "Discussions",
-        "href": "//s.wallstreetcn.com/discussions",
-        "api": "https://api.wallstreetcn.com/hatano/v1/discussions/normal?page=1&limit=3&order=createdAt"
-      },
-      {
         "name": "日历",
         "component": "Calendar",
         "href": "//calendar.wallstreetcn.com",
         "api": "http://api-markets.wallstreetcn.com/v1/calendar.json"
+      },
+      {
+        "name": "专栏",
+        "component": "Colums",
+        "href": "//wallstreetcn.com/columns"
       }
     ],
     "rest": [
@@ -137,7 +136,7 @@
       {
         "name": "峰会",
         "href": "//wallstreetcn.com/chatroom/detail/86",
-        "tag":"hot"
+        "tag": "hot"
       }
     ],
     "widget": [
@@ -248,16 +247,15 @@
         ]
       },
       {
-        "name": "社区",
-        "component": "Discussions",
-        "href": "//s.wallstreetcn.com/discussions",
-        "api": "https://api.wallstreetcn.com/hatano/v1/discussions/normal?page=1&limit=3&order=createdAt"
-      },
-      {
         "name": "日历",
         "component": "Calendar",
         "href": "//calendar.wallstreetcn.com",
         "api": "https://api-markets.wallstreetcn.com/v1/calendar.json"
+      },
+      {
+        "name": "专栏",
+        "component": "Colums",
+        "href": "//wallstreetcn.com/columns"
       }
     ],
     "rest": [
@@ -293,7 +291,7 @@
       {
         "name": "峰会",
         "href": "//wallstreetcn.com/chatroom/detail/86",
-        "tag":"hot"
+        "tag": "hot"
       }
     ],
     "widget": [
