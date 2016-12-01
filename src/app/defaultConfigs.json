@@ -111,7 +111,7 @@
         "tabs": [
           {
             "name": "最新观点",
-            "api": "/api/posts?type=fxmkt&limit=2&page=1",
+            "api": "/api/posts?type=news,fxmkt&cide=58&limit=2&page=1",
             "component": "News"
           },
           {
@@ -127,7 +127,7 @@
       },
       {
         "name": "黄金头条",
-        "href": "//www.goldtoutiao.com/events/app/index.html?from=wscn_navbar"
+        "href": "http://www.goldtoutiao.com/"
       },
       {
         "name": "下载",
@@ -266,7 +266,7 @@
         "tabs": [
           {
             "name": "最新观点",
-            "api": "https://api.wallstreetcn.com/v2/posts?type=fxmkt&limit=2&page=1",
+            "api": "https://api.wallstreetcn.com/v2/posts?type=news,fxmkt&cide=58&limit=2&page=1",
             "component": "News"
           },
           {
@@ -282,7 +282,7 @@
       },
       {
         "name": "黄金头条",
-        "href": "//www.goldtoutiao.com/events/app/index.html?from=wscn_navbar"
+        "href": "http://www.goldtoutiao.com/"
       },
       {
         "name": "下载",
