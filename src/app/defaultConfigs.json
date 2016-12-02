@@ -111,7 +111,7 @@
         "tabs": [
           {
             "name": "最新观点",
-            "api": "/api/posts?type=news,fxmkt&cide=58&limit=2&page=1",
+            "api": "/api/posts?type=news,fxmkt&cid=58&limit=2&page=1",
             "component": "News"
           },
           {
@@ -266,7 +266,7 @@
         "tabs": [
           {
             "name": "最新观点",
-            "api": "https://api.wallstreetcn.com/v2/posts?type=news,fxmkt&cide=58&limit=2&page=1",
+            "api": "https://api.wallstreetcn.com/v2/posts?type=news,fxmkt&cid=58&limit=2&page=1",
             "component": "News"
           },
           {
