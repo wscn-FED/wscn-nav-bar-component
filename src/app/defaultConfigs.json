@@ -107,7 +107,8 @@
       {
         "name": "一起交易",
         "component": "Weex",
-        "href": "//fx.weex.in",
+        "tag": "in",
+        "href": "https://s.growingio.com/JMV9EZ",
         "tabs": [
           {
             "name": "最新观点",
@@ -135,8 +136,7 @@
       },
       {
         "name": "峰会",
-        "href": "//wallstreetcn.com/chatroom/detail/86",
-        "tag": "hot"
+        "href": "//wallstreetcn.com/chatroom/detail/86"
       }
     ],
     "widget": [
@@ -262,7 +262,8 @@
       {
         "name": "一起交易",
         "component": "Weex",
-        "href": "//fx.weex.in",
+        "href": "https://s.growingio.com/JMV9EZ",
+        "tag": "in",
         "tabs": [
           {
             "name": "最新观点",
@@ -290,8 +291,7 @@
       },
       {
         "name": "峰会",
-        "href": "//wallstreetcn.com/chatroom/detail/86",
-        "tag": "hot"
+        "href": "//wallstreetcn.com/chatroom/detail/86"
       }
     ],
     "widget": [

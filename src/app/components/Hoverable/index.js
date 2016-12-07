@@ -15,11 +15,12 @@ class Hoverable extends React.PureComponent {
     render() {
         const p = withPrefix(this.props.prefix);
         if (this.props.href) {
+            console.log(this.props);
             const parseResult = urlParse(this.props.href);
             const url = parseResult.hostname + parseResult.pathname;
             return (
                 <div className={classname(p(), this.props.className)} data-active={location.href.includes(url)}>
-                    <a href={this.props.href} target="_blank" rel="noopener noreferrer">
+                    <a href={this.props.href} target="_blank" rel="noopener noreferrer" data-tag={this.props.dataTag}>
                         <div className={p('name')}>
                             {this.props.name}
                             <Icon symbolId="arrow-down"/>
