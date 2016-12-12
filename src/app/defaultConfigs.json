@@ -27,15 +27,15 @@
         "tabs": [
           {
             "name": "全球",
-            "api": "/api/livenews?type=news&cid=1"
+            "api": "/api/livenews?type=news&channelId=1"
           },
           {
             "name": "A股",
-            "api": "/api/livenews?type=news&cid=2"
+            "api": "/api/livenews?type=news&channelId=2"
           },
           {
             "name": "美股",
-            "api": "/api/livenews?type=news&cid=4"
+            "api": "/api/livenews?type=news&channelId=4"
           }
         ]
       },
@@ -182,15 +182,15 @@
         "tabs": [
           {
             "name": "全球",
-            "api": "https://api.wallstreetcn.com/v2/livenews?type=news&cid=1"
+            "api": "https://api.wallstreetcn.com/v2/livenews?type=news&channelId=1"
           },
           {
             "name": "A股",
-            "api": "https://api.wallstreetcn.com/v2/livenews?type=news&cid=2"
+            "api": "https://api.wallstreetcn.com/v2/livenews?type=news&channelId=2"
           },
           {
             "name": "美股",
-            "api": "https://api.wallstreetcn.com/v2/livenews?type=news&cid=4"
+            "api": "https://api.wallstreetcn.com/v2/livenews?type=news&channelId=4"
           }
         ]
       },
