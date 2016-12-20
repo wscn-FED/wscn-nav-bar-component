@@ -15,7 +15,6 @@ class Hoverable extends React.PureComponent {
     render() {
         const p = withPrefix(this.props.prefix);
         if (this.props.href) {
-            console.log(this.props);
             const parseResult = urlParse(this.props.href);
             const url = parseResult.hostname + parseResult.pathname;
             return (
